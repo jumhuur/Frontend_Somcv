@@ -1,0 +1,1838 @@
+:root {
+--main: #071c4d;
+ --main2 : #2466ff;
+ --qoraalo_ciwaano : #ffffff;
+ --qoraalo_content: #616368;
+ --_shafaaf: #cdcdcd;
+ --btn_Hover: #0344db;
+}
+
+
+*{
+  scrollbar-color: #002d97 #ffffff;
+  scrollbar-width: thin;
+}
+body{
+    background-color: var(--Bckground);
+    position: relative;
+    scrollbar-color:linear-gradient(90deg,#071c4d,#002d97) !important;
+}
+
+p {
+    font-family: sans-serif;
+    font-family: "font";
+    color: var(--qoraalo_content);
+}
+
+
+  
+/* html{
+    scroll-behavior: smooth;
+}
+   */
+  
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    user-select: none;
+}
+
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:linear-gradient(90deg,#071c4d,#002d97) !important;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+  
+.haye,
+.xajiye{
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+
+/*-----------b hedad ---------------------------------*/
+
+section.Head{
+  width: 100%;
+  height: 650px;
+  background-color: var(--main2);
+  background:linear-gradient(90deg,#071c4d,#002d97) !important;
+  position: relative;
+}
+
+div.header_nav{
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  transition: all 0.5s ease-in-out;
+  background-color:transparent;
+  background:linear-gradient(90deg,#071c4d,#002d97) !important;
+}
+
+div.header_nav.Cadaan{
+ box-shadow: 0px 0px 20px 0px #dedddd;
+  background:linear-gradient(90deg,#ffffff,#ffffff) !important;
+}
+
+div.header_nav.Cadaan nav.Nav div.nav_links ul.links_items li.items_nav{
+  color: var(--qoraalo_content);
+}
+
+div.header_nav.Cadaan nav.Nav div.actions button.sing {
+  color: var(--qoraalo_content);
+}
+
+
+nav.Nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap row;
+  padding: 0% 0px;
+  height: 85px;
+}
+
+nav.Nav div.logo{
+  flex: 1;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap row;
+}
+
+nav.Nav div.logo h2.logo_desc{
+  color: var(--qoraalo_ciwaano);
+  font-size: 20px;
+  font-family: sans-serif;
+  font-family: "font";
+  text-transform: capitalize;
+}
+
+nav.Nav div.logo h2.logo_desc.cadaan_logo{
+  color: var(--main2);
+}
+
+nav.Nav div.logo img {
+  height: 100%;
+  width: 60px;
+}
+
+nav.Nav div.nav_links{
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  position: relative;
+}
+nav.Nav div.nav_links ul.links_items {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: wrap row;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  padding: 0px 0px;
+  transition: all 0.6s ease-in-out;
+}
+
+nav.Nav div.nav_links ul.links_items li.items_nav {
+  height: 100%;
+  color: var(--qoraalo_ciwaano);
+  font-family: sans-serif;
+  font-family: "font";
+  font-size: 15px;
+  font-weight: normal;
+  padding: 10px 0px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+nav.Nav div.nav_links ul.links_items li.items_nav:hover{
+  color: var(--main2);
+}
+
+nav.Nav div.nav_links ul.links_items li.items_nav i.i{
+  font-size: 12px;
+}
+
+nav.Nav div.actions{
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap row;
+  gap: 40px;
+}
+
+nav.Nav div.actions button.sing { 
+  flex: 2;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: var(--qoraalo_ciwaano);
+  font-size: 16px;
+  font-family: sans-serif;
+  font-family: "font";
+  transition: all 0.4s;
+  cursor: pointer;
+}
+nav.Nav div.actions button.sing:hover{
+  color: var(--main2);
+
+}
+nav.Nav div.actions .reg {
+  flex: 1;
+}
+nav.Nav div.actions button.start {
+  width: 125px;
+  background-color: var(--main2);
+  color: var(--qoraalo_ciwaano);
+  font-size: 16px;
+  font-family: sans-serif;
+  font-family: "font";
+  transition: all 0.4s;
+  border-radius: 7px;
+  height: 50px;
+  outline: none;
+  border: none;
+  transition: all 0.4 ease-in-out;
+  cursor: pointer;
+}
+
+nav.Nav div.actions button.start:hover{
+  background-color: #0344db;
+}
+
+
+div.Home_conten{
+  width: 100%;
+  position: absolute;
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap row;
+  padding-top: 15px;
+}
+
+div.Home_conten div.haye div.home_Parts{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap row;
+}
+
+div.Home_conten div.haye div.home_Parts div.side{
+  width: calc(100% / 2);
+}
+
+div.Home_conten div.haye div.home_Parts div.side.left{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+}
+
+div.Home_conten div.haye div.home_Parts div.side.left .qoraalo {
+  width: 100%;
+}
+
+div.Home_conten div.haye div.home_Parts div.side.left .qoraalo h2 {
+  color: var(--qoraalo_ciwaano);
+  font-size: 3rem;
+  font-family: sans-serif;
+  font-family: "font";
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 1.30;
+}
+
+div.Home_conten div.haye div.home_Parts div.side.left .qoraalo p.desc_Home {
+  color: var(--qoraalo_ciwaano);
+  font-size: 16px;
+  font-family: sans-serif;
+  font-family: "font";
+  text-transform: capitalize;
+  line-height: 2;
+  padding: 15px 5px;
+  text-align: left;
+}
+
+div.Home_conten div.haye div.home_Parts div.side.left  div.actions_home{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap row;
+  gap: 20px;
+}
+
+div.Home_conten div.haye div.home_Parts div.side.left  div.actions_home button{
+  height: 50px;
+  width: 100%;
+}
+
+div.Home_conten div.haye div.home_Parts div.side.left  div.actions_home button.req{
+  flex: 1;
+  background-color: var(--main2);
+  color: var(--qoraalo_ciwaano);
+  font-size: 16px;
+  font-family: sans-serif;
+  font-family: "font";
+  transition: all 0.4s;
+  border-radius: 7px;
+  outline: none;
+  border: none;
+  transition: all 0.4 ease-in-out;
+  cursor: pointer;
+  width: 100%;
+  height: 50px;
+}
+
+div.Home_conten div.haye div.home_Parts div.side.left  div.actions_home  button.video{
+flex: 1;
+background-color: transparent;
+color: var(--qoraalo_ciwaano);
+font-size: 20px;
+font-family: sans-serif;
+font-family: "font";
+transition: all 0.4s;
+border-radius: 7px;
+outline: none;
+border: none;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-flow: wrap row;
+gap: 5px;
+cursor: pointer;
+}
+
+div.Home_conten div.haye div.home_Parts div.side.left  div.actions_home  button.video i {
+  font-size: 40px;
+}
+div.Home_conten div.haye div.home_Parts div.side.left div.all_clints{
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: wrap column;
+  margin-top: 25px;
+}
+div.Home_conten div.haye div.home_Parts div.side.left div.all_clints span.title {
+  padding: 10px 1px;
+  color: var(--qoraalo_ciwaano);
+  font-size: 16px;
+  font-family: sans-serif;
+  font-family: "font";
+  text-transform: capitalize;
+}
+div.Home_conten div.haye div.home_Parts div.side.left div.all_clints div.clints {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap row;
+  padding: 10px 1px;
+  width: 100%;
+}
+div.Home_conten div.haye div.home_Parts div.side.left div.all_clints div.clints div.clint{
+  flex: 1;
+}
+
+div.Home_conten div.haye div.home_Parts div.side.left div.all_clints div.clints div.clint img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+div.Home_conten div.haye div.home_Parts div.side.right{
+  overflow: hidden;
+}
+
+div.Home_conten div.haye div.home_Parts div.side.right img {
+  width: 100%;
+  height: 100%;
+}
+/*---------- dh head ---------------------------------*/
+
+
+/*--------------------------B Login ---------------------------------*/
+div.container_login{
+  width: 100%;
+  height: 100vh;
+  background:linear-gradient(90deg,#071c4d,#002d97) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+}
+div.container_login div.login_card{
+  width: 40%;
+  background-color: var(--qoraalo_ciwaano);
+  padding: 5% 3%;
+  border-radius: 7px;
+}
+
+div.container_login div.login_card form.login_from{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: wrap column;
+}
+
+div.container_login div.login_card form.login_from input{
+  width: 100%;
+  height: 50px;
+  outline: none;
+  background: var(--qoraalo_ciwaano);
+  border: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 10px 0px;
+  border-radius: 5px;
+  border: solid 1px #2466ff69;
+  color: var(--qoraalo_content);
+  font-size: 16px;
+  font-family: sans-serif;
+  font-family: "font";
+  text-transform: capitalize;
+  caret-color: var(--qoraalo_content);
+}
+
+div.container_login div.login_card form.login_from span{
+  font-size: 18px;
+  font-family: sans-serif;
+  font-family: "font";
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  margin: 2% 0px;
+}
+
+div.container_login div.login_card form.login_from span.Massage{
+  color: #ff4800;
+
+}
+div.container_login div.login_card form.login_from button.submit_btn{
+  width: 55%;
+  height: 45px;
+  background-color: var(--main2);
+  color: var(--qoraalo_ciwaano);
+  font-size: 15px;
+  font-family: sans-serif;
+  font-family: "font";
+  text-transform: capitalize;
+  transition: all 0.4s ease-in-out;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  margin: 2% 0px;
+  cursor: pointer;
+}
+
+div.container_login div.login_card form.login_from div.upload{
+  width: 100%;
+  height: 70px;
+  background-color: var(--qoraalo_ciwaano);
+  color: var(--main2);
+  font-size: 25px;
+  font-family: sans-serif;
+  font-family: "font";
+  text-transform: capitalize;
+  transition: all 0.4s ease-in-out;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  margin: 2% 0px;
+  border: dashed 1.50px var(--main2);
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  gap: 5px;
+  padding: 0px 10px;
+  cursor: pointer;
+}
+
+div.container_login div.login_card form.login_from div.upload P.file_name_and_zise{
+  font-size: 13px;
+}
+
+div.container_login div.login_card form.login_from button.submit_btn:hover{
+background-color: #2466ff;
+}
+
+
+div.container_login div.login_card form.login_from input::placeholder{
+  color: #2466ff69;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-family: "font";
+  text-transform: capitalize;
+}
+
+/*--------------------------dh Login ---------------------------------*/
+
+
+/*-------------------------- Bilow Tips ---------------------------------*/
+div.Tips{
+  width: 100%;
+  height: 100%;
+  margin: 5% 0px;
+  background-color: #F6F9FE; 
+  /* background:linear-gradient(90deg,#071c4d,#002d97) !important; */
+}
+
+div.Tips div.tips_container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap row;
+  gap: 20px;
+}
+
+
+div.Tips div.tips_container div.right_tips{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  gap: 5px;
+}
+
+div.Tips div.tips_container div.right_tips div.tap{
+  width: 100%;
+  height: 110px;
+  margin: 3% 0px;
+  padding: 2% 1% ;
+  border-radius: 5px;
+  /* background:linear-gradient(90deg,#002d97,#071c4d) !important; */
+  background-color: #F6F9FE;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: wrap row;
+  /* box-shadow: 0px 0px 8px 5px rgba(221, 221, 221, 0.491); */
+  transition: all 0.6s ease-in-out;
+}
+
+/* div.Tips div.tips_container div.right_tips div.tap:nth-child(2){
+  transform: translate(50px,0px);
+}
+div.Tips div.tips_container div.right_tips div.tap:nth-child(3){
+  transform: translate(0px,0px);
+} */
+
+div.Tips div.tips_container div.right_tips div.tap div.icon{
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+    /* background:linear-gradient(90deg,#071c4d,#002d97) !important; */
+  background-color: var(--qoraalo_ciwaano);
+  display: flex;
+  border: 1.5px dashed var(--main2);
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  font-size: 2em;
+  color: var(--main2);
+
+}
+
+div.Tips div.tips_container div.right_tips div.tap div.qoraal{
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: wrap column;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--qoraalo_content);
+  font-family: "font";
+  text-transform: capitalize;
+  line-height: 1.50;
+  padding: 0px 15px;
+}
+
+div.Tips div.tips_container div.right_tips div.tap div.qoraal h2 {
+  color: var(--main2);
+  font-weight:500;
+}
+
+div.Tips div.tips_container div.right_tips div.tap div.qoraal h2 ,p.info_tips {
+  text-align: left;
+}
+
+
+div.Tips div.tips_container div.left_tips{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap row;
+}
+
+div.Tips div.tips_container div.left_tips img {
+  width: 100%;
+  height: 100%;
+}
+/*-------------------------- dhamaad Tips ---------------------------------*/
+
+/*-------------------------- Bilow Design ---------------------------------*/
+div.design_cover{
+  width: 100%;
+  height: 100%;
+  margin: 5% 0px; 
+  /* background:linear-gradient(90deg,#071c4d,#002d97) !important; */
+  padding: 0% 0px;
+}
+
+div.design_cover div.designs{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow:  wrap row;
+}
+
+div.design_cover div.designs div.design{
+  width: calc(95% / 3);
+  height: 480px;
+  background-color: #ffffff80;
+  margin: 35px 0px;
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+  padding: 20px 30px;
+  box-shadow: 0px 0px 12px 0px #d7d7d7a7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: wrap column;
+  transition: all 0.4s ease-in-out;
+  border-top: solid 1.50px var(--main2);
+  border-bottom: solid 1.50px var(--main2);
+}
+
+div.design_cover div.designs div.design:hover{
+  background-color: var(--qoraalo_ciwaano);
+  transform: translate(0px,15px);
+}
+
+
+a {
+  text-decoration: none;
+  color: var(--qoraalo_content);
+
+}
+
+div.design_cover div.designs div.design div.info_design{
+  width: 100%;
+  height: 140px;
+  border-radius: 5px;
+  color: var(--qoraalo_content);
+  font-family: "font";
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+}
+
+div.design_cover div.designs div.design a.ankar_poin{
+  width: 65%;
+
+}
+
+div.design_cover div.designs div.design button.P_previews{
+  width: 100%;
+  height: 45px;
+  margin-bottom: 7px;
+  outline: none;
+  border: none;
+  /* background:linear-gradient(90deg,#071c4d,#002d97) !important; */
+  background-color: var(--main2);
+  border-radius: 5px;
+  color: var(--qoraalo_ciwaano);
+  font-family: "font";
+  text-transform: capitalize;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.4s ease-out;
+}
+
+div.design_cover div.designs div.design button.P_previews:hover{
+  background-color: #0344db;
+}
+
+div.design_cover div.designs div.design div.info_design h2:hover {
+  text-decoration: underline;
+}
+
+div.design_cover div.designs div.design div.info_design h2{
+  font-size: 1.5em;
+  font-weight: normal;
+}
+
+div.design_cover div.designs div.design div.info_design  h2 , p{
+  padding: 5px 1px;
+  text-align: center;
+  line-height: 1.50;
+}
+
+div.design_cover div.designs div.design div.info_design  p{
+  color: var(--main2);
+  font-weight: normal;
+}
+
+div.design_cover div.designs div.design div.in_design{
+  width: 100%;
+  height: 225px;
+  background-color: var(--qoraalo_ciwaano);
+  padding: 5px 5px;
+  overflow: hidden;
+  box-shadow: 0px 0px 11px 5px #d5d5d5b4;
+  border-radius: 5px;
+}
+
+div.design_cover div.designs div.design div.in_design img {
+  width: 100%;
+  height: 100%;
+}
+
+div.design_cover div.designs div.design div.over_vellow{
+  width: 100%;
+  height: 100%;
+  background-color: #2466ff80;
+  z-index: 17;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: scale(0);
+  transition: all 0.5s ease-in-out;
+  border-radius: 50%;
+}
+
+div.design_cover div.designs div.design:hover div.over_vellow{
+  transform: scale(1);
+  border-radius: 0%;
+}
+
+div.design_cover div.designs div.design > img {
+  width: 100%;
+  height: 100%;
+}
+
+div.ciwaan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  padding: 15px 0px;
+}
+
+div.ciwaan h3 {
+  color: var(--qoraalo_content);
+  font-size: 16px;
+  font-family: "font";
+  text-transform: capitalize;
+  padding: 20px 1px;
+}
+
+div.ciwaan > div.ciwaan_adv{
+  width: 25%;
+  height: 60px;
+  border-radius: 40px;
+  background-color: #2466ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  background-color: var(--qoraalo_ciwaano);
+  box-shadow: 0px 0px 11px 5px #d5d5d557;
+  color: var(--qoraalo_content);
+  font-family: "font";
+  text-transform: capitalize;
+  font-size: 11px;
+  font-weight: normal;
+}
+
+div.ciwaan > div.ciwaan_adv span {
+  color: var(--main2);
+}
+
+/*-------------------------- dhamaad Design ---------------------------------*/
+
+
+/*-------------------------- footer ---------------------------------*/
+div.footer {
+  width: 100%;
+  background:linear-gradient(90deg,#071c4d,#002d97) !important;
+  padding: 3% 0px;
+}
+
+div.footer div.footer_cointainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap row;
+  gap: 60px;
+}
+
+div.footer div.footer_cointainer div.parts_footer{
+  flex: 1;
+  /* background-color: #2466ff; */
+  padding: 3% 2px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: wrap column;
+}
+
+div.footer div.footer_cointainer div.parts_footer .logo_footer {
+  width: 100%;
+  height: 100%;
+}
+
+div.footer div.footer_cointainer div.parts_footer .logo_footer img {
+  width: 45%;
+  height: 70%;
+}
+
+div.footer div.footer_cointainer div.parts_footer p {
+  text-align: left;
+  color: var(--qoraalo_ciwaano);
+  font-family: "font";
+  text-transform: capitalize;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 1.80;
+}
+
+div.footer div.footer_cointainer div.parts_footer ul.footer_links {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: wrap column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+div.footer div.footer_cointainer div.parts_footer ul.footer_links  li.footer_links_items {
+  width: 100%;
+  padding: 10px 0px;
+}
+div.footer div.footer_cointainer div.parts_footer ul.footer_links  li.footer_links_items a {
+  color: var(--qoraalo_ciwaano);
+  font-family: "font";
+  text-transform: capitalize;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 1.80;
+}
+
+div.footer div.footer_cointainer div.parts_footer ul.footer_links  li.footer_links_items a span{
+  color: var(--main2);
+}
+
+div.footer div.footer_cointainer div.parts_footer div.contect_us_footer h2.ciwaan_footer{
+  color: var(--main2);
+  font-size: 2.50em;
+  font-weight: bold;
+  font-family: "font";
+  text-transform: capitalize;
+}
+
+div.footer div.footer_cointainer div.parts_footer div.contect_us_footer div.socila_footer{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: wrap row;
+  gap: 25px;
+}
+
+div.footer div.footer_cointainer div.parts_footer div.contect_us_footer div.socila_footer div.social{
+  font-size: 1.50em;
+  color: var(--qoraalo_ciwaano);
+}
+/*-------------------------- footer ---------------------------------*/
+
+
+/*-------------------------- Popup info satart ---------------------------------*/
+div.over_vellow_all{
+  width: 100%;
+  height: 670px;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #61636880;
+  z-index: 9999;
+  position: absolute;
+  transition: all 0.5s ease-in-out linear;
+  visibility: hidden;
+  position: fixed;
+  overflow-x: hidden;
+  overflow-y: auto;
+  opacity: 0;
+  display: block;
+  padding: 25px 1px;
+}
+
+div.over_vellow_all.active{
+  visibility: visible;
+  opacity: 1;
+}
+
+div.over_vellow_all.active div.popup_haye{
+  visibility: visible;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-flow: wrap column;
+}
+
+div.container_pop{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+}
+
+div.over_vellow_all.active div.popup{
+  width: 80%;
+  background-color: var(--qoraalo_ciwaano);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+div.over_vellow_all.active div.popup div.heead_info_pop{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: wrap row;
+  /* background: #004cff; */
+  padding: 10px 5px;
+  border-bottom: solid 1px #b7b7b780;
+}
+
+div.over_vellow_all.active div.popup div.heead_info_pop div.buttons{
+  width: 70%;
+  padding: 1px 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: wrap;
+  gap: 25px;
+}
+
+div.over_vellow_all.active div.popup div.heead_info_pop div.buttons button.edit{
+  width: 160px;
+  height: 45px;
+  margin: 10px 0px;
+  outline: none;
+  border: none;
+  /* background:linear-gradient(90deg,#071c4d,#002d97) !important; */
+  background-color: var(--main2);
+  border-radius: 5px;
+  color: var(--qoraalo_ciwaano);
+  font-family: "font";
+  text-transform: capitalize;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.4s ease-out;
+}
+
+div.over_vellow_all.active div.popup div.heead_info_pop div.buttons button.edit:hover{
+  background-color: var(--btn_Hover);
+}
+
+
+div.over_vellow_all.active div.popup div.heead_info_pop h2 {
+  color: var(--qoraalo_content);
+  font-family: "font";
+  font-size: 18px;
+  font-weight: 500;
+}
+
+div.over_vellow_all.active div.popup div.heead_info_pop div.close{
+  width: 15%;
+  /* background: #071c4d; */
+  display: flex;
+  padding: 10px 2px;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap row;
+}
+
+div.close_here{
+  width: 25px;
+  height: 25px;
+  background-color: var(--main2);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap row;
+  color: var(--qoraalo_ciwaano);
+  cursor: pointer;
+}
+
+div.over_vellow_all.active div.popup div.cv{
+  width: 100%;
+  height: 100%;
+  /* background-color: #2466ff; */
+  padding: 15px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap row;
+  gap: 15px;
+}
+
+div.over_vellow_all.active div.popup div.cv div.cv_image{
+  flex: 3.50;
+  height: 100%;
+  border-radius: 1px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+}
+
+div.over_vellow_all.active div.popup div.cv div.cv_short_descr{
+  flex: 2;
+  /* background-color: #2466ff; */
+  padding: 15px 15px;
+}
+
+div.over_vellow_all.active div.popup div.cv div.cv_short_descr h2 , h3 {
+  color: var(--main2);
+  font-family: "font";
+  text-transform: capitalize;
+  font-size: 20px;
+  padding: 10px 0px;
+}
+
+div.over_vellow_all.active div.popup div.cv div.cv_short_descr  h3{
+  font-size: 17px;
+} 
+
+div.over_vellow_all.active div.popup div.cv div.cv_short_descr p {
+  color: var(--qoraalo_content);
+  font-family: "font";
+  text-transform: capitalize;
+  font-size: 17px;
+  padding: 2px 0px;
+  text-align: left;
+}
+
+
+
+div.over_vellow_all.active div.popup div.cv div.cv_short_descr ul.ul_cv{
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  padding: 15px 2px;
+}
+
+div.over_vellow_all.active div.popup div.cv div.cv_short_descr ul.ul_cv li.li_items_cv i {
+  color: var(--main2);
+}
+div.over_vellow_all.active div.popup div.cv div.cv_short_descr ul.ul_cv li.li_items_cv{
+  padding: 7px 0px;
+  color: var(--qoraalo_content);
+  font-family: "font";
+  text-transform: capitalize;
+}
+
+
+div.over_vellow_all.active div.popup div.cv img {
+  width: 100%;
+  height: 100%;
+
+}
+body.overhidden{
+  overflow: hidden;
+}
+/*-------------------------- Popup info edn ------------------------------------*/
+
+
+/*-------------------------- edit cv start ------------------------------------*/
+div.head_edit{
+  width: 100%;
+  height: 250px;
+  background:linear-gradient(90deg,#071c4d,#002d97) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+}
+
+div.head_edit .qoraal_edit{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* flex-flow: wrap column; */
+  padding: 0px 15px;
+}
+
+div.head_edit .qoraal_edit p {
+  font-size: 20px;
+  color: var(--qoraalo_ciwaano);
+  font-family: "font";
+  text-transform: capitalize;
+}
+
+
+/*-------------------------- edit cv end ------------------------------------*/
+
+
+/*-------------------------- cv degsign start ------------------------------------*/
+div.design_cv_containers{
+  width: 100%;
+  height: 100%;
+  background-color: var(--qoraalo_ciwaano);
+  margin: 2% 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-flow: wrap row;
+  overflow: hidden;
+}
+
+div.design_cv_containers div.leval1{
+  height: 297mm;
+  width: 210mm;
+  overflow: hidden;
+  overflow-x: scroll;
+  scrollbar-color: #002d97 #ffffff;
+  scrollbar-width: thin;
+}
+
+
+div.design_cv_containers div.leval1::-webkit-scrollbar{
+  height: 3px;
+}
+
+/*-------------------------- cv degsign end ------------------------------------*/
+
+
+/*-------------------------- feilds start ------------------------------------*/
+div.design_cv_containers div.previewcv{
+  width: calc(100% - 215mm);
+  background-color: var(--qoraalo_ciwaano);
+  height: 297mm;
+  overflow: hidden;
+  padding: 0px 0px;
+  overflow: hidden;
+  overflow-y: scroll;
+  position: relative;
+  scrollbar-color: #ffffff #ffff;
+  scrollbar-width: thin;
+}
+
+div.design_cv_containers div.previewcv::-webkit-scrollbar {
+  width: 0px;
+}
+div.design_cv_containers div.previewcv .container_feilds{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+}
+
+div.design_cv_containers div.previewcv .container_feilds form.f_feilds{
+  width: 100%;
+  height: 100%;
+  /* background-color: #2466ff; */
+}
+
+div.design_cv_containers div.previewcv .container_feilds form.f_feilds div.Feilds_part{
+  width: 100%;
+  height: 100%;
+  margin: 25px 0px;
+  padding: 10px 10px;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  border: solid 1.50px var(--_shafaaf);
+}
+
+div.design_cv_containers div.previewcv .container_feilds form.f_feilds div.Feilds_part.profile_in div.image_uploader{
+  width: 100%;
+  height: 150px;
+  border: dashed 1.50px var(--main2);
+  margin: 15px 0px;
+  /* background-image: url("../Images/upload_image.svg"); */
+
+}
+
+div.design_cv_containers div.previewcv .container_feilds div.colors{
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: wrap row;
+  gap: 15px;
+}
+
+
+
+div.design_cv_containers div.previewcv .container_feilds div.colors div.color{
+  width: calc(73% / 4);
+  height: 30px;
+  border-radius: 2px;
+  border: solid 0px var(--_shafaaf);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap row;
+  cursor: pointer;
+}
+div.design_cv_containers div.previewcv .container_feilds div.colors div.color div.color1{
+  width: 20px;
+  height: 20px;
+  background-color: #2466ff;
+  border-radius: 50%;
+  border: solid 1.50px var(--qoraalo_ciwaano);
+}
+div.design_cv_containers div.previewcv .container_feilds div.colors div.color div.color1:nth-child(2){
+  transform: translate(-10px ,0px);
+}
+
+div.design_cv_containers div.previewcv .container_feilds div.colors div.color div.color1.arbic:nth-child(2){
+  transform: translate(10px ,0px);
+}
+
+div.image_uploader{
+  width: 100%;
+  height: 100%;
+}
+
+div.image_uploader div.upload_btn{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+}
+
+div.image_uploader div.upload_btn label{
+  background-color: var(--main2);
+  border-radius: 7px;
+  width: 200px;
+  height: 50px;
+  color: var(--qoraalo_ciwaano);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  cursor: pointer;
+}
+
+div.image_uploader div.upload_btn label.compuleted{
+  background-color: #319a00;
+  cursor: none;
+}
+
+div.image_uploader div.upload_btn label > p {
+  color: var(--qoraalo_ciwaano);
+}
+
+div.image_uploader div.upload_btn span{
+  margin-top: 15px;
+  font-family: "font";
+  text-transform: capitalize;
+  color: #f01501;
+  cursor: pointer;
+  font-size: 19px;
+}
+
+div.C_download{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+  position: sticky;
+}
+
+button.save_data{
+  width: 75%;
+  height: 45px;
+  background-color: var(--main2);
+  outline: none;
+  border: none;
+  color: var(--qoraalo_ciwaano);
+  border-radius: 7px;
+  font-family: "font";
+  text-transform: capitalize;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  margin: 15PX 0PX;
+}
+button.save_data:hover{
+  background: none;
+  background-color: #0344db;
+
+}
+
+div.design_cv_containers div.previewcv .container_feilds form.f_feilds div.Feilds_part h2.ciwaan_feilds{
+  color: var(--main2);
+  font-size: 16px;
+  font-family: "font";
+  text-transform: capitalize;
+  padding: 10px 0px;
+  text-align: left;
+}
+
+div.design_cv_containers div.previewcv .container_feilds form.f_feilds div.Feilds_part label.label_feilds{
+  width: 100%;
+  color: var(--qoraalo_content);
+  font-size: 13px;
+  font-family: "font";
+  text-transform: capitalize;
+  font-weight: 500;
+}
+div.design_cv_containers div.previewcv .container_feilds form.f_feilds div.Feilds_part input.feilds_inputs{
+  width: 100%;
+  height: 40px;
+  margin: 10px 0px;
+  font-size: 15px;
+  font-family: "font";
+  text-transform: capitalize;
+  padding-left: 15px;
+  padding-right: 15px;
+  outline: var(--_shafaaf);
+  border-radius: 2px;
+  border: none;
+  color: var(--qoraalo_content);
+  border: solid 1.50px var(--main2);
+
+}
+
+div.design_cv_containers div.previewcv .container_feilds form.f_feilds div.Feilds_part input.feilds_inputs.color_input{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  width: 39px;
+  border-radius: 50%;
+  height: 40px;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background: none;
+}
+
+div.design_cv_containers div.previewcv .container_feilds form.f_feilds div.Feilds_part input.feilds_inputs.color_input::-webkit-color-swatch{
+  width: 40px;
+  height: 100%;
+  border-radius: 50%;
+}
+
+div.design_cv_containers div.previewcv .container_feilds form.f_feilds div.Feilds_part textarea.Text_area{
+  width: 100%;
+  height: 100px;
+  margin: 10px 0px;
+  font-size: 15px;
+  font-family: "font";
+  text-transform: capitalize;
+  padding: 15px 15px;
+  outline: var(--_shafaaf);
+  border-radius: 2px;
+  border: none;
+  color: var(--qoraalo_content);
+  border: solid 1.50px var(--main2);
+  resize: vertical;
+}
+
+div.design_cv_containers div.previewcv .container_feilds form.f_feilds div.Feilds_part input.feilds_inputs::placeholder{
+  color: var(--_shafaaf);
+}
+
+div.design_cv_containers div.previewcv span.delere_Feilds_part{
+  padding: 10px 5px;
+  cursor: pointer;
+  color: #f01501;
+
+}
+/*-------------------------- feilds end ------------------------------------*/
+
+
+/*-------------------------- Language start ------------------------------------*/
+div.nav_lang{
+  background-color: var(--main2);
+  position: absolute;
+  width: 165px;
+  padding: 5px 10px;
+  position: absolute;
+  top: 70px;
+  right: 89px;
+  transition: all 0.2s ease-in-out;
+  visibility: hidden;
+  border-radius: 5px;
+
+}
+div.nav_lang.active{
+  visibility: visible;
+  top: 62px;
+  right: 89px;
+  transition: all 0.4s ease-in-out;
+}
+
+div.nav_lang div.language_ul{
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+div.nav_lang div.language_ul div.lan_list{
+  width: 100%;
+  border-radius: 5px;
+  padding: 13px 9px;
+  color: var(--qoraalo_ciwaano);
+  font-size: 15px;
+  font-family: "font";
+  text-transform: capitalize;
+  font-weight: 600;
+  transition: all 0.4s ease-in-out;
+  margin: 2px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap row;
+}
+
+
+
+div.nav_lang div.language_ul div.lan_list:hover{
+  background-color: var(--btn_Hover);
+  transition: all 0.4s ease-in-out;
+  color: var(--qoraalo_ciwaano);
+}
+div.nav_lang div.language_ul div.lan_list a.anchar span.calan{
+  width: 45px;
+  height: 45px;
+  border-radius: 7px;
+  background-color: #319a00;
+}
+div.nav_lang div.language_ul  a.anchar{
+  width: 100%;
+  margin: 0px 5px;
+  color: var(--qoraalo_ciwaano);
+  transition: all 0s ease-in-out;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: wrap row;
+  gap: 5px;
+  font-weight: normal;
+}
+
+div.nav_lang div.language_ul div.lan_list:hover a.anchar{
+  color: var(--qoraalo_ciwaano);
+}
+
+div.calan{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: solid 1px var(--qoraalo_ciwaano);
+  overflow: hidden;
+}
+
+div.calan img {
+  width: 100%;
+  height: 100%;
+}
+/*-------------------------- Language end ------------------------------------*/
+
+
+
+
+
+/*--------all median -------------------------------*/
+
+@media (min-width: 200px) and (max-width: 400px) {
+  div.Tips div.tips_container div.right_tips div.tap div.icon{
+    width: 50px;
+    height: 50px;
+  }
+
+  div.Home_conten div.haye div.home_Parts div.side.left .qoraalo h2.ar{
+    font-size: 1.60rem;
+    margin-top: 20px;
+  }
+  div.Home_conten div.haye div.home_Parts div.side.left .qoraalo p.desc_Home.ar{
+    font-size: 14px;
+  }
+
+  div.design_cover div.designs div.design {
+    width: calc(97% / 1) !important;
+  }
+
+  div.Tips div.tips_container div.right_tips div.tap {
+    width: 100%;
+    height: 100%;
+  }
+
+  div.Home_conten div.haye div.home_Parts div.side.left div.actions_home{
+    flex-flow: wrap column;
+  }
+
+  div.design_cv_containers div.previewcv{
+    width: 100% !important;
+  }
+
+  div.design_cv_containers{
+    justify-content: center;
+  }
+
+  div.ciwaan h3 {
+    padding: 20px 43px;
+    text-align: center;
+    line-height: 1.9;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 576px) {
+    .xajiye,
+    .haye {
+      max-width: 540px;
+    }
+
+    nav.Nav div.nav_links{
+      display: none;
+    }
+
+    nav.Nav div.actions{
+      display: none;
+    }
+
+    div.Home_conten div.haye div.home_Parts div.side{
+      width: calc(100% / 1);
+    }
+
+    div.Home_conten div.haye div.home_Parts div.side.left .qoraalo h2{
+      font-size: 2rem;
+      margin-top: 20px;
+    }
+
+    div.Home_conten div.haye div.home_Parts div.side.left .qoraalo h2.ar{
+      font-size: 1.60rem;
+      margin-top: 20px;
+    }
+
+    div.Tips div.tips_container div.right_tips div.tap {
+      width: 100%;
+      height: 100%;
+    }
+
+
+    section.Head{
+      height: 800px;
+    }
+
+    div.Tips div.tips_container{
+      flex-flow: wrap column;
+    }
+
+    div.ciwaan > div.ciwaan_adv {
+      width: 90%;
+    }
+
+    div.design_cover div.designs div.design {
+      width: calc(89% / 1);
+    }
+
+    div.design_cover div.designs {
+      justify-content: space-evenly;
+    }
+
+    div.footer div.footer_cointainer{
+      flex-flow: wrap column;
+      align-items: flex-start;
+    }
+
+    div.design_cv_containers div.previewcv{
+      width: 85%;
+    }
+  
+    div.design_cv_containers{
+      justify-content: center;
+    }
+
+    /*----------login page -----------*/
+    div.container_login div.login_card{
+      width: 95%;
+      height: 75%;
+    }
+    
+
+  }
+  
+  @media (min-width: 576px) and (max-width: 768px) {
+      .xajiye,
+      .haye {
+        max-width: 540px;
+      }
+
+      div.Home_conten div.haye div.home_Parts div.side.left .qoraalo h2.ar{
+        font-size: 1.60rem;
+        margin-top: 20px;
+      }
+      div.Home_conten div.haye div.home_Parts div.side.left .qoraalo p.desc_Home.ar{
+        font-size: 14px;
+      }
+
+      nav.Nav div.nav_links{
+        display: none;
+      }
+  
+      nav.Nav div.actions{
+        display: none;
+      }
+  
+      div.Home_conten div.haye div.home_Parts div.side{
+        width: calc(100% / 1);
+      }
+  
+      div.Home_conten div.haye div.home_Parts div.side.left .qoraalo h2{
+        font-size: 2rem;
+        margin-top: 15%;
+      }
+  
+      section.Head{
+        height: 1000px;
+      }
+  
+      div.Tips div.tips_container{
+        flex-flow: wrap column;
+      }
+  
+      div.ciwaan > div.ciwaan_adv {
+        width: 70%;
+      }
+  
+      div.design_cover div.designs div.design {
+        width: calc(80% / 1);
+      }
+  
+      div.design_cover div.designs {
+        justify-content: space-evenly;
+      }
+
+
+      div.design_cv_containers div.previewcv{
+        width: 85%;
+      }
+    
+      div.design_cv_containers{
+        justify-content: center;
+      }
+      div.footer div.footer_cointainer{
+        flex-flow: wrap column;
+        align-items: flex-start;
+      }
+
+    /*----------login page -----------*/
+    div.container_login div.login_card{
+      width: 75%;
+      height: 65%;
+    }
+
+  }
+
+  @media (min-width: 768px) and (max-width: 992px) {
+    .xajiye,
+    .haye {
+      max-width: 540px;
+    }
+
+    nav.Nav div.actions{
+      gap: 20px;
+    }
+
+    nav.Nav div.nav_links{
+      display: none;
+    }
+    div.Home_conten div.haye div.home_Parts div.side{
+      width: calc(100% / 1);
+    }
+
+    div.Home_conten div.haye div.home_Parts div.side.left .qoraalo h2{
+      font-size: 4rem;
+      margin-top: 15%;
+    }
+
+    section.Head{
+      height: 1300px;
+    }
+
+    div.Tips div.tips_container{
+      flex-flow: wrap column;
+    }
+
+    div.ciwaan > div.ciwaan_adv {
+      width: 70%;
+    }
+
+    div.design_cover div.designs div.design {
+      width: calc(75% / 1);
+    }
+
+    div.design_cover div.designs {
+      justify-content: space-evenly;
+    }
+
+    div.container_login div.login_card{
+      width: 65%;
+      height: 75%;
+    }
+
+    nav.Nav div.actions{
+      flex: 1;
+    }
+
+    div.design_cv_containers div.previewcv{
+      width: 95%;
+    }
+  
+    div.design_cv_containers{
+      justify-content: center;
+    }
+
+    div.footer div.footer_cointainer{
+      flex-flow: wrap column;
+      align-items: flex-start;
+    }
+
+}
+  @media (min-width: 992px) and (max-width: 1200px) {
+      .xajiye,
+      .haye {
+        max-width: 960px;
+      }
+
+      
+    nav.Nav div.actions{
+      flex: 1;
+    }
+
+      nav.Nav div.nav_links{
+        display: none;
+      }
+
+      div.Home_conten div.haye div.home_Parts div.side.left .qoraalo h2{
+        margin-top: 15%;
+      }
+
+      div.design_cover div.designs div.design {
+        width: calc(75% / 2);
+      }
+  
+      div.design_cover div.designs {
+        justify-content: space-evenly;
+      }
+
+      div.container_login div.login_card{
+        width: 55%;
+        height: 75%;
+      }
+
+      div.design_cv_containers div.previewcv{
+        width: 95%;
+      }
+    
+      div.design_cv_containers{
+        justify-content: center;
+      }
+      div.design_cv_containers div.previewcv .container_feilds div.colors div.color{
+        width: calc(25% / 4);
+      }
+  }
+  @media (min-width: 1200px) and (max-width:1400px) {
+      .xajiye,
+      .haye {
+        max-width: 1140px;
+      }
+
+  }
+  @media (min-width: 1400px) {
+      .xajiye,
+      .haye {
+        max-width: 1320px;
+      }
+  }
+  @media print{
+  }
+/*-------------- dhamaadka  all media -----------------*/
+
+
+

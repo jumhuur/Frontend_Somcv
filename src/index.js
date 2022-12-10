@@ -1,17 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import {BrowserRouter} from "react-router-dom"
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import "./Components/Static/Css/all.min.css";
+import "./Components/Static/Css/main.css";
+import "./Components/Static/Css/Normalize.css";
+import "./Components/Static/Js/main.js";
+import {ContextProvider} from "./Components/Context/Auth";
+import {CvcontextProvaider} from "./Components/Context/Cv"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <ContextProvider>
+      <CvcontextProvaider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </CvcontextProvaider>
+   </ContextProvider>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

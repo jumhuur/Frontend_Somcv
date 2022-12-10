@@ -1,0 +1,8 @@
+@font-face {
+    font-family: "font";
+    src: url(../Static/Fonts/Noto\ Kufi\ Arabic\ Regular.ttf);
+}
+
+div.Home_conten div.haye div.home_Parts div.side.left .qoraalo h2 {
+    line-height: 1.85;
+}
