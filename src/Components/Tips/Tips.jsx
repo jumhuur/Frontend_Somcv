@@ -5,7 +5,7 @@ function Tips(){
             <div className="haye">
             <div className="tips_container">
                 <div className="left_tips">
-                    <img src="images/Home8.svg"  alt="image_tips"/>
+                    <img src="/images/Home8.svg"  alt="image_tips"/>
                 </div>
                 <div className="right_tips">
                     <div className="tap">
