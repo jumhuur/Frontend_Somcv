@@ -8,7 +8,11 @@ export const Register = (req,res) => {
     const query = 'SELECT * FROM users WHERE Email = ?'
     db.query(query, [req.body.Email], (err,data) => {
         if(err) return res.status(500).json(err)
-        if(data.length) return res.status(409).json("Horaa Loo Qaatay Emailkan")
+        if(data.length) return res.status(409).json([
+            "Emaikan Horaa Loo Diwaan Galiyay",
+            "هذا بريد الإلكترونى مسجل بالفعل",
+            "This email is already registered",
+        ])
         const salat = bcrypt.genSaltSync(10);
         const Hashedpassword = bcrypt.hashSync(req.body.Password, salat)
         const q_insert = "INSERT INTO users (`Email`, `Password` ,`Name` , `Image`) VALUE (?)";
@@ -33,9 +37,17 @@ export const login = (req,res) => {
     const q = 'SELECT * FROM users WHERE Email = ?';
     db.query(q,[req.body.Email] , (err,data) => {
         if(err) return res.status(500).json(err)
-        if(data.length == 0) return res.status(404).json('Akoonkan Ma Samaysna !')
+        if(data.length == 0) return res.status(404).json([
+            'Akoonkan Ma Samaysna !',
+            "لم يتم إنشاء هذا الحساب! ",
+            "This account is not created!"
+        ])
         const passwordCheck = bcrypt.compareSync(req.body.Password, data[0].Password)
-        if(!passwordCheck) return res.status(400).json('Waa Qalad Passworkaagu')
+        if(!passwordCheck) return res.status(400).json([
+            'Waa Qalad Passworkaagu',
+            'كلمة مرور غير صحيحة',
+            'Incorrect password'
+        ])
         const token = Jwt.sign({id:data[0].Id}, "Takriimsecret")
         const {Password, ...athers} = data[0];
         res.cookie('Token', token, {

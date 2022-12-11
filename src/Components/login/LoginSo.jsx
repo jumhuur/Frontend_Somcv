@@ -22,7 +22,7 @@ function  LoginSo() {
            await Login(inputs)
         } catch(Err){
             console.log(Err)
-            seterr(Err.response.data)
+            seterr(Err.response.data[0])
         }
     }
     function Check(){

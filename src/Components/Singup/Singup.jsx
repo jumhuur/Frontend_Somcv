@@ -26,8 +26,7 @@ function Register() {
            navigate('/Login')
 
         } catch(Err){
-            console.log(Err)
-            seterr(Err.response.data)
+            seterr(Err.response.data[2])
         }
     }
 

@@ -21,8 +21,7 @@ function  LoginAr() {
         try{
            await Login(inputs)
         } catch(Err){
-            console.log(Err)
-            seterr(Err.response.data)
+            seterr(Err.response.data[1])
         }
     }
     function Check(){
