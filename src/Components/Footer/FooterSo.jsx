@@ -29,12 +29,12 @@ function FooterSo() {
                                 </Link>
                             </li>
                             <li className="footer_links_items">
-                            <Link to={"/"}>
+                            <Link to={"/so/Register" }>
                             <span><i className="fa-solid fa-user"></i></span> Samayso Akoon
                             </Link>
                             </li>
                             <li className="footer_links_items">
-                            <Link to={"/"}>
+                            <Link to={"/so/Login"}>
                             <span><i className="fa-solid fa-right-to-bracket"></i></span> Gal Akoon Hore
                             </Link>
                             </li>

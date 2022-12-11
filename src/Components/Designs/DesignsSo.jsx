@@ -20,7 +20,7 @@ function DesignsSo({click}) {
                         <p><i className="fa-solid fa-dollar-sign"></i> 0{cvdata.Price} USD</p>
                     </div>
                     <Link to={`/so/?id=${cvdata.id}`} className="ankar_poin">
-                    <button  className="P_previews" onClick={click}><i className="fa-solid fa-eye"></i> Preview</button>
+                    <button  className="P_previews" onClick={click}><i className="fa-solid fa-eye"></i> Itus Qaabka</button>
                    </Link>
                     <div className="in_design">
                     <Link to={"/so"}>

@@ -1,5 +1,4 @@
 function LangNav({Lan}){
-    console.log(Lan)
     const storage_language01 = () => {
         const lang = localStorage.getItem('lan')
         if(lang === "En"){

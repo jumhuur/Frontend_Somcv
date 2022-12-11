@@ -17,7 +17,6 @@ function CVdesign({cv}) {
         useEffect (function(){
             window.scrollTo(0,0)
         },[path])
-        console.log('scrolled')
     }
 
     Bugscroll()

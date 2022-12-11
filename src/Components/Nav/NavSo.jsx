@@ -12,9 +12,7 @@ function NavSo(){
     // change activity language nav 
     const language = () => {
         setLang(!Lan)
-        console.log(Lan)
     }
-    console.log(splitname)
 
     window.onscroll = function(){
         const scroll = window.scrollY;
