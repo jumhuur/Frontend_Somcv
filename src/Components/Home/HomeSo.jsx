@@ -8,10 +8,14 @@ import TipsSo from "../Tips/TipsSo";
 import DesignsSo from "../Designs/DesignsSo";
 import FooterSo from "../Footer/FooterSo";
 import PopupInfoSo from "../PopupInfo/popupinfoSo";
+import { Usecvcontext } from "../Context/Cv";
+import { useProtectedPage } from "../Context/Auth";
 function HomeSo () {
     const language = localStorage.getItem('lan');
     const [active,setactive] = useState(false)
     const Qiimaha = "4"
+    const {cv} = Usecvcontext()
+    const {user} = useProtectedPage()
 
     // popup activate
     const popup_active = (e) => {
@@ -91,16 +95,19 @@ function HomeSo () {
                         </button>
                     </div>
                     <div className="all_clints">
-                        <span className="title">Macaamiisha Cusub :</span>
+                        <span className="title">Tirakoobyo Guud :</span>
                         <div className="clints">
                             <div className="clint">
-                            <img src="/Images/client-1.svg" alt="1"/>
+                            {/* <img src="/Images/client-1.svg" alt="1"/> */}
+                            <h2 className="ltr"><i className="fa-solid fa-cloud-arrow-down"></i> dajisashada <span>23489</span></h2>
                             </div>
                             <div className="clint">
-                            <img src="/Images/client-2.svg" alt="2"/>
+                            {/* <img src="/Images/client-2.svg" alt="2"/> */}
+                            <h2 className="ltr"><i className="fa-solid fa-user"></i> Isticmalayaasha <span>{user && user.length}</span></h2>
                             </div>
                             <div className="clint">
-                            <img src="/Images/client-3.svg" alt="3"/>
+                            {/* <img src="/Images/client-3.svg" alt="3"/> */}
+                            <h2 className="ltr"><i className="fa-solid fa-file-lines"></i> Nashqadaha <span>{cv && cv.length}</span></h2>
                             </div>
                         </div>
                     </div>

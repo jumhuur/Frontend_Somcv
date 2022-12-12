@@ -9,6 +9,7 @@ export function ContextProvider({children}){
     const [CrentUser,setCrentUser] = useState(
        JSON.parse(localStorage.getItem('user')) || null
     )
+    const [user,setuser] = useState("");
 
     const Singup  = async(inputs) => {
         const data = await axios.post("http://localhost:8800/Api/Register", inputs,)
@@ -36,6 +37,14 @@ export function ContextProvider({children}){
         })
         setCrentUser(null)
     }
+
+    const Allusers = async() => {
+        const response = await axios.get("http://localhost:8800/Api/allusers/")
+        return setuser(response.data)
+
+    }
+
+
     const value = {
         CrentUser,
         setCrentUser,
@@ -43,8 +52,12 @@ export function ContextProvider({children}){
         Singup,
         Logout,
         get,
+        user
     }
 
+    useEffect(() => {
+        Allusers()
+    },[])
     useEffect(() => {
         localStorage.setItem('user', JSON.stringify(CrentUser))
     },[CrentUser])

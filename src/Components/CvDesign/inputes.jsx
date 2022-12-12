@@ -9,10 +9,12 @@ function Feilds({color1,color2,c1,c2}){
         setimage,
         progimg,
         done,
-        setdone
+        setdone,
+        Onchange_inputs_download,
+        cv
     } = Usecvcontext()
     const [filename,setfilename] = useState(null)
-    const [c01,setc01] = useState("")
+    // const [c01,setc01] = useState("")
     function onchange({target}){
         let file = target.files[0];
         if(file){
@@ -232,7 +234,7 @@ function Feilds({color1,color2,c1,c2}){
                     uploadcvimage()
                 }} id="Image" autoComplete="off" name="Image" className="feilds_inputs" type="file" required  hidden accept="image/*"/>
                 <label className="label_feilds" htmlFor="Name">Full Name</label>
-                <input value={info.Name} onChange={Onchange_inputs} autoComplete="off" name="Name" className="feilds_inputs" id="name" type="text" required />
+                <input value={info.Name} onChange={Onchange_inputs} onInput={Onchange_inputs_download} autoComplete="off" name="Name" className="feilds_inputs" id="name" type="text" required />
                 <label className="label_feilds" htmlFor="Job Title">Job Title</label>
                 <input value={info.Jobtitle} onChange={Onchange_inputs} autoComplete="off" name="Jobtitle" className="feilds_inputs" id="Job Title" type="text" required />
                 </div>
@@ -344,6 +346,7 @@ function Feilds({color1,color2,c1,c2}){
                 <input value={info.Inters3} onChange={Onchange_inputs} autoComplete="off" name="Inters3" className="feilds_inputs" id="name" type="text" required placeholder="Interst Name" />
                 <label className="label_feilds" htmlFor="Name">Interst Name</label>
                 <input value={info.Inters4} onChange={Onchange_inputs} autoComplete="off" name="Inters4" className="feilds_inputs" id="name" type="text" required placeholder="Interst Name" />
+                <input value={cv && cv.Price} onChange={Onchange_inputs_download} autoComplete="off" name="Lacagta" className="feilds_inputs" id="name" type="text" required placeholder="Interst Name"/>
                 </div>
                 <div className="Feilds_part profile_in">
                     <button className="save_data" onClick={HangdaleUpdate}>

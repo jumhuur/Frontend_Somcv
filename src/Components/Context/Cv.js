@@ -12,6 +12,11 @@ export function Usecvcontext(){
 export function CvcontextProvaider({children}) {
     const {CrentUser,get} = useProtectedPage()
     const [cv,setcv] = useState()
+    const [download_info,setdownload_info] = useState({
+      Name:CrentUser && CrentUser.Name,
+      Lacagta:cv && cv.Price
+    })
+    const [download,setdownload] = useState();
     const [image ,setimage] = useState("")
     const [progimg ,setProgimg] = useState('');
     const [done,setdone] = useState(false)
@@ -112,7 +117,7 @@ uploadTask.on('state_changed',
     const Onchange_inputs =(e) => {
         setinfo((prev) => ({...prev, [e.target.name]:e.target.value }))
     }
-    const HangdaleUpdate =  async(e,) => {
+    const HangdaleUpdate =  async(e) => {
         e.preventDefault()
         try{
             await axios.put(`http://localhost:8800/Api/update/${CrentUser.Id}`, info)
@@ -122,11 +127,30 @@ uploadTask.on('state_changed',
         }
 
     }
+
+    const Onchange_inputs_download = (e) => {
+      setdownload_info((prev) => ({...prev, [e.target.name]:e.target.value }))
+    }
+
+    const create_dowanload = async(e) => {
+      e.preventDefault()
+      try{
+        await axios.post("http://localhost:8800/Api/downloads/", download_info)
+
+
+      } catch(err){
+        console.log(err)
+      }
+    }
     
     // GET ALL DATA CVS
     const Getallcv = async () => {
         const data = await axios.get('http://localhost:8800/Api/cvs')
         return setcv(data.data)
+    }
+    const getalldownloads = async () => {
+      const data = await axios.get("http://localhost:8800/Api/Alldownloads");
+      return setdownload(data.data)
     }
     const value = {
         cv,
@@ -137,11 +161,15 @@ uploadTask.on('state_changed',
         setimage,
         progimg,
         done,
-        setdone
+        setdone,
+        download,
+        Onchange_inputs_download,
+        create_dowanload,
         //getsingalcv
     }
     useEffect(() => {
         Getallcv()
+        getalldownloads()
     },[])
     return (
         <Cvcontext.Provider value={value}>

@@ -49,9 +49,9 @@ function FeildsAr({color1,color2,c1,c2}){
                         }
 
                     } className="color" color1="#226C69" color2="#003B39">
-                        <div className="color1" color1="#226C69" color2="#003B39" style={{backgroundColor:"#226C69"}}>
+                        <div className="color1 Ar" color1="#226C69" color2="#003B39" style={{backgroundColor:"#226C69"}}>
                         </div>
-                        <div className="color1" color1="#226C69" color2="#003B39" style={{backgroundColor:"#003B39"}}>
+                        <div className="color1 Ar" color1="#226C69" color2="#003B39" style={{backgroundColor:"#003B39"}}>
                         </div>
                     </div>
                     {/*-------2aad -------*/}
@@ -62,9 +62,9 @@ function FeildsAr({color1,color2,c1,c2}){
                         }
 
                     } className="color" color1="#B26F38" color2="#612C01" >
-                        <div className="color1" color1="#B26F38" color2="#612C01" style={{backgroundColor:"#B26F38"}}>
+                        <div className="color1 Ar" color1="#B26F38" color2="#612C01" style={{backgroundColor:"#B26F38"}}>
                         </div>
-                        <div className="color1" color1="#B26F38" color2="#612C01" style={{backgroundColor:"#612C01"}}>
+                        <div className="color1 Ar" color1="#B26F38" color2="#612C01" style={{backgroundColor:"#612C01"}}>
                         </div>
                     </div>
                     {/*-------3aad -------*/}
@@ -75,9 +75,9 @@ function FeildsAr({color1,color2,c1,c2}){
                         }
 
                     } className="color" color1="#5A2A77" color2="#b946ff">
-                        <div className="color1" color1="#5A2A77" color2="#b946ff" style={{backgroundColor:"#5A2A77"}}>
+                        <div className="color1 Ar" color1="#5A2A77" color2="#b946ff" style={{backgroundColor:"#5A2A77"}}>
                         </div>
-                        <div className="color1" color1="#5A2A77" color2="#b946ff" style={{backgroundColor:"#b946ff"}}>
+                        <div className="color1 Ar" color1="#5A2A77" color2="#b946ff" style={{backgroundColor:"#b946ff"}}>
                         </div>
                     </div>
                     {/*-------4aad -------*/}
@@ -88,9 +88,9 @@ function FeildsAr({color1,color2,c1,c2}){
                         }
 
                     } className="color" color1="#AA383E" color2="#5F1F22">
-                        <div className="color1" color1="#AA383E" color2="#5F1F22" style={{backgroundColor:"#AA383E"}}>
+                        <div className="color1 Ar" color1="#AA383E" color2="#5F1F22" style={{backgroundColor:"#AA383E"}}>
                         </div>
-                        <div className="color1" color1="#AA383E" color2="#5F1F22" style={{backgroundColor:"#5F1F22"}}>
+                        <div className="color1 Ar" color1="#AA383E" color2="#5F1F22" style={{backgroundColor:"#5F1F22"}}>
                         </div>
                     </div>
                     {/*-------5aad -------*/}
@@ -101,9 +101,9 @@ function FeildsAr({color1,color2,c1,c2}){
                         }
 
                     } className="color" color1="#289717" color2="#134C0A">
-                        <div className="color1" color1="#289717" color2="#134C0A" style={{backgroundColor:"#289717"}}>
+                        <div className="color1 Ar" color1="#289717" color2="#134C0A" style={{backgroundColor:"#289717"}}>
                         </div>
-                        <div className="color1" color1="#289717" color2="#134C0A" style={{backgroundColor:"#134C0A"}}>
+                        <div className="color1 Ar" color1="#289717" color2="#134C0A" style={{backgroundColor:"#134C0A"}}>
                         </div>
                     </div>
                     {/*-------6aad -------*/}
@@ -114,9 +114,9 @@ function FeildsAr({color1,color2,c1,c2}){
                         }
 
                     } className="color" color1="#001d3d" color2="#4361ee">
-                        <div className="color1" color1="#001d3d" color2="#4361ee" style={{backgroundColor:"#001d3d"}}>
+                        <div className="color1 Ar" color1="#001d3d" color2="#4361ee" style={{backgroundColor:"#001d3d"}}>
                         </div>
-                        <div className="color1" color1="#001d3d" color2="#4361ee" style={{backgroundColor:"#4361ee"}}>
+                        <div className="color1 Ar" color1="#001d3d" color2="#4361ee" style={{backgroundColor:"#4361ee"}}>
                         </div>
                     </div>
                     {/*-------7aad -------*/}
@@ -127,9 +127,9 @@ function FeildsAr({color1,color2,c1,c2}){
                         }
 
                     } className="color" color1="#e06d00" color2="#252425">
-                        <div className="color1" color1="#e06d00" color2="#252425" style={{backgroundColor:"#e06d00"}}>
+                        <div className="color1 Ar" color1="#e06d00" color2="#252425" style={{backgroundColor:"#e06d00"}}>
                         </div>
-                        <div className="color1" color1="#e06d00" color2="#252425" style={{backgroundColor:"#252425"}}>
+                        <div className="color1 Ar" color1="#e06d00" color2="#252425" style={{backgroundColor:"#252425"}}>
                         </div>
                     </div>
                     {/*-------8aad -------*/}
@@ -140,9 +140,9 @@ function FeildsAr({color1,color2,c1,c2}){
                         }
 
                     } className="color" color1="#212529" color2="#0077b6">
-                        <div className="color1" color1="#212529" color2="#0077b6" style={{backgroundColor:"#212529"}}>
+                        <div className="color1 Ar" color1="#212529" color2="#0077b6" style={{backgroundColor:"#212529"}}>
                         </div>
-                        <div className="color1" color1="#212529" color2="#0077b6" style={{backgroundColor:"#0077b6"}}>
+                        <div className="color1 Ar" color1="#212529" color2="#0077b6" style={{backgroundColor:"#0077b6"}}>
                         </div>
                     </div>
                     {/*-------9aad -------*/}
@@ -153,9 +153,9 @@ function FeildsAr({color1,color2,c1,c2}){
                         }
 
                     } className="color" color1="#000" color2="#c88300">
-                        <div className="color1" color1="#000" color2="#c88300" style={{backgroundColor:"#000"}}>
+                        <div className="color1 Ar" color1="#000" color2="#c88300" style={{backgroundColor:"#000"}}>
                         </div>
-                        <div className="color1" color1="#000" color2="#c88300" style={{backgroundColor:"#c88300"}}>
+                        <div className="color1 Ar" color1="#000" color2="#c88300" style={{backgroundColor:"#c88300"}}>
                         </div>
                     </div>
                      {/*-------10aad -------*/}
@@ -166,9 +166,9 @@ function FeildsAr({color1,color2,c1,c2}){
                         }
 
                     } className="color" color1="#470061" color2="#009AFA">
-                        <div className="color1" color1="#470061" color2="#009AFA" style={{backgroundColor:"#009AFA"}}>
+                        <div className="color1 Ar" color1="#470061" color2="#009AFA" style={{backgroundColor:"#009AFA"}}>
                         </div>
-                        <div className="color1" color1="#470061" color2="#009AFA" style={{backgroundColor:"#001D26"}}>
+                        <div className="color1 Ar" color1="#470061" color2="#009AFA" style={{backgroundColor:"#001D26"}}>
                         </div>
                     </div>
                     {/*-------11aad -------*/}
@@ -179,9 +179,9 @@ function FeildsAr({color1,color2,c1,c2}){
                         }
 
                     } className="color" color1="#470061" color2="#718f0c">
-                        <div className="color1" color1="#333d29" color2="#718f0c" style={{backgroundColor:"#333d29"}}>
+                        <div className="color1 Ar" color1="#333d29" color2="#718f0c" style={{backgroundColor:"#333d29"}}>
                         </div>
-                        <div className="color1" color1="#333d29" color2="#718f0c" style={{backgroundColor:"#718f0c"}}>
+                        <div className="color1 Ar" color1="#333d29" color2="#718f0c" style={{backgroundColor:"#718f0c"}}>
                         </div>
                     </div>
                      {/*-------12aad -------*/}
@@ -192,9 +192,9 @@ function FeildsAr({color1,color2,c1,c2}){
                         }
 
                     } className="color" color1="#402a2c" color2="#c88300">
-                        <div className="color1" color1="#402a2c" color2="#c88300" style={{backgroundColor:"#402a2c"}}>
+                        <div className="color1 Ar" color1="#402a2c" color2="#c88300" style={{backgroundColor:"#402a2c"}}>
                         </div>
-                        <div className="color1" color1="#402a2c" color2="#c88300" style={{backgroundColor:"#c88300"}}>
+                        <div className="color1 Ar" color1="#402a2c" color2="#c88300" style={{backgroundColor:"#c88300"}}>
                         </div>
                     </div>
                 </div>

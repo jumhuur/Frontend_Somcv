@@ -374,6 +374,32 @@ div.Home_conten div.haye div.home_Parts div.side.left div.all_clints div.clints 
   flex: 1;
 }
 
+div.Home_conten div.haye div.home_Parts div.side.left div.all_clints div.clints div.clint h2.ltr {
+  color: var(--qoraalo_ciwaano);
+  font-size: 16px;
+  font-family: sans-serif;
+  font-family: "font";
+  text-transform: capitalize;
+  font-weight: normal;
+  /* border-left: solid 1px var(--qoraalo_ciwaano); */
+  padding: 0px 7px;
+}
+div.Home_conten div.haye div.home_Parts div.side.left div.all_clints div.clints div.clint h2 i {
+  color: var(--main2);
+}
+div.Home_conten div.haye div.home_Parts div.side.left div.all_clints div.clints div.clint h2.Ar {
+  /* border-right: solid 1px var(--qoraalo_ciwaano); */
+  color: var(--qoraalo_ciwaano);
+  font-size: 16px;
+  font-family: sans-serif;
+  font-family: "font";
+  text-transform: capitalize;
+  font-weight: normal;
+  padding: 0px 7px;
+}
+
+
+
 div.Home_conten div.haye div.home_Parts div.side.left div.all_clints div.clints div.clint img {
   width: 100%;
   height: 100%;
@@ -1259,7 +1285,8 @@ div.design_cv_containers div.previewcv .container_feilds div.colors div.color di
   transform: translate(-10px ,0px);
 }
 
-div.design_cv_containers div.previewcv .container_feilds div.colors div.color div.color1.arbic:nth-child(2){
+
+div.design_cv_containers div.previewcv .container_feilds div.colors div.color div.color1.Ar:nth-child(2){
   transform: translate(10px ,0px);
 }
 

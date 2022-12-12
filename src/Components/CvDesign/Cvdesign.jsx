@@ -5,13 +5,14 @@ import Template from "./Template1/Tempalete"
 import Template2 from "./Template2/Template2"
 // import Pdf from "react-to-pdf";
 import React from "react"
-import { useProtectedPage } from "../Context/Auth"
 import Template3 from "./Template3/Template3"
+import { Usecvcontext } from "../Context/Cv"
 function CVdesign({cv}) {
     const [color1,setcolor1] = useState("#001d3d")
     const [color2,setcolor2] = useState("#4361ee")
-    const {CrentUser} = useProtectedPage()
-    const name_id = CrentUser && `${CrentUser.Name}_${CrentUser.Id}`;
+    // const {CrentUser} = useProtectedPage()
+    const {create_dowanload,} = Usecvcontext()
+    // const name_id = CrentUser && `${CrentUser.Name}_${CrentUser.Id}`;
     function Bugscroll(){
         const path = useLocation()
         useEffect (function(){
@@ -50,6 +51,7 @@ function CVdesign({cv}) {
             <i className="fa-solid fa-download"></i> Download CV
             </button>}
             </Pdf> */}
+            <button onClick={create_dowanload}><i className="fa-solid fa-download"></i> Download CV</button>
             </div>
 
             <Feilds color1={setcolor1} c1={color1}  color2={setcolor2} c2={color2} />

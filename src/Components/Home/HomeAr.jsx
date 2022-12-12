@@ -8,10 +8,14 @@ import TipsAr from "../Tips/TipsAr";
 import DesignsAr from "../Designs/DesignsAr";
 import FooterAr from "../Footer/FooterAr";
 import PopupInfoAr from "../PopupInfo/popupinfoAr";
+import { Usecvcontext } from "../Context/Cv";
+import { useProtectedPage } from "../Context/Auth";
 function HomeAr () {
     const language = localStorage.getItem('lan')
     const [active,setactive] = useState(false)
     const Qiimaha = "4"
+    const {cv} = Usecvcontext()
+    const {user} = useProtectedPage()
 
     // popup activate
     const popup_active = (e) => {
@@ -91,16 +95,19 @@ function HomeAr () {
                         </button>
                     </div>
                     <div className="all_clints">
-                        <span className="title">عملائنا الجدد :</span>
+                        <span className="title">إحصائيات عامة :</span>
                         <div className="clints">
                             <div className="clint">
-                            <img src="/Images/client-1.svg" alt="1"/>
+                            {/* <img src="/Images/client-1.svg" alt="1"/> */}
+                            <h2 className="Ar"><i className="fa-solid fa-cloud-arrow-down"></i> عدد تحميلات <span>23489</span></h2>
                             </div>
                             <div className="clint">
-                            <img src="/Images/client-2.svg" alt="2"/>
+                            {/* <img src="/Images/client-2.svg" alt="2"/> */}
+                            <h2 className="Ar"><i className="fa-solid fa-user"></i> عدد مستخدمين <span>{user && user.length}</span></h2>
                             </div>
                             <div className="clint">
-                            <img src="/Images/client-3.svg" alt="3"/>
+                            {/* <img src="/Images/client-3.svg" alt="3"/> */}
+                            <h2 className="Ar"><i className="fa-solid fa-file-lines"></i> عدد تصاميم  <span>{cv && cv.length}</span></h2>
                             </div>
                         </div>
                     </div>

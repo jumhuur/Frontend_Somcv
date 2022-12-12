@@ -60,6 +60,34 @@ export const getonecv = (req,res) => {
     })
 }
 
+// download cv
+
+export const Downloadcv = (req,res) => {
+    const q = "INSERT INTO downloads (`Name`, `Lacagta`) VALUE (?)";
+    const Values = [
+        req.body.Name,
+        req.body.Lacagta
+    ]
+    db.query(q, [Values], (err,data) => {
+        if(err) return res.status(500).json(err)
+        if(data) return res.status(200).json([
+            "Wuu Wadaa ...",
+           "جار تنزيل ...",
+            "Loading ..."
+        ])
+    })
+
+}
+
+export const geDownloads = (req,res) => {
+    const q = "SELECT * FROM downloads";
+    db.query(q,(err,data) => {
+        if(err) return res.status(404).json("Not Found")
+        if(data) return res.status(200).json(data)
+    })
+
+}
+
 // delete cv
 export const deleteCv = (req,res) => {
     res.json('delete Cv')

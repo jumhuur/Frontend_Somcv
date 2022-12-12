@@ -1,5 +1,5 @@
 import express from "express";
-import { getCvs,getSingalcv, updateCv, deleteCv, addCv, getonecv } from "../Controllers/Cv.js";
+import { getCvs,getSingalcv, updateCv, deleteCv, addCv, getonecv,Downloadcv , geDownloads } from "../Controllers/Cv.js";
 const Cvrouters =  express.Router()
 
 // get all cvs
@@ -16,7 +16,10 @@ Cvrouters.post('/addcv', addCv)
 // update  and gt  cv
 Cvrouters.put('/updatecv/:id', updateCv)
 Cvrouters.get('/getonecv/:id', getonecv)
-
+// download cv add
+Cvrouters.post("/downloads", Downloadcv)
+// downloads get
+Cvrouters.get("/Alldownloads", geDownloads)
 // delete cv
 Cvrouters.delete('/delete/:id', deleteCv)
 

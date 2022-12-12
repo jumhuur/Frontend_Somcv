@@ -82,6 +82,15 @@ export const getuser = (req,res) => {
     })
 }
 
+export const Getallusers = (req,res) => {
+    const q = 'SELECT * FROM users'
+    db.query(q,(err,data) => {
+        if(err) return res.status(500).json(err)
+        if(data) return res.status(200).json(data)
+    })
+    
+}
+
 export const Update_info = (req,res) => {
     const q = "UPDATE users SET `Name` = ?,`Jobtitle` = ?,`Tell` = ?,`Location` =  ?, `Cvemail` = ?, `Image` = ?, `Edyear1` = ?, `Eddesc1` = ?, `Edunivername1` = ?, `Edyear2` = ?, `Eddesc2` = ?, `Edunivername2`= ?, `Edyear3` = ?, `Eddesc3` = ?, `Edunivername3` = ?, `Langname1` = ?, `Langprog1` = ?, `Langname2` = ?, `Langprog2` = ?, `Langname3` = ?,  `Langprog3` = ? , `Profile` = ?, `Exyear1` = ?, `Excompnay1` = ?, `Exjob1` = ?, `Exdesc1` = ?, `Exyear2` = ?, `Excompnay2` = ?, `Exjob2` = ?, `Exdesc2` = ?, `Exyear3` = ?, `Excompnay3` = ?, `Exjob3` = ?, `Exdesc3` = ?, `Skillname` = ?, `Skillprog` = ?,  `Skillname1` = ?, `Skillprog1` = ?, `Skillname2` = ?, `Skillprog2` = ?, `Skillname3` = ?, `Skillprog3` = ?, `Skillname4` = ?, `Skillprog4` = ?, `Skillname5` = ?,  `Skillprog5` = ?, `Skillname6` = ?, `Skillprog6` = ?, `Skillname7`  = ?, `Skillprog7` = ?, `Inters1` = ?, `Inters2` = ?, `Inters3` = ?,  `Inters4` = ? WHERE Id = ?"
     const id = req.params.id
@@ -146,4 +155,5 @@ export const Update_info = (req,res) => {
         if(data) return res.status(200).json("Updated")
     })
 }
+
 

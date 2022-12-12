@@ -8,16 +8,19 @@ import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import "./Home.css"
+import { Usecvcontext } from "../Context/Cv";
+import { useProtectedPage } from "../Context/Auth";
 function Home () {
     const language = localStorage.getItem('lan');
     const [active,setactive] = useState(false)
     const Qiimaha = "4"
+    const {cv,download} = Usecvcontext()
+    const {user} = useProtectedPage()
 
     // popup activate
     const popup_active = (e) => {
         //e.preventDefault()
         setactive(!active)
-
     }
 
     const [singalcv , setsingalcv] = useState();
@@ -91,16 +94,19 @@ function Home () {
                         </button>
                     </div>
                     <div className="all_clints">
-                        <span className="title">Out Top Clints :</span>
+                        <span className="title">General statistics :</span>
                         <div className="clints">
                             <div className="clint">
-                            <img src="/Images/client-1.svg" alt="1"/>
+                            {/* <img src="/Images/client-1.svg" alt="1"/> */}
+                            <h2 className="ltr"><i className="fa-solid fa-cloud-arrow-down"></i> downloads <span>{download && download.length}</span></h2>
                             </div>
                             <div className="clint">
-                            <img src="/Images/client-2.svg" alt="2"/>
+                            {/* <img src="/Images/client-2.svg" alt="2"/> */}
+                            <h2 className="ltr"><i className="fa-solid fa-user"></i> Users <span>{user && user.length}</span></h2>
                             </div>
                             <div className="clint">
-                            <img src="/Images/client-3.svg" alt="3"/>
+                            {/* <img src="/Images/client-3.svg" alt="3"/> */}
+                            <h2 className="ltr"><i className="fa-solid fa-file-lines"></i> CV Design  <span>{cv && cv.length}</span></h2>
                             </div>
                         </div>
                     </div>
