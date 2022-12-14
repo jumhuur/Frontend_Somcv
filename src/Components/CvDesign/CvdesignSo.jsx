@@ -2,15 +2,17 @@ import { useEffect, useState} from "react"
 import { useLocation } from "react-router-dom"
 // import Pdf from "react-to-pdf";
 import React from "react"
-import { useProtectedPage } from "../Context/Auth"
+// import { useProtectedPage } from "../Context/Auth"
 import FeildsSo from "./inputesSo"
 import TemplateSo from "./Template1/TempaleteSo";
 import Template2So from "./Template2/Template2So";
+import { Usecvcontext } from "../Context/Cv";
 function CVdesignSo({cv}) {
     const [color1,setcolor1] = useState("#001d3d")
     const [color2,setcolor2] = useState("#4361ee")
-    const {CrentUser} = useProtectedPage()
-    const name_id = CrentUser && `${CrentUser.Name}_${CrentUser.Id}`;
+    // const {CrentUser} = useProtectedPage()
+    // const name_id = CrentUser && `${CrentUser.Name}_${CrentUser.Id}`;
+    const {create_dowanload} = Usecvcontext()
     function Bugscroll(){
         const path = useLocation()
         useEffect (function(){
@@ -46,6 +48,7 @@ function CVdesignSo({cv}) {
             <i className="fa-solid fa-download"></i> Dajiso CV-ga
             </button>}
             </Pdf> */}
+            <button onClick={create_dowanload}><i className="fa-solid fa-download"></i> Download CV</button>
             </div>
             <FeildsSo color1={setcolor1} c1={color1}  color2={setcolor2} c2={color2} />
             </div>

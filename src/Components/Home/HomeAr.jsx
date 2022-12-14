@@ -14,7 +14,7 @@ function HomeAr () {
     const language = localStorage.getItem('lan')
     const [active,setactive] = useState(false)
     const Qiimaha = "4"
-    const {cv} = Usecvcontext()
+    const {cv,download} = Usecvcontext()
     const {user} = useProtectedPage()
 
     // popup activate
@@ -99,7 +99,7 @@ function HomeAr () {
                         <div className="clints">
                             <div className="clint">
                             {/* <img src="/Images/client-1.svg" alt="1"/> */}
-                            <h2 className="Ar"><i className="fa-solid fa-cloud-arrow-down"></i> عدد تحميلات <span>23489</span></h2>
+                            <h2 className="Ar"><i className="fa-solid fa-cloud-arrow-down"></i> عدد تحميلات <span>{download && download.length}</span></h2>
                             </div>
                             <div className="clint">
                             {/* <img src="/Images/client-2.svg" alt="2"/> */}

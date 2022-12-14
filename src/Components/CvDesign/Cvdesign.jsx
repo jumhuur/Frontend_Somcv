@@ -11,7 +11,7 @@ function CVdesign({cv}) {
     const [color1,setcolor1] = useState("#001d3d")
     const [color2,setcolor2] = useState("#4361ee")
     // const {CrentUser} = useProtectedPage()
-    const {create_dowanload,} = Usecvcontext()
+    const {create_dowanload} = Usecvcontext()
     // const name_id = CrentUser && `${CrentUser.Name}_${CrentUser.Id}`;
     function Bugscroll(){
         const path = useLocation()

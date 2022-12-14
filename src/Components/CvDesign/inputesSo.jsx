@@ -9,7 +9,8 @@ function FeildsSo({color1,color2,c1,c2}){
         setimage,
         progimg,
         done,
-        setdone
+        setdone,
+        Onchange_inputs_download
     } = Usecvcontext()
     const [filename,setfilename] = useState(null)
     function onchange({target}){
@@ -231,7 +232,7 @@ function FeildsSo({color1,color2,c1,c2}){
                     uploadcvimage()
                 }} id="Image" autoComplete="off" name="Image" className="feilds_inputs" type="file" required  hidden accept="image/*"/>
                 <label className="label_feilds" htmlFor="Name">Full Name</label>
-                <input value={info.Name} onChange={Onchange_inputs} autoComplete="off" name="Name" className="feilds_inputs" id="name" type="text" required />
+                <input value={info.Name} onChange={Onchange_inputs} onInput={Onchange_inputs_download} autoComplete="off" name="Name" className="feilds_inputs" id="name" type="text" required />
                 <label className="label_feilds" htmlFor="Job Title">Job Title</label>
                 <input value={info.Jobtitle} onChange={Onchange_inputs} autoComplete="off" name="Jobtitle" className="feilds_inputs" id="Job Title" type="text" required />
                 </div>

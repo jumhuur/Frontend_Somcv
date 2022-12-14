@@ -115,6 +115,7 @@ nav.Nav{
   flex-flow: wrap row;
   padding: 0% 0px;
   height: 85px;
+  position: relative;
 }
 
 nav.Nav div.logo{
@@ -234,6 +235,145 @@ nav.Nav div.actions button.start {
 nav.Nav div.actions button.start:hover{
   background-color: #0344db;
 }
+
+div.nav_icon_mobile{
+  width: 45px;
+  height: 45px;
+  border-radius: 2px;
+  border: solid 1.50px var(--main2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  font-size: 2em;
+  color: var(--qoraalo_ciwaano);
+}
+
+div.nav_icon_mobile.cadaan_mbl{
+  color: var(--main2);
+}
+
+div.nav_mobile{
+  width: 100%;
+  height: 0px;
+  position: absolute;
+  background:linear-gradient(90deg,#071c4d,#002d97) !important;
+  padding: 0px 0px;
+  /* transform: scale(0); */
+  transition: all 0.9s ease-in-out;
+  overflow: hidden;
+}
+
+div.nav_mobile.active{
+  height: 650px;
+  /* transform: scale(1); */
+  transition: all 0.9s ease-in-out;
+  padding: 20px 0px;
+}
+
+div#mobile_languge{
+  position: relative;
+  top: -7px;
+  right: -16px;
+}
+
+
+/*------bilowga nav mobile style-----------*/
+div.nav_mobile div.nav_mbl{
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  position: relative;
+}
+div.nav_mobile div.nav_mbl ul.links_items {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: wrap column;
+  gap: 30px;
+  padding: 0;
+  margin: 30px 0px;
+  list-style: none;
+  padding: 0px 0px;
+  transition: all 0.6s ease-in-out;
+}
+
+div.nav_mobile div.nav_mbl ul.links_items li.items_nav {
+  width: 100%;
+  height: 100%;
+  color: var(--qoraalo_ciwaano);
+  font-family: sans-serif;
+  font-family: "font";
+  font-size: 15px;
+  font-weight: normal;
+  padding: 5px 35px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+div.nav_mobile div.nav_mbl ul.links_items li.items_nav:hover{
+  color: var(--main2);
+}
+
+div.nav_mobile div.nav_mbl ul.links_items li.items_nav i.i{
+  font-size: 12px;
+}
+
+div.nav_mobile div.actions_mob{
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: wrap column;
+  gap: 40px;
+  margin: 0px 33px;
+}
+
+div.nav_mobile div.actions_mob button.sing { 
+  flex: 2;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: var(--qoraalo_ciwaano);
+  font-size: 16px;
+  font-family: sans-serif;
+  font-family: "font";
+  transition: all 0.4s;
+  cursor: pointer;
+}
+div.nav_mobile div.actions_mob button.sing:hover{
+  color: var(--main2);
+
+}
+div.nav_mobile div.actions_mob .reg {
+  width: 100%;
+}
+div.nav_mobile div.actions_mob button.start {
+  width: 125px;
+  background-color: var(--main2);
+  color: var(--qoraalo_ciwaano);
+  font-size: 16px;
+  font-family: sans-serif;
+  font-family: "font";
+  transition: all 0.4s;
+  border-radius: 7px;
+  height: 50px;
+  outline: none;
+  border: none;
+  transition: all 0.4 ease-in-out;
+  cursor: pointer;
+}
+
+div.nav_mobile div.actions_mob button.start:hover{
+  background-color: #0344db;
+}
+
+/*------dhamaadka nav mobile style-----------*/
 
 
 div.Home_conten{
@@ -1623,7 +1763,7 @@ div.calan img {
 
 
     section.Head{
-      height: 800px;
+      height: 1150px !important;
     }
 
     div.Tips div.tips_container{
@@ -1660,8 +1800,24 @@ div.calan img {
       width: 95%;
       height: 75%;
     }
-    
 
+
+    div.Home_conten div.haye div.home_Parts div.side.left div.all_clints div.clints {
+      align-items: flex-start;
+      flex-flow: wrap column;
+    }
+
+    div.Home_conten div.haye div.home_Parts div.side.left div.all_clints div.clints div.clint{
+      margin-top: 17px;
+    }
+    div.Home_conten div.haye div.home_Parts div.side.left div.all_clints div.clints div.clint h2.ltr{
+      font-size: 22px;
+    }
+
+    div.Home_conten div.haye div.home_Parts div.side.left div.actions_home button.req{
+      flex: none;
+      margin: 20px 0px;
+    }
   }
   
   @media (min-width: 576px) and (max-width: 768px) {
@@ -1696,7 +1852,7 @@ div.calan img {
       }
   
       section.Head{
-        height: 1000px;
+        height: 1000px !important;
       }
   
       div.Tips div.tips_container{
@@ -1743,12 +1899,13 @@ div.calan img {
     }
 
     nav.Nav div.actions{
-      gap: 20px;
+      display: none;
     }
 
     nav.Nav div.nav_links{
       display: none;
     }
+
     div.Home_conten div.haye div.home_Parts div.side{
       width: calc(100% / 1);
     }
@@ -1759,7 +1916,7 @@ div.calan img {
     }
 
     section.Head{
-      height: 1300px;
+      height: 1200px;
     }
 
     div.Tips div.tips_container{
@@ -1808,9 +1965,9 @@ div.calan img {
       }
 
       
-    nav.Nav div.actions{
-      flex: 1;
-    }
+      nav.Nav div.actions{
+        display: none;
+      }
 
       nav.Nav div.nav_links{
         display: none;
@@ -1850,11 +2007,26 @@ div.calan img {
         max-width: 1140px;
       }
 
+      div.nav_mobile{
+        display: none;
+      }
+
+      div.nav_icon_mobile{
+        display: none;
+      }
+
   }
   @media (min-width: 1400px) {
       .xajiye,
       .haye {
         max-width: 1320px;
+      }
+
+      div.nav_mobile{
+        display: none;
+      }
+      div.nav_icon_mobile{
+        display: none;
       }
   }
   @media print{
