@@ -3,16 +3,20 @@ import { useLocation } from "react-router-dom"
 import Feilds from "./inputes"
 import Template from "./Template1/Tempalete"
 import Template2 from "./Template2/Template2"
+import html2canvas from "html2canvas"
+import jsPDF from "jspdf"
 // import Pdf from "react-to-pdf";
 import React from "react"
 import Template3 from "./Template3/Template3"
 import { Usecvcontext } from "../Context/Cv"
+import { useProtectedPage } from "../Context/Auth"
+import { useRef } from "react"
 function CVdesign({cv}) {
     const [color1,setcolor1] = useState("#001d3d")
     const [color2,setcolor2] = useState("#4361ee")
-    // const {CrentUser} = useProtectedPage()
+    const {CrentUser} = useProtectedPage()
     const {create_dowanload} = Usecvcontext()
-    // const name_id = CrentUser && `${CrentUser.Name}_${CrentUser.Id}`;
+    const name_id = CrentUser && `${CrentUser.Name}_${CrentUser.Id}`;
     function Bugscroll(){
         const path = useLocation()
         useEffect (function(){
@@ -24,14 +28,30 @@ function CVdesign({cv}) {
 
     
     //pdf samayn 
-
     const ref = React.createRef()
+
+    // samaynta download pdf using html2canvas and jspdf
+    const btn_download = useRef()
+    const downloadPdf = () => {
+        const cv = document.getElementById("leval1");
+        html2canvas(cv,{logging: true, letterRendering: 1, useCORS: true, }).then(canvas => {
+            const imgWidth = 208;
+            const imgHeight = canvas.height * imgWidth / canvas.width;
+            const imgData = canvas.toDataURL("img/png");
+            const pdf = new jsPDF("p", "mm", "a4");
+            pdf.addImage(imgData, "PNG", 0,0,imgWidth, imgHeight);
+            pdf.save(`${name_id}.pdf`)
+        })
+
+        btn_download.current.click()
+    }
+
     
     return (
         <>
         <div className="haye">
         <div ref={ref} className="design_cv_containers">
-        <div className="leval1">
+            <div className="leval1" id="leval1">
             { cv && cv[0].id === 1615 ?
            
             <Template cv={cv} color1={color1} color2={color2}/>
@@ -51,7 +71,8 @@ function CVdesign({cv}) {
             <i className="fa-solid fa-download"></i> Download CV
             </button>}
             </Pdf> */}
-            <button onClick={create_dowanload}><i className="fa-solid fa-download"></i> Download CV</button>
+            <button  className="save_data" onClick={downloadPdf}><i className="fa-solid fa-download"></i> Download CV</button>
+            <button hidden ref={btn_download} onClick={create_dowanload}></button>
             </div>
 
             <Feilds color1={setcolor1} c1={color1}  color2={setcolor2} c2={color2} />

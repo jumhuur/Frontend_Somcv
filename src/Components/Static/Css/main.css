@@ -265,7 +265,7 @@ div.nav_mobile{
 }
 
 div.nav_mobile.active{
-  height: 650px;
+  height: 680px;
   /* transform: scale(1); */
   transition: all 0.9s ease-in-out;
   padding: 20px 0px;

@@ -9,6 +9,7 @@ import Styletemp2 from "./Template2.module.css"
             <div className={Styletemp2.cv_doc}>
                 <div className={Styletemp2.image_and_name}>
                     <div className={Styletemp2.image}  style={{backgroundImage: `Url(${CrentUser ? info.Image : "/Images/User.png"})`}}>
+                    <img src={CrentUser ? info.Image : "/Images/User.png"} alt="image_user" />
                     </div>
                     <h2>{CrentUser ? info.Name : "John Due"}</h2>
                     <h3 style={{color: color1}} className={Styletemp2.Jobtitle}>{CrentUser ? info.Jobtitle : "Your Job Title"}</h3>

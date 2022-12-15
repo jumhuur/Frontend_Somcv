@@ -11,6 +11,7 @@ function TemplateAr({color1,color2}){
             <div className={Styletemp1.cv_doc} style={{backgroundColor: `${color1}`}}>
                 <div className={Styletemp1.image_and_name}>
                     <div className={Styletemp1.image}  style={{backgroundImage: `Url(${CrentUser ? info.Image : "/Images/User.png"})`}}>
+                    <img src={CrentUser ? info.Image : "/Images/User.png"} alt="image_user" />
                     </div>
                     <h2>{CrentUser ? info.Name : "عمران على "}</h2>
                     <h3 style={{color: `${color2}`}} className={Styletemp1.Jobtitle} >{CrentUser ? info.Jobtitle : "غنوان الوظيفة"}</h3>
