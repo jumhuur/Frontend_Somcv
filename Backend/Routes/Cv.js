@@ -1,5 +1,5 @@
-import express from "express";
-import { getCvs,getSingalcv, updateCv, deleteCv, addCv, getonecv,Downloadcv , geDownloads } from "../Controllers/Cv.js";
+const express = require("express");
+const { getCvs,getSingalcv, updateCv, deleteCv, addCv, getonecv,Downloadcv , geDownloads } = require("../Controllers/Cv.js");
 const Cvrouters =  express.Router()
 
 // get all cvs
@@ -24,4 +24,6 @@ Cvrouters.get("/Alldownloads", geDownloads)
 Cvrouters.delete('/delete/:id', deleteCv)
 
 
-export default Cvrouters
+// export default Cvrouters
+
+module.exports = Cvrouters

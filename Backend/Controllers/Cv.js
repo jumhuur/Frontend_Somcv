@@ -1,6 +1,6 @@
-import { db } from "../Db.js";
+const  db = require("../Db.js");
 // add cv
-export const addCv = (req,res) => {
+const addCv = (req,res) => {
     const query = "INSERT INTO  cv (`Name` ,`Price` , `Image` , `Imagecover`) VALUE (?)";
     const Values = [
         req.body.Name,
@@ -15,16 +15,16 @@ export const addCv = (req,res) => {
     })
 }
 // get all cvs
-export const getCvs = (req,res) => {
-    const query = "SELECT * FROM cv LIMIT 9"
-    db.query(query, (err,data) => {
+const getCvs = (req,res) => {
+    const my_qu = "SELECT * FROM cv LIMIT 9"
+    db.query(my_qu, (err,data) => {
         if(err) return res.status(400).json(err)
         return res.status(200).json(data)
     })
 }
 
 // get singal cvs
-export const getSingalcv = (req,res) => {
+const getSingalcv = (req,res) => {
     const query = req.query.id && "SELECT * FROM cv WHERE id=?";
     const value = req.query.id;
     db.query(query,[value], (err, data) => {
@@ -34,7 +34,7 @@ export const getSingalcv = (req,res) => {
 }
 
 // update cv
-export const updateCv = (req,res) => {
+const updateCv = (req,res) => {
     const query = "UPDATE cv SET (`Name` ,`Price` , `Image` , `Imagecover`)  VALUE (?)  WHERE id = ?"
     const id = req.params.id
     console.log(id)
@@ -51,7 +51,7 @@ export const updateCv = (req,res) => {
 }
 
 // get one cv 
-export const getonecv = (req,res) => {
+const getonecv = (req,res) => {
     const query = "SELECT * FROM cv WHERE id=?";
     const id = req.params.id
     db.query(query,[id], (err,data) => {
@@ -62,7 +62,7 @@ export const getonecv = (req,res) => {
 
 // download cv
 
-export const Downloadcv = (req,res) => {
+const Downloadcv = (req,res) => {
     const q = "INSERT INTO downloads (`Name`, `Lacagta`) VALUE (?)";
     const Values = [
         req.body.Name,
@@ -79,9 +79,9 @@ export const Downloadcv = (req,res) => {
 
 }
 
-export const geDownloads = (req,res) => {
-    const q = "SELECT * FROM downloads";
-    db.query(q,(err,data) => {
+const geDownloads = (req,res) => {
+    const My_que = "SELECT * FROM downloads";
+    db.query(My_que,(err,data) => {
         if(err) return res.status(404).json("Not Found")
         if(data) return res.status(200).json(data)
     })
@@ -89,6 +89,18 @@ export const geDownloads = (req,res) => {
 }
 
 // delete cv
-export const deleteCv = (req,res) => {
+const deleteCv = (req,res) => {
     res.json('delete Cv')
+}
+
+
+module.exports = {
+    addCv,
+    getCvs,
+    getSingalcv,
+    getonecv,
+    updateCv,
+    deleteCv,
+    Downloadcv,
+    geDownloads
 }

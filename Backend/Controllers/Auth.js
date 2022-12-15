@@ -1,9 +1,8 @@
-import { db } from "../Db.js"
-import bcrypt from 'bcrypt'
-import Jwt from "jsonwebtoken"
-
+const db = require("../Db.js")
+const bcrypt = require('bcrypt')
+const Jwt = require("jsonwebtoken")
 // log in 
-export const Register = (req,res) => {
+const Register = (req,res) => {
     // hubi in hore loo qaatay emailkan 
     const query = 'SELECT * FROM users WHERE Email = ?'
     db.query(query, [req.body.Email], (err,data) => {
@@ -33,7 +32,7 @@ export const Register = (req,res) => {
 }
 
 // log in 
-export const login = (req,res) => {
+const login = (req,res) => {
     const q = 'SELECT * FROM users WHERE Email = ?';
     db.query(q,[req.body.Email] , (err,data) => {
         if(err) return res.status(500).json(err)
@@ -60,7 +59,7 @@ export const login = (req,res) => {
 
 
 // log in 
-export const Logout = (req,res) => {
+const Logout = (req,res) => {
     res.clearCookie("Token", {
         sameSite: "none",
         httpOnly: true
@@ -73,7 +72,7 @@ export const Logout = (req,res) => {
 }
 
 
-export const getuser = (req,res) => {
+const getuser = (req,res) => {
     const id = req.params.id
     const q = 'SELECT * FROM users WHERE Id = ?';
     db.query(q,[id] , (err,data) => {
@@ -82,16 +81,16 @@ export const getuser = (req,res) => {
     })
 }
 
-export const Getallusers = (req,res) => {
-    const q = 'SELECT * FROM users'
-    db.query(q,(err,data) => {
+const Getallusers = (req,res) => {
+    const my_q = 'SELECT * FROM users'
+    db.query(my_q,(err,data) => {
         if(err) return res.status(500).json(err)
         if(data) return res.status(200).json(data)
     })
     
 }
 
-export const Update_info = (req,res) => {
+const Update_info = (req,res) => {
     const q = "UPDATE users SET `Name` = ?,`Jobtitle` = ?,`Tell` = ?,`Location` =  ?, `Cvemail` = ?, `Image` = ?, `Edyear1` = ?, `Eddesc1` = ?, `Edunivername1` = ?, `Edyear2` = ?, `Eddesc2` = ?, `Edunivername2`= ?, `Edyear3` = ?, `Eddesc3` = ?, `Edunivername3` = ?, `Langname1` = ?, `Langprog1` = ?, `Langname2` = ?, `Langprog2` = ?, `Langname3` = ?,  `Langprog3` = ? , `Profile` = ?, `Exyear1` = ?, `Excompnay1` = ?, `Exjob1` = ?, `Exdesc1` = ?, `Exyear2` = ?, `Excompnay2` = ?, `Exjob2` = ?, `Exdesc2` = ?, `Exyear3` = ?, `Excompnay3` = ?, `Exjob3` = ?, `Exdesc3` = ?, `Skillname` = ?, `Skillprog` = ?,  `Skillname1` = ?, `Skillprog1` = ?, `Skillname2` = ?, `Skillprog2` = ?, `Skillname3` = ?, `Skillprog3` = ?, `Skillname4` = ?, `Skillprog4` = ?, `Skillname5` = ?,  `Skillprog5` = ?, `Skillname6` = ?, `Skillprog6` = ?, `Skillname7`  = ?, `Skillprog7` = ?, `Inters1` = ?, `Inters2` = ?, `Inters3` = ?,  `Inters4` = ? WHERE Id = ?"
     const id = req.params.id
     const  values = [
@@ -156,4 +155,13 @@ export const Update_info = (req,res) => {
     })
 }
 
+
+module.exports = {
+    Register,
+    login,
+    Logout,
+    Update_info,
+    getuser,
+    Getallusers
+}
 

@@ -1,5 +1,5 @@
-import express from "express";
-import { login, Logout, Register, Update_info,getuser , Getallusers } from "../Controllers/Auth.js";
+const  express = require("express");
+const  { login, Logout, Register, Update_info,getuser , Getallusers } = require("../Controllers/Auth.js");
 const Authrouter =  express.Router()
 // login 
 Authrouter.post('/Login', login)
@@ -14,4 +14,6 @@ Authrouter.get('/user/:id', getuser)
 Authrouter.get("/allusers", Getallusers)
 // update info
 Authrouter.put('/update/:id', Update_info)
-export default Authrouter
+// export default Authrouter
+
+module.exports = Authrouter
