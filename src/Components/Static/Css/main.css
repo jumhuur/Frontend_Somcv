@@ -678,6 +678,62 @@ div.container_login div.login_card form.login_from input::placeholder{
   text-transform: capitalize;
 }
 
+
+/*--------------------------------- video -----------------------------*/
+div.Over_my_help_video{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: #4d4d4d91;
+  z-index: 99999;
+  visibility: hidden;
+  display: flex;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  overflow: hidden;
+}
+
+div.Over_my_help_video.active{
+  visibility: visible;
+  display: flex;
+}
+
+div.Over_my_help_video > div.video{
+  width: 65%;
+  height: fit-content;
+  background-color: var(--qoraalo_ciwaano);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  overflow: hidden;
+  padding-bottom: 30px;
+  position: relative;
+  border-radius: 5px;
+}
+
+div.Over_my_help_video > div.video video.video-react-video{
+  padding: 0;
+  margin: 0;
+
+}
+
+div.Over_my_help_video > div.video > div.vide_content{
+  width: 95%;
+  height: 95%;
+} 
+
+
+
+
+
+
+/*--------------------------------- video -----------------------------*/
+
+
 /*--------------------------dh Login ---------------------------------*/
 
 
@@ -1195,6 +1251,14 @@ div.close_here{
   flex-flow: wrap row;
   color: var(--qoraalo_ciwaano);
   cursor: pointer;
+}
+
+div.close_here.video{
+  position: absolute;
+  z-index: 100;
+  right: 30px;
+  top: 20px;
+  background-color: #c91e00;
 }
 
 div.over_vellow_all.active div.popup div.cv{
@@ -1726,6 +1790,11 @@ div.calan img {
     text-align: center;
     line-height: 1.9;
   }
+
+  div.Over_my_help_video > div.video{
+    width: 97%;
+    height: 31%;
+  }
 }
 
 @media (min-width: 200px) and (max-width: 576px) {
@@ -1798,7 +1867,6 @@ div.calan img {
     /*----------login page -----------*/
     div.container_login div.login_card{
       width: 95%;
-      height: 75%;
     }
 
 
@@ -1817,6 +1885,10 @@ div.calan img {
     div.Home_conten div.haye div.home_Parts div.side.left div.actions_home button.req{
       flex: none;
       margin: 20px 0px;
+    }
+
+    div.Over_my_help_video > div.video{
+      width: 97%;
     }
   }
   
@@ -1890,6 +1962,11 @@ div.calan img {
       height: 65%;
     }
 
+    div.Over_my_help_video > div.video{
+      width: 97%;
+
+    }
+
   }
 
   @media (min-width: 768px) and (max-width: 992px) {
@@ -1957,6 +2034,10 @@ div.calan img {
       align-items: flex-start;
     }
 
+    div.Over_my_help_video > div.video{
+      width: 97%;
+    }
+
 }
   @media (min-width: 992px) and (max-width: 1200px) {
       .xajiye,
@@ -1999,6 +2080,10 @@ div.calan img {
       }
       div.design_cv_containers div.previewcv .container_feilds div.colors div.color{
         width: calc(25% / 4);
+      }
+
+      div.Over_my_help_video > div.video{
+        width: 97%;
       }
   }
   @media (min-width: 1200px) and (max-width:1400px) {

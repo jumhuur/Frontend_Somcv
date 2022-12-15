@@ -10,9 +10,11 @@ import { useEffect } from "react";
 import "./Home.css"
 import { Usecvcontext } from "../Context/Cv";
 import { useProtectedPage } from "../Context/Auth";
+import HelpVideo from "../Video/video";
 function Home () {
     const language = localStorage.getItem('lan');
     const [active,setactive] = useState(false)
+    const [active_vide,setactive_video] = useState(false)
     const Qiimaha = "4"
     const {cv,download} = Usecvcontext()
     const {user} = useProtectedPage()
@@ -21,6 +23,12 @@ function Home () {
     const popup_active = (e) => {
         //e.preventDefault()
         setactive(!active)
+    }
+
+    // video activate
+    const video_active = (e) => {
+        e.preventDefault()
+        setactive_video(!active_vide)
     }
 
     const [singalcv , setsingalcv] = useState();
@@ -71,6 +79,8 @@ function Home () {
     <Navigate to={"/so"} />
     :<></>
     }
+
+    <HelpVideo active={active_vide} func={video_active}/>
     <Nav />
     <section className="Head">
         <div className="Home_conten">
@@ -89,7 +99,7 @@ function Home () {
                         <button className="req">
                            Cv Designs
                         </button>
-                        <button className="video">
+                        <button className="video" onClick={video_active}>
                         <i className="fa-regular fa-circle-play"></i> Wotch Video
                         </button>
                     </div>

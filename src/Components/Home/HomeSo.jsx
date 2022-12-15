@@ -10,9 +10,11 @@ import FooterSo from "../Footer/FooterSo";
 import PopupInfoSo from "../PopupInfo/popupinfoSo";
 import { Usecvcontext } from "../Context/Cv";
 import { useProtectedPage } from "../Context/Auth";
+import HelpVideo from "../Video/video";
 function HomeSo () {
     const language = localStorage.getItem('lan');
     const [active,setactive] = useState(false)
+    const [active_vide,setactive_video] = useState(false)
     const Qiimaha = "4"
     const {cv,download} = Usecvcontext()
     const {user} = useProtectedPage()
@@ -22,6 +24,11 @@ function HomeSo () {
         //e.preventDefault()
         setactive(!active)
 
+    }
+
+    const video_active = (e) => {
+        e.preventDefault()
+        setactive_video(!active_vide)
     }
 
     const [singalcv , setsingalcv] = useState();
@@ -72,6 +79,7 @@ function HomeSo () {
     <Navigate to={"/"} />
     :<></>
     }
+    <HelpVideo active={active_vide} func={video_active}/>
     <NavSo />
     <section className="Head">
         <div className="Home_conten">
@@ -90,7 +98,7 @@ function HomeSo () {
                         <button className="req">
                             Nashqada cv-yada
                         </button>
-                        <button className="video">
+                        <button className="video" onClick={video_active}>
                         <i className="fa-regular fa-circle-play"></i> Daawo Muqaal
                         </button>
                     </div>

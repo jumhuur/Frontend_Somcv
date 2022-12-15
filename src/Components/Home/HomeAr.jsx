@@ -10,9 +10,11 @@ import FooterAr from "../Footer/FooterAr";
 import PopupInfoAr from "../PopupInfo/popupinfoAr";
 import { Usecvcontext } from "../Context/Cv";
 import { useProtectedPage } from "../Context/Auth";
+import HelpVideo from "../Video/video";
 function HomeAr () {
     const language = localStorage.getItem('lan')
     const [active,setactive] = useState(false)
+    const [active_vide,setactive_video] = useState(false)
     const Qiimaha = "4"
     const {cv,download} = Usecvcontext()
     const {user} = useProtectedPage()
@@ -22,6 +24,11 @@ function HomeAr () {
         //e.preventDefault()
         setactive(!active)
 
+    }
+
+    const video_active = (e) => {
+        e.preventDefault()
+        setactive_video(!active_vide)
     }
 
     const [singalcv , setsingalcv] = useState();
@@ -72,6 +79,7 @@ function HomeAr () {
     <Navigate to={"/so"} />
     :<></>
     }
+    <HelpVideo active={active_vide} func={video_active}/>
     <NavAr />
     <section className="Head" dir="rtl">
         <div className="Home_conten">
@@ -90,7 +98,7 @@ function HomeAr () {
                         <button className="req">
                             تصاميم السير الذاتية 
                         </button>
-                        <button className="video">
+                        <button className="video" onClick={video_active}>
                         <i className="fa-regular fa-circle-play"></i> شاهد فيديو
                         </button>
                     </div>
