@@ -47,7 +47,7 @@ function RegisterAr() {
         <Navigate to="/ar/" />
         :<></>
         }
-        <div className="container_login" dir="rtl">
+        <div className="container_login modren" dir="rtl">
             <div className="login_card">
                 <form className="login_from">
                     <span className="welcome">

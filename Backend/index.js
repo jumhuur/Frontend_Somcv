@@ -10,17 +10,18 @@ const  cookieParse = require('cookie-parser');
 // middale 
 app.use((req,res , next) => {
     res.header("Access-Control-Allow-Origin", true)
+    res.header("Access-Control-Allow-Private-Network", true)
     next()
 })
 app.use(Express.json())
-// app.use(cors({
-//     origin:"http://localhost:3000",
-//     credentials: true
-// }
 app.use(cors({
-    origin:"http://5.182.18.172",
+    origin:"http://localhost:3000",
     credentials: true
 }
+// app.use(cors({
+//     origin:"http://5.182.18.172",
+//     credentials: true
+// }
 ))
 app.use(cookieParse())
 app.use('/Api', Authrouter)

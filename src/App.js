@@ -14,6 +14,9 @@ import EditcvSo from "./Components/Editcv/EditcvSo";
 import Addcv from "./Components/Addcv/Addcv";
 import AddcvAr from "./Components/Addcv/AddcvAr";
 import AddcvSo from "./Components/Addcv/AddcvSo";
+import SingupModern from "./Components/Singup/Singup_modern";
+import SingupModernAr from "./Components/Singup/Singup_modernAr";
+import SingupModernSo from "./Components/Singup/Singup_modernSo";
 function App() {
   return (
     <div className="App">
@@ -24,9 +27,10 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="ar/Login" element={<LoginAr />} />
         <Route path="so/Login" element={<LoginSo />} />
-        <Route path="/Register" element={<Register/>} />
-        <Route path="ar/Register" element={<RegisterAr/>} />
-        <Route path="so/Register" element={<RegisterSo/>} />
+        <Route path="/Register" element={<SingupModern/>} />
+        {/* <Route path="/singup" element={<SingupModern/>} /> */}
+        <Route path="ar/Register" element={<SingupModernAr/>} />
+        <Route path="so/Register" element={<SingupModernSo/>} />
         <Route path="/Editcv/:id" element={<Editcv/>} />
         <Route path="/ar/Editcv/:id" element={<EditcvAR/>} />
         <Route path="/so/Editcv/:id" element={<EditcvSo/>} />
