@@ -1900,6 +1900,7 @@ div.tips_sing ul.qodobad_shabakda{
   border-radius: 10px;
   padding: 0px 10px;
   cursor: pointer;
+  transition: all 0.4s ease;
 }
 
 div.tips_sing ul.qodobad_shabakda li.qo_shabakada:hover{
@@ -1908,7 +1909,7 @@ div.tips_sing ul.qodobad_shabakda li.qo_shabakada:hover{
   /* background:linear-gradient(90deg,#071c4d,#002d97) !important; */
   background-color: var(--qoraalo_ciwaano);
   backdrop-filter: blur(10px);
-  transition: all 0.4s ease;
+  transition: all 0.6s ease;
   color: var(--qoraalo_content);
   box-shadow: 5px 0px 12px #d2d2d2;
 }
@@ -2147,6 +2148,21 @@ div.container_login.modren div.login_card form.login_from input::placeholder{
     width: 97%;
     height: 31%;
   }
+
+  div.body_guud div.haye.over_sing_up div.content div.bidix{
+    display: none;
+  }
+  div.body_guud div.haye.over_sing_up div.content div.midig{
+    width: 100%;
+  }
+
+  div.container_login.modren div.login_card{
+    width: 95%;
+  }
+
+  div.body_guud div.haye.over_sing_up div.content{
+    width: 95%;
+  }
 }
 
 @media (min-width: 200px) and (max-width: 576px) {
@@ -2242,6 +2258,21 @@ div.container_login.modren div.login_card form.login_from input::placeholder{
     div.Over_my_help_video > div.video{
       width: 97%;
     }
+
+    div.body_guud div.haye.over_sing_up div.content div.bidix{
+      display: none;
+    }
+    div.body_guud div.haye.over_sing_up div.content div.midig{
+      width: 100%;
+    }
+  
+    div.container_login.modren div.login_card{
+      width: 95%;
+    }
+  
+    div.body_guud div.haye.over_sing_up div.content{
+      width: 95%;
+    }
   }
   
   @media (min-width: 576px) and (max-width: 768px) {
@@ -2319,6 +2350,21 @@ div.container_login.modren div.login_card form.login_from input::placeholder{
 
     }
 
+    div.body_guud div.haye.over_sing_up div.content div.bidix{
+      display: none;
+    }
+    div.body_guud div.haye.over_sing_up div.content div.midig{
+      width: 100%;
+    }
+  
+    div.container_login.modren div.login_card{
+      width: 95%;
+    }
+  
+    div.body_guud div.haye.over_sing_up div.content{
+      width: 95%;
+    }
+
   }
 
   @media (min-width: 768px) and (max-width: 992px) {
@@ -2388,6 +2434,21 @@ div.container_login.modren div.login_card form.login_from input::placeholder{
 
     div.Over_my_help_video > div.video{
       width: 97%;
+    }
+
+    div.body_guud div.haye.over_sing_up div.content div.bidix{
+      display: none;
+    }
+    div.body_guud div.haye.over_sing_up div.content div.midig{
+      width: 100%;
+    }
+  
+    div.container_login.modren div.login_card{
+      width: 85%;
+    }
+  
+    div.body_guud div.haye.over_sing_up div.content{
+      width: 85%;
     }
 
 }

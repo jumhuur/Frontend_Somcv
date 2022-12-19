@@ -17,6 +17,9 @@ import AddcvSo from "./Components/Addcv/AddcvSo";
 import SingupModern from "./Components/Singup/Singup_modern";
 import SingupModernAr from "./Components/Singup/Singup_modernAr";
 import SingupModernSo from "./Components/Singup/Singup_modernSo";
+import LoginModr from "./Components/login/login_m";
+import LoginModrSo from "./Components/login/login_mSo";
+import LoginModrAr from "./Components/login/login_mAr";
 function App() {
   return (
     <div className="App">
@@ -24,9 +27,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/ar" element={<HomeAr />} />
         <Route path="/so" element={<HomeSo />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="ar/Login" element={<LoginAr />} />
-        <Route path="so/Login" element={<LoginSo />} />
+        <Route path="/Login" element={<LoginModr />} />
+        <Route path="ar/Login" element={<LoginModrAr />} />
+        <Route path="so/Login" element={<LoginModrSo />} />
         <Route path="/Register" element={<SingupModern/>} />
         {/* <Route path="/singup" element={<SingupModern/>} /> */}
         <Route path="ar/Register" element={<SingupModernAr/>} />
