@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
 import { Link, Navigate } from "react-router-dom"
 import { useProtectedPage } from "../Context/Auth"
+import { Usecvcontext } from "../Context/Cv";
 
 function LoginModr(){
-    const {Login, CrentUser} = useProtectedPage()
+    const {Login, CrentUser,user} = useProtectedPage()
+    const {cv,download} = Usecvcontext()
     const [err,seterr] = useState(null)
     const [inputs,setinputs] = useState({
         Email: "",
@@ -62,30 +64,30 @@ function LoginModr(){
                                 <ul className="qodobad_shabakda">
                                     <li className="qo_shabakada">
                                         <div className="icon">
-                                        <i className="fa-solid fa-circle-check"></i>
+                                        <i className="fa-solid fa-cloud-arrow-down"></i>
                                         </div>
                                         <div className="text_qodo">
-                                            <h3>Select</h3>
+                                            <h3>Downloads {download && download.length}</h3>
                                             <p>Dooro mid kamida nashqadaha diyaarsan ee cv-yada</p>
                                         </div>
 
                                     </li>
                                     <li className="qo_shabakada">
                                     <div className="icon">
-                                    <i className="fa-solid fa-brush"></i>
+                                    <i className="fa-solid fa-users"></i>
                                         </div>
                                         <div className="text_qodo">
-                                            <h3>prepair</h3>
+                                            <h3>Users {user && user.length}</h3>
                                             <p>Dooro mid kamida nashqadaha diyaarsan ee cv-yada</p>
                                         </div>
                                     </li>
                                     <li className="qo_shabakada">
                                     <div className="icon">
                                    
-                                    <i className="fa-solid fa-cloud-arrow-down"></i>
+                                    <i className="fa-solid fa-layer-group"></i>
                                         </div>
                                         <div className="text_qodo">
-                                            <h3>Download</h3>
+                                            <h3>Designs {cv && cv.length}</h3>
                                             <p>Dooro mid kamida nashqadaha diyaarsan ee cv-yada</p>
                                         </div>
                                     </li>

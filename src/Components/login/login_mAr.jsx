@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
 import { Link, Navigate } from "react-router-dom"
 import { useProtectedPage } from "../Context/Auth"
+import { Usecvcontext } from "../Context/Cv"
 
 function LoginModrAr(){
-    const {Login, CrentUser} = useProtectedPage()
+    const {Login, CrentUser, user} = useProtectedPage()
+    const {cv,download} = Usecvcontext()
     const [err,seterr] = useState(null)
     const [inputs,setinputs] = useState({
         Email: "",
@@ -62,30 +64,30 @@ function LoginModrAr(){
                                 <ul className="qodobad_shabakda">
                                     <li className="qo_shabakada ar">
                                         <div className="icon">
-                                        <i className="fa-solid fa-circle-check"></i>
+                                        <i className="fa-solid fa-cloud-arrow-down"></i>
                                         </div>
                                         <div className="text_qodo">
-                                            <h3>إختر </h3>
+                                            <h3>عدد تحميلات {download && download.length} </h3>
                                             <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،</p>
                                         </div>
 
                                     </li>
                                     <li className="qo_shabakada ar">
                                     <div className="icon">
-                                    <i className="fa-solid fa-brush"></i>
+                                    <i className="fa-solid fa-users"></i>
                                         </div>
                                         <div className="text_qodo">
-                                            <h3>جهز</h3>
+                                            <h3>عدد مستخدمين {user && user.length}</h3>
                                             <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،</p>
                                         </div>
                                     </li>
                                     <li className="qo_shabakada ar">
                                     <div className="icon">
                                    
-                                    <i className="fa-solid fa-cloud-arrow-down"></i>
+                                    <i className="fa-solid fa-layer-group"></i>
                                         </div>
                                         <div className="text_qodo">
-                                            <h3>حمل</h3>
+                                            <h3>عدد تصاميم {cv && cv.length}</h3>
                                             <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،</p>
                                         </div>
                                     </li>

@@ -1927,7 +1927,7 @@ div.tips_sing ul.qodobad_shabakda li.qo_shabakada div.icon{
   width: 40px;
   height: 70%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-flow: wrap column;
   color: var(--qoraalo_ciwaano);
@@ -1945,6 +1945,8 @@ div.tips_sing ul.qodobad_shabakda li.qo_shabakada div.text_qodo{
 div.tips_sing ul.qodobad_shabakda li.qo_shabakada div.text_qodo h3{
   color: var(--_shafaaf);
   padding: 0;
+  font-weight: normal;
+  font-size: 17px;
 }
 
 div.tips_sing ul.qodobad_shabakda li.qo_shabakada:hover div.text_qodo h3{
