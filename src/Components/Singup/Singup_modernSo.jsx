@@ -53,6 +53,14 @@ function SingupModernSo(){
 
             </div>
             <div className="Midig_design">
+            <div className="Midig_design">
+                {/* <div className="geed_cusub">
+                    <img src="/Images/Robin bird-rafiki.svg"  alt="sawir_qurxin"/>
+                </div> */}
+                <div className="geed_cusub">
+                    <img src="/Images/Mango tree-rafiki.svg"  alt="sawir_qurxin"/>
+                </div>
+            </div>
                 
             </div>
             <div className="haye over_sing_up">
@@ -120,7 +128,7 @@ function SingupModernSo(){
                                     {err}
                                     </span>
                                     }
-                                    <Link to={"/Login"}>
+                                    <Link to={"/so/Login"}>
                                     <span>
                                         Gal Akoon Hore
                                     </span>

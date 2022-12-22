@@ -1764,7 +1764,7 @@ div.body_guud{
 }
 
 div.body_guud div.bidix_design.ar{
-  background:linear-gradient(287deg,#7606ff,#0088ff) !important;
+  background:linear-gradient(320deg,#7606ff,#0088ff) !important;
 }
 
 div.body_guud div.bidix_design{
@@ -1781,6 +1781,39 @@ div.body_guud div.Midig_design{
   background-color: #e6e6e6;
   width: 100%;
   min-height: 100vh;
+  position: relative;
+}
+
+div.body_guud div.Midig_design div.geed_cusub{
+  position: absolute;
+  width: 210px;
+  height: 170px;
+  background-color: var(--qoraalo_content);
+  bottom: 0;
+  z-index: 1;
+  background-color: transparent;
+  bottom: 35px;
+
+}
+
+/* div.body_guud div.Midig_design div.geed_cusub:nth-child(1){
+  left: -35px;
+} */
+
+div.body_guud div.Midig_design div.geed_cusub:nth-child(1){
+  right: 185px;
+  bottom: 65px;
+}
+
+div.body_guud div.Midig_design div.geed_cusub.ar:nth-child(1){
+  bottom: 65px;
+  left: 165px;
+  right:auto;
+}
+
+div.body_guud div.Midig_design div.geed_cusub img {
+  width: 100%;
+  height: 100%;
 }
 
 div.body_guud div.haye.over_sing_up{
@@ -2032,7 +2065,7 @@ div.container_login.modren div.login_card form.login_from span{
 }
 
 div.container_login.modren div.login_card form.login_from span.Massage{
-  color: #ff4800;
+  color: #fe8c00;
 
 }
 div.container_login.modren div.login_card form.login_from button.submit_btn{
@@ -2050,6 +2083,7 @@ div.container_login.modren div.login_card form.login_from button.submit_btn{
   border-radius: 5px;
   margin: 2% 0px;
   cursor: pointer;
+  z-index: 10;
 }
 
 div.container_login.modren div.login_card form.login_from div.upload{
@@ -2165,6 +2199,10 @@ div.container_login.modren div.login_card form.login_from input::placeholder{
   div.body_guud div.haye.over_sing_up div.content{
     width: 95%;
   }
+
+  div.body_guud div.Midig_design div.geed_cusub{
+    display: none;
+  }
 }
 
 @media (min-width: 200px) and (max-width: 576px) {
@@ -2275,6 +2313,15 @@ div.container_login.modren div.login_card form.login_from input::placeholder{
     div.body_guud div.haye.over_sing_up div.content{
       width: 95%;
     }
+
+    div.body_guud div.Midig_design div.geed_cusub{
+      display: none;
+    }
+
+    div.body_guud div.Midig_design div.geed_cusub:nth-child(1){
+      right: 147px;
+      bottom: 101px;
+    }
   }
   
   @media (min-width: 576px) and (max-width: 768px) {
@@ -2367,6 +2414,11 @@ div.container_login.modren div.login_card form.login_from input::placeholder{
       width: 95%;
     }
 
+    div.body_guud div.Midig_design div.geed_cusub{
+      display: none;
+    }
+
+
   }
 
   @media (min-width: 768px) and (max-width: 992px) {
@@ -2451,6 +2503,10 @@ div.container_login.modren div.login_card form.login_from input::placeholder{
   
     div.body_guud div.haye.over_sing_up div.content{
       width: 85%;
+    }
+
+    div.body_guud div.Midig_design div.geed_cusub{
+      display: none;
     }
 
 }

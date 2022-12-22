@@ -45,7 +45,9 @@ function LoginModrAr(){
 
             </div>
             <div className="Midig_design">
-                
+            <div className="geed_cusub ar">
+                    <img src="/Images/Mango tree-rafiki.svg"  alt="sawir_qurxin"/>
+            </div> 
             </div>
             <div className="haye over_sing_up">
                 <div className="content">
