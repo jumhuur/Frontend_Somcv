@@ -16,7 +16,7 @@ const addCv = (req,res) => {
 }
 // get all cvs
 const getCvs = (req,res) => {
-    const my_qu = "SELECT * FROM cv LIMIT 9"
+    const my_qu = "SELECT * FROM cv LIMIT 15"
     db.query(my_qu, (err,data) => {
         if(err) return res.status(400).json(err)
         return res.status(200).json(data)
