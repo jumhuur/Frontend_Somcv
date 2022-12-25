@@ -69,7 +69,7 @@ function HomeAr () {
 
 
     // change image evry loading 
-    const arr_images = ['somcv.svg','Home1.svg','Home4.svg','Home9.svg']
+    const arr_images = ['Home1.svg','Home4.svg']
     const roundom_number = Math.ceil(Math.random() * arr_images.length - 1)
     return (
     <>
@@ -88,7 +88,7 @@ function HomeAr () {
                 <div className="side left">
                     <div className="qoraalo">
                     <h2 className="ar" style={{lineHeight: "1.85"}}>
-                   مرحبا! جهز سيترك ذاتية بقيمة أقل بكثير من  {Qiimaha} $
+                   أهلا بك! جهز سيترك ذاتية بقيمة أقل بكثير من  {Qiimaha} $
                     </h2>
                     <p className="desc_Home ar" style={{textAlign: "right"}}>
                     هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص ة .

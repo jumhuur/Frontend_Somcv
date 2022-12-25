@@ -21,7 +21,11 @@ function LoginModrAr(){
     const Onclick_login = async (e) => {
         e.preventDefault()
         try{
-           await Login(inputs)
+            if(inputs.Email !== "") {
+                await Login(inputs)
+            }else {
+                seterr("بريدك الإلكتروني فاضي")
+            }
         } catch(Err){
             seterr(Err.response.data[1])
         }

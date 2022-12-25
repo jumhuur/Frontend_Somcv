@@ -20,6 +20,7 @@ import SingupModernSo from "./Components/Singup/Singup_modernSo";
 import LoginModr from "./Components/login/login_m";
 import LoginModrSo from "./Components/login/login_mSo";
 import LoginModrAr from "./Components/login/login_mAr";
+import Unuvalibe from "./Components/Notfound/404";
 function App() {
   return (
     <div className="App">
@@ -40,6 +41,7 @@ function App() {
         <Route path="/Addcv" element={<Addcv />} />
         <Route path="/ar/Addcv" element={<AddcvAr />} />
         <Route path="/so/Addcv" element={<AddcvSo />} />
+        <Route path="*" element ={<Unuvalibe />} />
       </Routes>
     </div>
   );

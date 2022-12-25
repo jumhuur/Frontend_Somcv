@@ -101,10 +101,10 @@ function FeildsAr({color1,color2,c1,c2}){
                             color2(e.target.attributes.color2.value)
                         }
 
-                    } className="color" color1="#289717" color2="#134C0A">
-                        <div className="color1 Ar" color1="#289717" color2="#134C0A" style={{backgroundColor:"#289717"}}>
+                    } className="color" color1="#289717" color2="#0065a3">
+                        <div className="color1 Ar" color1="#289717" color2="#0065a3" style={{backgroundColor:"#289717"}}>
                         </div>
-                        <div className="color1 Ar" color1="#289717" color2="#134C0A" style={{backgroundColor:"#134C0A"}}>
+                        <div className="color1 Ar" color1="#289717" color2="#0065a3" style={{backgroundColor:"#134C0A"}}>
                         </div>
                     </div>
                     {/*-------6aad -------*/}

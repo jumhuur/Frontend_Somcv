@@ -23,8 +23,13 @@ function SingupModernSo(){
         const Singup_now = async(e) => {
             e.preventDefault()
             try{
-               await Singup(inputs)
-               navigate('/Login')
+                if(inputs.Email === "" || inputs.Email.length < 4 || inputs.Email.includes('@') === false || inputs.Email.includes('.') === false){
+                    seterr('Fadlan Qor Email sax Oo La Aqbali Karro !')
+                   }  else {
+                    await Singup(inputs)
+                    navigate('/so/Login')
+                   }
+               
     
             } catch(Err){
                 seterr(Err.response.data[0])

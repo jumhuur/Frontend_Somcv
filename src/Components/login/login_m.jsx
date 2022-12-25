@@ -21,7 +21,12 @@ function LoginModr(){
     const Onclick_login = async (e) => {
         e.preventDefault()
         try{
-           await Login(inputs)
+            if(inputs.Email !== "") {
+                await Login(inputs)
+            }else {
+                seterr("Your email is empty")
+            }
+           
         } catch(Err){
             seterr(Err.response.data[2])
         }
@@ -105,8 +110,8 @@ function LoginModr(){
                             <span className="welcome">
                                 Log In Here
                             </span>
-                            <input onChange={Onchange_inputs} type={"email"} placeholder="Emailkaaga" name="Email" autoComplete="off"/>
-                            <input onChange={Onchange_inputs} type={"password"} placeholder="Passworka" name="Password"/>
+                            <input onChange={Onchange_inputs} type={"email"} placeholder="Emailkaaga" name="Email" autoComplete="off" required/>
+                            <input onChange={Onchange_inputs} type={"password"} placeholder="Passworka" name="Password"  required/>
                             <button onClick={Onclick_login} className="submit_btn">Login</button>
                             {err && 
                             <span className="Massage">

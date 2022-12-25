@@ -19,7 +19,11 @@ function LoginModrSo(){
     const Onclick_login = async (e) => {
         e.preventDefault()
         try{
-           await Login(inputs)
+            if(inputs.Email !== "") {
+                await Login(inputs)
+            }else {
+                seterr("Email Maad Qorin")
+            }
         } catch(Err){
             seterr(Err.response.data[0])
         }

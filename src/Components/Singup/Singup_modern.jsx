@@ -23,8 +23,13 @@ function SingupModern(){
         const Singup_now = async(e) => {
             e.preventDefault()
             try{
-               await Singup(inputs)
-               navigate('/Login')
+               if(inputs.Email === "" || inputs.Email.length < 4 || inputs.Email.includes('@') === false || inputs.Email.includes('.') === false){
+                seterr('Please write a valid and acceptable email')
+               }  else {
+                await Singup(inputs)
+                navigate('/Login')
+               }
+
     
             } catch(Err){
                 seterr(Err.response.data[2])

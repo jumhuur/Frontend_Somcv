@@ -69,7 +69,7 @@ function HomeSo () {
 
 
     // change image evry loading 
-    const arr_images = ['somcv.svg','Home1.svg','Home4.svg','Home9.svg']
+    const arr_images = ['Home1.svg','Home4.svg']
     const roundom_number = Math.ceil(Math.random() * arr_images.length - 1)
     return (
     <>

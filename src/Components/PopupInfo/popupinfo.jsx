@@ -17,7 +17,7 @@ function PopupInfo({active,onclickpop,singalcv}){
                                 <h2>Cv Format Overview {singalcv && singalcv[0].id}</h2>
                             {!CrentUser ? 
                             <Link to={"/Login"}>
-                            <button className="edit"><i className="fa-solid fa-right-to-bracket"></i> Gal Akonkaga</button>
+                            <button className="edit"><i className="fa-solid fa-right-to-bracket"></i> Login Now</button>
                             </Link>
                             :
                             <a href={`/Editcv/${singalcv && singalcv[0].id}`}>
