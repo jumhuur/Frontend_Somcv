@@ -6,8 +6,8 @@ import Mobile from "./n_mobile";
 function Nav(){
     const {Logout,CrentUser} = useProtectedPage()
     const [q_scroll,setq_scroll]= useState(0)
-    const name = CrentUser ? CrentUser.Name.split(' ') : "";
-    const splitname = name[0]
+    const name = CrentUser && CrentUser.Name;
+    const splitname = name
     const [Lan,setLang] = useState(false)
 
     const [Activenav,setActivenav] = useState(false)

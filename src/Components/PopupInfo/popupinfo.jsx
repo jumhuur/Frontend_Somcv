@@ -20,9 +20,9 @@ function PopupInfo({active,onclickpop,singalcv}){
                             <button className="edit"><i className="fa-solid fa-right-to-bracket"></i> Login Now</button>
                             </Link>
                             :
-                            <a href={`/Editcv/${singalcv && singalcv[0].id}`}>
+                            <Link to={`/Editcv/${singalcv && singalcv[0].id}`}>
                             <button className="edit"><i className="fa-solid fa-brush"></i> prepare now</button>
-                            </a>
+                            </Link>
                             }
                             </div>
                             <div className="close">

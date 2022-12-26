@@ -9,7 +9,12 @@ export function ContextProvider({children}){
     const [CrentUser,setCrentUser] = useState(
        JSON.parse(localStorage.getItem('user')) || null
     )
-    const [user,setuser] = useState("");
+    const Id = localStorage.getItem('user')
+
+
+
+
+    const [user,setuser_data] = useState("");
 
     const Singup  = async(inputs) => {
         const data = await axios.post("http://localhost:8800/Api/Register", inputs,)
@@ -20,12 +25,13 @@ export function ContextProvider({children}){
         const data = await axios.post("http://localhost:8800/Api/Login",inputs, {
             withCredentials: true
         })
+        localStorage.setItem("user", JSON.stringify(data.data.Id))
         return setCrentUser(data.data)
     }
 
     const get = async () => {
         // login Work here
-        const data = await axios.get(`http://localhost:8800/Api/user/${CrentUser.Id}`,{
+        const data = await axios.get(`http://localhost:8800/Api/user/${Id}`,{
             withCredentials: true
         })
         return setCrentUser(data.data)
@@ -36,11 +42,12 @@ export function ContextProvider({children}){
             withCredentials: true
         })
         setCrentUser(null)
+        localStorage.setItem('user', null)
     }
 
     const Allusers = async() => {
         const response = await axios.get("http://localhost:8800/Api/allusers/")
-        return setuser(response.data)
+        return setuser_data(response.data)
 
     }
 
@@ -57,10 +64,11 @@ export function ContextProvider({children}){
 
     useEffect(() => {
         Allusers()
+        get()
     },[])
-    useEffect(() => {
-        localStorage.setItem('user', JSON.stringify(CrentUser))
-    },[CrentUser])
+    // useEffect(() => {
+    //     localStorage.setItem('user', JSON.stringify(CrentUser ? CrentUser.Id : null))
+    // },[])
     return (
         <ProtectPages.Provider value={value}>
             {children}

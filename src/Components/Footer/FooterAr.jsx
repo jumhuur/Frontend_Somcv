@@ -8,7 +8,8 @@ function FooterAr() {
                 <div className="footer_cointainer">
                 <div className="parts_footer">
                     <div className="logo_footer">
-                        <img src="/Images/logo-white.svg" alt="logo_footer" /> 
+                    <img src="/Images/logo-whiteAr.png" alt="logo_footer" /> 
+                    <h2>صومالي سيفي</h2>
                     </div>
                     <div className="info_footer">
                         <p style={{textAlign:"right"}}>

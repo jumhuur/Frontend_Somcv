@@ -8,7 +8,7 @@ function FooterSo() {
                 <div className="footer_cointainer">
                 <div className="parts_footer">
                     <div className="logo_footer">
-                        <img src="/Images/logo-white.svg" alt="logo_footer" /> 
+                    <img src="/Images/logo-white.png" alt="logo_footer" />  
                     </div>
                     <div className="info_footer">
                         <p>

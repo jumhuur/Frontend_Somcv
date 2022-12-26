@@ -25,6 +25,10 @@ function SingupModern(){
             try{
                if(inputs.Email === "" || inputs.Email.length < 4 || inputs.Email.includes('@') === false || inputs.Email.includes('.') === false){
                 seterr('Please write a valid and acceptable email')
+               }else if(inputs.Name === ""){
+                seterr('Name is required')
+               }else if(inputs.Password.length < 6){
+                seterr('Your password is very easy')
                }  else {
                 await Singup(inputs)
                 navigate('/Login')

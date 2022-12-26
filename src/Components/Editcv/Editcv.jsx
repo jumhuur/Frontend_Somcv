@@ -24,6 +24,7 @@ function Editcv(){
     }
 
     useEffect(() => {
+        document.title = "Soomali cv | Pripare Cv"
         fetchdata()
     },[CrentUser])
 

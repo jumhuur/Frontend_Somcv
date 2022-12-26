@@ -25,10 +25,14 @@ function SingupModernAr(){
         try{
             if(inputs.Email === "" || inputs.Email.length < 4 || inputs.Email.includes('@') === false || inputs.Email.includes('.') === false){
                 seterr('من فضلك أكتب بريد إلكتروني صحيح ومقبول')
-               }  else {
+            }else if(inputs.Name === ""){
+                seterr('الإسم مطلوب')
+            }else if(inputs.Password.length < 6){
+                seterr('كلمة المرور سهل جدا ')
+            }  else {
                 await Singup(inputs)
                 navigate('/ar/Login')
-               }
+            }
         } catch(Err){
             seterr(Err.response.data[1])
         }

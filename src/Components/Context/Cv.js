@@ -21,9 +21,10 @@ export function CvcontextProvaider({children}) {
     const [progimg ,setProgimg] = useState('');
     const [done,setdone] = useState(false)
     const Id = CrentUser && CrentUser.Id
+    const info_user = useState([CrentUser])
     const [info,setinfo] = useState({
-        Name:CrentUser && CrentUser.Name,
-        Jobtitle: CrentUser && CrentUser.Jobtitle,
+        Name:`${CrentUser && CrentUser.Name}`,
+        Jobtitle:`${CrentUser && CrentUser.Jobtitle}`,
         Tell: CrentUser && CrentUser.Tell,
         Location: CrentUser && CrentUser.Location,
         Cvemail: CrentUser && CrentUser.Cvemail,
@@ -77,6 +78,8 @@ export function CvcontextProvaider({children}) {
         Inters3: CrentUser && CrentUser.Inters3,
         Inters4: CrentUser && CrentUser.Inters4,
     })
+
+    console.log(info_user)
 
 
     
