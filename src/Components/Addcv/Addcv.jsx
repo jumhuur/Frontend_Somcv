@@ -2,7 +2,7 @@ import axios from "axios"
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage"
 import { useRef } from "react"
 import { useState } from "react"
-import {Link, Navigate } from "react-router-dom"
+import {Link, Navigate, useNavigate } from "react-router-dom"
 import { useProtectedPage } from "../Context/Auth"
 import {Storage} from "../firebase";
 
@@ -11,11 +11,12 @@ function Addcv(){
     const [Image,setimage] = useState("")
     const [filename,setfilename] = useState(null)
     const [done,setdone] = useState(false)
-    const [err,seterr] = useState("")
+    const [qalad,setqalad] = useState("")
     const image = useRef()
+    const location = useNavigate()
     const [cvinfo, setcvinfo] = useState({
-        Name: "",
-        Price:"", 
+        Magac: "",
+        Qiimaha:"", 
         Image:Image,
         Imagecover:""
     })
@@ -35,20 +36,43 @@ function Addcv(){
             setfilename(file_name.substring(0,10))
         }
         setimage(file)
-        console.log(Image)
+        console.log(cvinfo)
     }
 
 
     const addcv = async(e) => {
         e.preventDefault()
-        try {
-            const data = await axios.post("http://localhost:8800/Api/addcv", cvinfo)
-            return data.data
-        } catch(err){
-            console.log(err)
-            seterr(err)
-        }
+        // try {
+        //     const data = await axios.post("http://localhost:8800/Api/addcv", cvinfo)
+        //     return data.data
+        // } catch(err){
+        //     console.log(err)
+        //     seterr(err)
+        // }
+        // try{
 
+        // } catch(err){
+        //     console.log(err)
+        // }
+        const data = await fetch("http://localhost:8080/Api/Addcv" , {
+            method: 'POST',
+            body: JSON.stringify(cvinfo),
+            headers: {
+                'Content-Type':'application/json'
+            }
+        })
+         const json = await data.json()
+         if(!data.ok){
+            setqalad(json.Fariin[1])
+            console.log(json.Fariin[2])
+
+         }
+
+         if(data.ok){
+            setqalad(null)
+            location('/')
+            console.log('newcv added', json)
+        }
     }
 
 
@@ -78,8 +102,7 @@ uploadTask.on('state_changed',
     getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
       console.log('File available at', downloadURL);
       cvinfo.Image = downloadURL;
-      console.log(Image)
-      console.log(cvinfo.Image)
+      console.log(cvinfo)
       setdone(true)
     });
   }
@@ -115,8 +138,8 @@ uploadTask.on('state_changed',
                     <span className="welcome">
                         Add New Cv Design
                     </span>
-                    <input onChange={Onchange_inputs} type={"text"} placeholder="Magacaaga" name="Name"/>
-                    <input onChange={Onchange_inputs} type={"number"} placeholder="Price" name="Price"/>
+                    <input onChange={Onchange_inputs} type={"text"} placeholder="Magacaaga" name="Magac"/>
+                    <input onChange={Onchange_inputs} type={"number"} placeholder="Price" name="Qiimaha"/>
                     <input onChange={function(e){
                         setimage(`${e.target.files[0].name}`)
                         uploadcvimage()
@@ -131,10 +154,10 @@ uploadTask.on('state_changed',
 
                     </div>
                     
-                    <button onClick={addcv} className="submit_btn"><Link to={'/'}>Add Cv</Link></button>
-                    {err && 
+                    <button type="submit" onClick={addcv}  className="submit_btn"><Link>Add Cv</Link></button>
+                    {qalad && 
                     <span className="Massage">
-                       {err}
+                       {qalad}
                     </span>
                     }
                     <Link to={"/"}>

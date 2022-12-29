@@ -52,12 +52,12 @@ function CVdesign({cv}) {
         <div className="haye">
         <div ref={ref} className="design_cv_containers">
             <div className="leval1" id="leval1">
-            { cv && cv[0].id === 1615 ?
+            { cv && cv._id === "63ad711f28224e162448935d" ?
            
             <Template cv={cv} color1={color1} color2={color2}/>
-            : cv && cv[0].id === 1616 ?
+            : cv && cv._id === "63ad54c8af6c2744ec2373b8" ?
             <Template2 cv={cv} color1={color1} color2={color2}/>
-            :cv && cv[0].id === 1617 ? 
+            :cv && cv._id === 1617 ? 
             <Template3 cv={cv} color1={color1} color2={color2}/>
             :
             <></>

@@ -1,4 +1,4 @@
-import {Navigate, useLocation } from "react-router-dom";
+import {json, Navigate, useLocation } from "react-router-dom";
 import Nav from "../Nav/Nav";
 import Tips from "../Tips/Tips";
 import Designs from "../Designs/Designs";
@@ -32,33 +32,24 @@ function Home () {
     }
 
     const [singalcv , setsingalcv] = useState();
-    const id = useLocation().search
+    const id = useLocation().search.split('=')[1]
   
     const onclickbnt = async () => {
         popup_active()
-            try{
-                const getsingalcv = async () => {
-                    const data = await axios.get(`http://localhost:8800/Api/Singalcv/${id}`)
-                        setsingalcv(data && data.data)
-                }
-    
-                await getsingalcv()
-                
-            } catch(err){
-                console.log(err)
-            }
-
     }
 
     useEffect(() => {
         if(id) {
             try{
                 const getsingalcv = async () => {
-                    const data = await axios.get(`http://localhost:8800/Api/Singalcv/${id}`)
-                        setsingalcv(data && data.data)
+                    const data = await fetch(`http://localhost:8080/Api/Cv/${id}`)
+                    data.json()
+                    .then((cvdata) => {
+                    setsingalcv(cvdata)
+                    })
                 }
-    
                 getsingalcv()
+                localStorage.setItem('cv', JSON.stringify(singalcv))
                 
             } catch(err){
                 console.log(err)

@@ -14,13 +14,13 @@ function PopupInfo({active,onclickpop,singalcv}){
                     <div className="popup">
                         <div className="heead_info_pop">
                             <div className="buttons">
-                                <h2>Cv Format Overview {singalcv && singalcv[0].id}</h2>
+                                <h2>Cv Format Overview {singalcv && singalcv._id}</h2>
                             {!CrentUser ? 
                             <Link to={"/Login"}>
                             <button className="edit"><i className="fa-solid fa-right-to-bracket"></i> Login Now</button>
                             </Link>
                             :
-                            <Link to={`/Editcv/${singalcv && singalcv[0].id}`}>
+                            <Link to={`/Editcv/${singalcv && singalcv._id}`}>
                             <button className="edit"><i className="fa-solid fa-brush"></i> prepare now</button>
                             </Link>
                             }
@@ -38,11 +38,11 @@ function PopupInfo({active,onclickpop,singalcv}){
                         </div>
                     <div className="cv">
                         <div className="cv_image">
-                        {singalcv && singalcv[0].id === 1615 ?
+                        {singalcv && singalcv._id === "63ad711f28224e162448935d" ?
                         <Template cv={singalcv}/>
-                        :singalcv && singalcv[0].id === 1616 ?
+                        :singalcv && singalcv._id === "63ad54c8af6c2744ec2373b8" ?
                         <Template2 cv={singalcv}/>
-                        :singalcv && singalcv[0].id === 1617 ?
+                        :singalcv && singalcv._id === 1617 ?
                         <Template3 cv={singalcv}/>
                         :<></>
                         } 

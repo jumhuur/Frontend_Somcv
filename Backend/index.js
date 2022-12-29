@@ -9,8 +9,6 @@ const  cookieParse = require('cookie-parser');
 
 // middale 
 app.use((req,res , next) => {
-    res.header("Access-Control-Allow-Origin", true)
-    res.header("Access-Control-Allow-Private-Network", true)
     next()
 })
 app.use(Express.json())

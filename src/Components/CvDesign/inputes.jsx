@@ -28,6 +28,8 @@ function Feilds({color1,color2,c1,c2}){
         }
         setimage(file)
     }
+
+    console.log(info)
     return (
         <>
             <div className="container_feilds">
