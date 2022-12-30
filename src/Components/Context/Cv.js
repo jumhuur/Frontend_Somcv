@@ -1,8 +1,9 @@
 import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useReducer, useState } from "react";
 import { useProtectedPage } from "./Auth";
 import {ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import {Storage} from "../firebase";
+import {CvRadiuse , INITIAL_STATE} from "../Hooks/cvRediuse"
 const Cvcontext = React.createContext()
 // isticmaalka context-ga 
 export function Usecvcontext(){
@@ -16,74 +17,69 @@ export function CvcontextProvaider({children}) {
       Name:CrentUser && CrentUser.Name,
       Lacagta:cv && cv.Price
     })
-    const [onecv,setOneCv] = useState(null)
     const [download,setdownload] = useState();
     const [image ,setimage] = useState("")
     const [progimg ,setProgimg] = useState('');
     const [done,setdone] = useState(false)
     const Id = CrentUser && CrentUser.Id
     const info_user = useState([CrentUser])
-    onecv && localStorage.setItem('cv', null)
     const [info,setinfo] = useState({
-      Name: onecv && onecv.Magac,
-      Jobtitle:onecv && onecv.Jobtitle,
-      Tell: onecv && onecv.Tell,
-      Location: onecv && onecv.Location,
-      Cvemail: onecv && onecv.Cvemail,
-      Image: onecv && onecv.Image,
-      Edyear1: onecv && onecv.Edyear1,
-      Eddesc1: onecv && onecv.Eddesc1,
-      Edunivername1: onecv && onecv.Edunivername1,
-      Edyear2: onecv && onecv.Edyear2,
-      Eddesc2: onecv && onecv.Eddesc2,
-      Edunivername2: onecv && onecv.Edunivername2,
-      Edyear3: onecv && onecv.Edyear3,
-      Eddesc3: onecv && onecv.Eddesc3,
-      Edunivername3: onecv && onecv.Edunivername3,
-      Langname1: onecv && onecv.Langname1,
-      Langprog1: onecv && onecv.Langprog1,
-      Langname2: onecv && onecv.Langname2,
-      Langprog2: onecv && onecv.Langprog2,
-      Langname3: onecv && onecv.Langname3,
-      Langprog3: onecv && onecv.Langprog3,
-      Profile: onecv && onecv.Profile,
-      Exyear1: onecv && onecv.Exyear1,
-      Excompnay1: onecv && onecv.Excompnay1,
-      Exjob1: onecv && onecv.Exjob1,
-      Exdesc1: onecv && onecv.Exdesc1,
-      Exyear2: onecv && onecv.Exyear2,
-      Excompnay2: onecv && onecv.Excompnay2,
-      Exjob2: onecv && onecv.Exjob2,
-      Exdesc2: onecv && onecv.Exdesc2,
-      Exyear3: onecv && onecv.Exyear3,
-      Excompnay3: onecv && onecv.Excompnay3,
-      Exjob3: onecv && onecv.Exjob3,
-      Exdesc3: onecv && onecv.Exdesc3,
-      Skillname: onecv && onecv.Skillname,
-      Skillprog: onecv && onecv.Skillprog,
-      Skillname1: onecv && onecv.Skillname1,
-      Skillprog1: onecv && onecv.Skillprog1,
-      Skillname2: onecv && onecv.Skillname2,
-      Skillprog2: onecv && onecv.Skillprog2,
-      Skillname3: onecv && onecv.Skillname3,
-      Skillprog3: onecv && onecv.Skillprog3,
-      Skillname4: onecv && onecv.Skillname4,
-      Skillprog4: onecv && onecv.Skillprog4,
-      Skillname5: onecv && onecv.Skillname5,
-      Skillprog5: onecv && onecv.Skillprog5,
-      Skillname6: onecv && onecv.Skillname6,
-      Skillprog6: onecv && onecv.Skillprog6,
-      Skillname7: onecv && onecv.Skillname7,
-      Skillprog7: onecv && onecv.Skillprog7,
-      Inters1: onecv && onecv.Inters1,
-      Inters2: onecv && onecv.Inters2,
-      Inters3: onecv && onecv.Inters3,
-      Inters4: onecv && onecv.Inters4,
+      Name: CrentUser && CrentUser.Name,
+      Jobtitle:CrentUser && CrentUser.Jobtitle,
+      Tell: CrentUser && CrentUser.Tell,
+      Location: CrentUser && CrentUser.Location,
+      Cvemail: CrentUser && CrentUser.Cvemail,
+      Image: CrentUser && CrentUser.Image,
+      Edyear1: CrentUser && CrentUser.Edyear1,
+      Eddesc1: CrentUser && CrentUser.Eddesc1,
+      Edunivername1: CrentUser && CrentUser.Edunivername1,
+      Edyear2: CrentUser && CrentUser.Edyear2,
+      Eddesc2: CrentUser && CrentUser.Eddesc2,
+      Edunivername2: CrentUser && CrentUser.Edunivername2,
+      Edyear3: CrentUser && CrentUser.Edyear3,
+      Eddesc3: CrentUser && CrentUser.Eddesc3,
+      Edunivername3: CrentUser && CrentUser.Edunivername3,
+      Langname1: CrentUser && CrentUser.Langname1,
+      Langprog1: CrentUser && CrentUser.Langprog1,
+      Langname2: CrentUser && CrentUser.Langname2,
+      Langprog2: CrentUser && CrentUser.Langprog2,
+      Langname3: CrentUser && CrentUser.Langname3,
+      Langprog3: CrentUser && CrentUser.Langprog3,
+      Profile: CrentUser && CrentUser.Profile,
+      Exyear1: CrentUser && CrentUser.Exyear1,
+      Excompnay1: CrentUser && CrentUser.Excompnay1,
+      Exjob1: CrentUser && CrentUser.Exjob1,
+      Exdesc1: CrentUser && CrentUser.Exdesc1,
+      Exyear2: CrentUser && CrentUser.Exyear2,
+      Excompnay2: CrentUser && CrentUser.Excompnay2,
+      Exjob2: CrentUser && CrentUser.Exjob2,
+      Exdesc2: CrentUser && CrentUser.Exdesc2,
+      Exyear3: CrentUser && CrentUser.Exyear3,
+      Excompnay3: CrentUser && CrentUser.Excompnay3,
+      Exjob3: CrentUser && CrentUser.Exjob3,
+      Exdesc3: CrentUser && CrentUser.Exdesc3,
+      Skillname: CrentUser && CrentUser.Skillname,
+      Skillprog: CrentUser && CrentUser.Skillprog,
+      Skillname1: CrentUser && CrentUser.Skillname1,
+      Skillprog1: CrentUser && CrentUser.Skillprog1,
+      Skillname2: CrentUser && CrentUser.Skillname2,
+      Skillprog2: CrentUser && CrentUser.Skillprog2,
+      Skillname3: CrentUser && CrentUser.Skillname3,
+      Skillprog3: CrentUser && CrentUser.Skillprog3,
+      Skillname4: CrentUser && CrentUser.Skillname4,
+      Skillprog4: CrentUser && CrentUser.Skillprog4,
+      Skillname5: CrentUser && CrentUser.Skillname5,
+      Skillprog5: CrentUser && CrentUser.Skillprog5,
+      Skillname6: CrentUser && CrentUser.Skillname6,
+      Skillprog6: CrentUser && CrentUser.Skillprog6,
+      Skillname7: CrentUser && CrentUser.Skillname7,
+      Skillprog7: CrentUser && CrentUser.Skillprog7,
+      Inters1: CrentUser && CrentUser.Inters1,
+      Inters2: CrentUser && CrentUser.Inters2,
+      Inters3: CrentUser && CrentUser.Inters3,
+      Inters4: CrentUser && CrentUser.Inters4,
   })
-  console.log(onecv)
 
-
-    
 const storageRef = ref(Storage, `images/${image.name}${Id}`);
 
 const uploadcvimage = () => {
@@ -158,26 +154,31 @@ try{
 } catch(err){
   console.log(err)
 }
-}
-    
+}   
+    const  [state, dispatch] = useReducer(CvRadiuse, INITIAL_STATE)
     // GET ALL DATA CVS
     const Getallcv = async () => {
+      dispatch({type:"BILOW"})
+      console.log(state.loading)
         const response = await fetch('http://localhost:8080/Api/Allcv')
-        response.json()
+        const res = response.json()
         .then((data) => {
-          setcv(data)   
+          dispatch({type: "DIYAAR" , payload:data})
+          setcv(data)
+          console.log(state.allcv)
+          console.log(state.loading)
         })
     }
 
     // get one cv 
-    const getonecv = async(id) => {
-      const jawaab = await fetch(`http://localhost:8080/Api/Cv/${id}`)
-      jawaab.json()
-      .then((data) => {
-        setOneCv(data)
-      })
+    // const getonecv = async(id) => {
+    //   const jawaab = await fetch(`http://localhost:8080/Api/Cv/${id}`)
+    //   jawaab.json()
+    //   .then((data) => {
+    //     setOneCv(data)
+    //   })
 
-    }
+    // }
     // get all downloads
     const getalldownloads = async () => {
       const data = await axios.get("http://localhost:8800/Api/Alldownloads");
@@ -197,13 +198,8 @@ try{
         Onchange_inputs_download,
         create_dowanload,
         //getsingalcv
-        getonecv,
-        onecv,
+        state
     }
-
-    useEffect(() => {
-      setinfo(info && JSON.parse(localStorage.getItem('cv')))
-    },[onecv])
     useEffect(() => {
         Getallcv()
         getalldownloads()

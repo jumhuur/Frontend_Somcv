@@ -1,11 +1,9 @@
-import axios from "axios"
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage"
-import { useRef } from "react"
+import { useReducer, useRef } from "react"
 import { useState } from "react"
 import {Link, Navigate, useNavigate } from "react-router-dom"
 import { useProtectedPage } from "../Context/Auth"
 import {Storage} from "../firebase";
-
 function Addcv(){
     const {CrentUser} = useProtectedPage()
     const [Image,setimage] = useState("")
@@ -38,22 +36,8 @@ function Addcv(){
         setimage(file)
         console.log(cvinfo)
     }
-
-
     const addcv = async(e) => {
         e.preventDefault()
-        // try {
-        //     const data = await axios.post("http://localhost:8800/Api/addcv", cvinfo)
-        //     return data.data
-        // } catch(err){
-        //     console.log(err)
-        //     seterr(err)
-        // }
-        // try{
-
-        // } catch(err){
-        //     console.log(err)
-        // }
         const data = await fetch("http://localhost:8080/Api/Addcv" , {
             method: 'POST',
             body: JSON.stringify(cvinfo),
@@ -65,7 +49,6 @@ function Addcv(){
          if(!data.ok){
             setqalad(json.Fariin[1])
             console.log(json.Fariin[2])
-
          }
 
          if(data.ok){

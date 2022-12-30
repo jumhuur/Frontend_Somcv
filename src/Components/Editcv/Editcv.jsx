@@ -12,11 +12,10 @@ import Nav from "../Nav/Nav"
 function Editcv(){
     const {id} = useParams()
     const {CrentUser} = useProtectedPage()
-    const {getonecv,onecv} = Usecvcontext()
+    // const {getonecv,onecv} = Usecvcontext()
     const [cv,setcv] = useState('')
     const fetchdata = async () => {
         try {
-
             const data = await fetch(`http://localhost:8080/Api/Cv/${id}`);
             data.json()
             .then((datacv) => {
@@ -29,12 +28,9 @@ function Editcv(){
         }
     }
 
-    console.log(onecv)
-
     useEffect(() => {
         document.title = "Soomali cv | Pripare Cv"
         fetchdata()
-        getonecv(id)
     },[CrentUser])
 
     return(
