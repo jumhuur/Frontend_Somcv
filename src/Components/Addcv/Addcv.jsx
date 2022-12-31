@@ -3,8 +3,10 @@ import { useReducer, useRef } from "react"
 import { useState } from "react"
 import {Link, Navigate, useNavigate } from "react-router-dom"
 import { useProtectedPage } from "../Context/Auth"
+import { Usecvcontext } from "../Context/Cv"
 import {Storage} from "../firebase";
 function Addcv(){
+    const {Getallcv} = Usecvcontext()
     const {CrentUser} = useProtectedPage()
     const [Image,setimage] = useState("")
     const [filename,setfilename] = useState(null)
@@ -53,8 +55,8 @@ function Addcv(){
 
          if(data.ok){
             setqalad(null)
+            Getallcv()
             location('/')
-            console.log('newcv added', json)
         }
     }
 
@@ -85,7 +87,6 @@ uploadTask.on('state_changed',
     getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
       console.log('File available at', downloadURL);
       cvinfo.Image = downloadURL;
-      console.log(cvinfo)
       setdone(true)
     });
   }
@@ -99,7 +100,6 @@ uploadTask.on('state_changed',
 
     const Onchange_inputs = (e) => {
         setcvinfo((perv) => ({...perv, [e.target.name]: e.target.value}))
-        console.log(cvinfo)
     }
     return (
         <>

@@ -35,6 +35,7 @@ export function ContextProvider({children}){
             withCredentials: true
         })
         return setCrentUser(data.data)
+        // setinfo(userdata)
     }
 
     const Logout = async() => {

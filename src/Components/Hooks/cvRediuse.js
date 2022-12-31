@@ -1,32 +1,26 @@
 export  const INITIAL_STATE = {
     loading : false ,
-    allcv: [],
-    error : false
+    error : false,
+    allcv: []
+}
+
+
+export const ACTIONS = {
+    GET_DATA : "GET",
+    CREATE_DATA: 'CREATE',
+    UPDATE_DATA: "UPDATE",
+    DELETE_DATE: "DELETE"
 }
 
 export const CvRadiuse = (state,action) => {
     switch (action.type) {
-        case "BILOW" :
+        case ACTIONS.GET_DATA:
             return {
-                loading : true ,
-                allcv: [],
-                error : false
-            }
-        case "DIYAAR":
-            return {
-                loading : true ,
+                loading: true ,
                 allcv: action.payload,
-                error : false
-            } 
-        case "QALAD": 
-        return {
-            loading : false ,
-            allcv: action.payload,
-            error : true,
-            default:
-                state
-        } 
-
+                error : true
+            }
+            default: 
+            return state;
     }
-
 }

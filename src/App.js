@@ -21,6 +21,7 @@ import LoginModr from "./Components/login/login_m";
 import LoginModrSo from "./Components/login/login_mSo";
 import LoginModrAr from "./Components/login/login_mAr";
 import Unuvalibe from "./Components/Notfound/404";
+import UpdateCv from "./Components/Updatecv/Updatecv";
 function App() {
   return (
     <div className="App">
@@ -39,6 +40,7 @@ function App() {
         <Route path="/ar/Editcv/:id" element={<EditcvAR/>} />
         <Route path="/so/Editcv/:id" element={<EditcvSo/>} />
         <Route path="/Addcv" element={<Addcv />} />
+        <Route path="/updateCv/:Id" element={<UpdateCv />} />
         <Route path="/ar/Addcv" element={<AddcvAr />} />
         <Route path="/so/Addcv" element={<AddcvSo />} />
         <Route path="*" element ={<Unuvalibe />} />

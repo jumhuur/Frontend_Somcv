@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useReducer, useState } from "react";
 import { useProtectedPage } from "./Auth";
 import {ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import {Storage} from "../firebase";
-import {CvRadiuse , INITIAL_STATE} from "../Hooks/cvRediuse"
+import {CvRadiuse , INITIAL_STATE, ACTIONS} from "../Hooks/cvRediuse"
 const Cvcontext = React.createContext()
 // isticmaalka context-ga 
 export function Usecvcontext(){
@@ -149,36 +149,19 @@ const create_dowanload = async(e) => {
 e.preventDefault()
 try{
   await axios.post("http://localhost:8800/Api/downloads/", download_info)
-
-
 } catch(err){
   console.log(err)
 }
-}   
+}  
     const  [state, dispatch] = useReducer(CvRadiuse, INITIAL_STATE)
-    // GET ALL DATA CVS
-    const Getallcv = async () => {
-      dispatch({type:"BILOW"})
-      console.log(state.loading)
+      // GET ALL DATA CVS
+      const Getallcv = async() => {
         const response = await fetch('http://localhost:8080/Api/Allcv')
-        const res = response.json()
-        .then((data) => {
-          dispatch({type: "DIYAAR" , payload:data})
-          setcv(data)
-          console.log(state.allcv)
-          console.log(state.loading)
-        })
-    }
-
-    // get one cv 
-    // const getonecv = async(id) => {
-    //   const jawaab = await fetch(`http://localhost:8080/Api/Cv/${id}`)
-    //   jawaab.json()
-    //   .then((data) => {
-    //     setOneCv(data)
-    //   })
-
-    // }
+        const res = await response.json()
+        if(response.ok){
+          dispatch({type: ACTIONS.GET_DATA , payload:res})
+        }
+      }
     // get all downloads
     const getalldownloads = async () => {
       const data = await axios.get("http://localhost:8800/Api/Alldownloads");
@@ -189,6 +172,7 @@ try{
         Onchange_inputs,
         HangdaleUpdate,
         info,
+        setinfo,
         uploadcvimage,
         setimage,
         progimg,
@@ -198,11 +182,17 @@ try{
         Onchange_inputs_download,
         create_dowanload,
         //getsingalcv
-        state
+        state,
+        dispatch,
+        setcv,
+        Getallcv
     }
     useEffect(() => {
-        Getallcv()
-        getalldownloads()
+      setcv(state.allcv)
+    })
+    useEffect(() => {
+    Getallcv()
+      getalldownloads()
     },[])
     return (
         <Cvcontext.Provider value={value}>

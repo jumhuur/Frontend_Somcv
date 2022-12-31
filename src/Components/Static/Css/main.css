@@ -908,6 +908,32 @@ div.design_cover div.designs div.design div.info_design{
   justify-content: center;
   align-items: center;
   flex-flow: wrap column;
+  position: relative;
+}
+
+
+div.design_cover div.designs div.design div.info_design div.update{
+  position: absolute;
+  width: 55px;
+  height: 25px;
+  background-color: var(--main2);
+  border-radius: 7px;
+  z-index: 2;
+  right: 0;
+  color: var(--qoraalo_ciwaano);
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  cursor: pointer;
+
+}
+
+div.design_cover div.designs div.design div.info_design div.update p{
+  color: var(--qoraalo_ciwaano);
+  padding: 0;
+  font-size: 12px;
 }
 
 div.design_cover div.designs div.design a.ankar_poin{

@@ -1,7 +1,10 @@
+import { useEffect } from "react";
 import {Link} from "react-router-dom";
+import { useProtectedPage } from "../Context/Auth";
 import {Usecvcontext} from "../Context/Cv";
 function Designs({click}) {
     const {cv} = Usecvcontext()
+    const {CrentUser} = useProtectedPage()
     return (
         <>
         <div className="design_cover">
@@ -14,6 +17,15 @@ function Designs({click}) {
                     {cv && cv.map((cvdata) => (
                     <div className="design" key={cvdata._id}>
                     <div className="info_design">
+                        {CrentUser && CrentUser.leval === "Mamul"?
+                        <>
+                        <div className="update">
+                            <Link to={`/updateCv/${cvdata._id}`}><p>Update</p></Link> 
+                        </div>
+                        </>
+                        :<></>
+                        }
+
                         <Link to={"/"}>
                         <h2>Design {cvdata.Magac}</h2>
                         </Link>
