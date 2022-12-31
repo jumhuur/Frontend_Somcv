@@ -1,9 +1,12 @@
 import { useRef, useState } from "react"
-import { Link, Navigate, useNavigate } from "react-router-dom"
-import { useProtectedPage } from "../Context/Auth"
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom"
+import { useProtectedPage } from "../Context/Auth";
+import {Usesingup} from "../Hooks/SinupHock";
 
 function SingupModern(){
         // state hoocks 
+        const {Singupuser, Looding, Error} = Usesingup()
+        const location = useLocation()
         const image = useRef()
         const {Singup,CrentUser} = useProtectedPage()
         const navigate = useNavigate()
@@ -13,30 +16,19 @@ function SingupModern(){
             Name: "",
             Image:""
         })
-        const [err,seterr] = useState("")
+        //const [err,seterr] = useState("")
     
         const Onchange_inputs =(e) => {
             setinputs((prev) => ({...prev, [e.target.name]:e.target.value }))
+            console.log(inputs)
         }
     
     
         const Singup_now = async(e) => {
             e.preventDefault()
-            try{
-               if(inputs.Email === "" || inputs.Email.length < 4 || inputs.Email.includes('@') === false || inputs.Email.includes('.') === false){
-                seterr('Please write a valid and acceptable email')
-               }else if(inputs.Name === ""){
-                seterr('Name is required')
-               }else if(inputs.Password.length < 6){
-                seterr('Your password is very easy')
-               }  else {
-                await Singup(inputs)
-                navigate('/Login')
-               }
-
-    
-            } catch(Err){
-                seterr(Err.response.data[2])
+            Singupuser(inputs.Email, inputs.Password,inputs.Name)
+            if(CrentUser){
+                location('/')
             }
         }
     
@@ -122,13 +114,13 @@ function SingupModern(){
                                     <span className="welcome">
                                     Create your new account
                                     </span>
-                                    <input onChange={Onchange_inputs} type={"text"} placeholder="Your Name" name="Name"/>
-                                    <input onChange={Onchange_inputs} type={"email"} placeholder="Email" name="Email"/>
-                                    <input onChange={Onchange_inputs} type={"password"} placeholder="Password" name="Password"/>
+                                    <input onInput={Onchange_inputs} type={"text"} placeholder="Your Name" name="Name"/>
+                                    <input onInput={Onchange_inputs} type={"email"} placeholder="Email" name="Email"/>
+                                    <input onInput={Onchange_inputs} type={"password"} placeholder="Password" name="Password"/>
                                     <button onClick={Singup_now} className="submit_btn">Register</button>
-                                    {err && 
+                                    {Error && 
                                     <span className="Massage">
-                                    {err}
+                                    {Error}
                                     </span>
                                     }
                                     <Link to={"/Login"}>

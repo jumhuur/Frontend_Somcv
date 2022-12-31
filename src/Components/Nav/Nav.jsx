@@ -3,10 +3,12 @@ import {Link} from "react-router-dom";
 import {useProtectedPage} from "../Context/Auth";
 import LangNav from "./Languagenav";
 import Mobile from "./n_mobile";
+import {UseLogin} from "../Hooks/LogoutHock"
 function Nav(){
-    const {Logout,CrentUser} = useProtectedPage()
+    const {Logout} = UseLogin()
+    const {CrentUser} = useProtectedPage()
     const [q_scroll,setq_scroll]= useState(0)
-    const name = CrentUser && CrentUser.Name;
+    const name = CrentUser && CrentUser.Email;
     const splitname = name
     const [Lan,setLang] = useState(false)
 
@@ -26,12 +28,7 @@ function Nav(){
     }
 
     const loged_out = async(e) => {
-        e.preventDefault()
-        try{
-            await Logout()
-        } catch(Err){
-            console.log(Err)
-        }
+        Logout()
     }
     return (
         <>

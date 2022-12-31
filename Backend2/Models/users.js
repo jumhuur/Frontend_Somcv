@@ -1,5 +1,7 @@
 const mongoose = require("mongoose")
 const schema = mongoose.Schema
+const bcrypt = require("bcrypt");
+const validator = require("validator")
 
 const UserSchema = new schema({
     Name : {
@@ -8,7 +10,8 @@ const UserSchema = new schema({
     },
     Email : {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     Password:{
         type: String,
@@ -244,4 +247,55 @@ const UserSchema = new schema({
     }
 })
 
-module.exports = mongoose.model("Users", UserSchema)
+
+UserSchema.statics.singup = async function(Email,Password,Name){
+    if(!Email || !Password || !Name){
+        throw Error("Buuxi Sadexda Meeloodba")
+    }
+
+    if(!validator.isEmail(Email)){
+        throw Error("Emailka Maaha Mid saxa")
+    }
+    if(!validator.isStrongPassword(Password)){
+        throw Error("Passworkaagu wuu fudud yahay")
+    }
+    const Jira = await this.findOne({Email,Name})
+    if(Jira){
+        throw Error("Horaa Loo Diwaan Galiyay Emailkan")
+    }
+    const salt = await bcrypt.genSalt(10)
+    const Hash = await bcrypt.hash(Password,salt)
+    const user = await this.create({Email, Password:Hash,Name})
+    return user
+}
+
+
+UserSchema.statics.Login = async function(Email,Password) {
+    if(!Email || !Password){
+        throw Error("Buuxi Sadexda Meeloodba")
+    }
+    const User = await this.findOne({Email})
+    if(!User){
+        throw Error("Emailkaagu Waa Qalad")
+    }
+
+    const match = await bcrypt.compare(Password, User.Password)
+    if(!match){
+        throw Error([
+            "Passworkaagu Waa Qalad !",
+            "Your Password Is In correct !",
+            'كلمة المرور غير صحيحة'
+    ])
+    }
+
+    return User
+}
+
+
+module.exports = mongoose.model("User", UserSchema)
+
+
+
+
+
+

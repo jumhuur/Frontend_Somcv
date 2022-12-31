@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react"
-import { Link, Navigate } from "react-router-dom"
+import { Link, Navigate, useLocation } from "react-router-dom"
 import { useProtectedPage } from "../Context/Auth"
 import { Usecvcontext } from "../Context/Cv";
+import {UseLogin} from "../Hooks/Login";
 
 function LoginModr(){
-    const {Login, CrentUser,user} = useProtectedPage()
+    const {Login, Looding, Error} = UseLogin()
+    const locations = useLocation()
+    const {CrentUser,user} = useProtectedPage()
     const {cv,download} = Usecvcontext()
-    const [err,seterr] = useState(null)
     const [inputs,setinputs] = useState({
         Email: "",
         Password: "",
@@ -20,25 +22,13 @@ function LoginModr(){
 
     const Onclick_login = async (e) => {
         e.preventDefault()
-        try{
-            if(inputs.Email !== "") {
-                await Login(inputs)
-            }else {
-                seterr("Your email is empty")
-            }
-           
-        } catch(Err){
-            seterr(Err.response.data[2])
-        }
-    }
-    function Check(){
+        Login(inputs.Email,inputs.Password)
         if(CrentUser){
-          return <Navigate to="/" />
+            locations('/')
         }
     }
-    useEffect(() => {
-        Check()
-    })
+
+    console.log(Error)
     return (
         <>
         {CrentUser ? 
@@ -110,12 +100,12 @@ function LoginModr(){
                             <span className="welcome">
                                 Log In Here
                             </span>
-                            <input onChange={Onchange_inputs} type={"email"} placeholder="Emailkaaga" name="Email" autoComplete="off" required/>
-                            <input onChange={Onchange_inputs} type={"password"} placeholder="Passworka" name="Password"  required/>
+                            <input onInput={Onchange_inputs} type={"email"} placeholder="Emailkaaga" name="Email" autoComplete="off" required/>
+                            <input onInput={Onchange_inputs} type={"password"} placeholder="Passworka" name="Password"  required/>
                             <button onClick={Onclick_login} className="submit_btn">Login</button>
-                            {err && 
+                            {Error && 
                             <span className="Massage">
-                            {err}
+                            {Error.substring(0,24)}
                             </span>
                             }
                             <Link to={"/Register"}>
