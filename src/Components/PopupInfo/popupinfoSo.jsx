@@ -19,9 +19,9 @@ function PopupInfoSo({active,onclickpop,singalcv}){
                             <button className="edit"><i className="fa-solid fa-right-to-bracket"></i> Gal Akonkaga</button>
                             </Link>
                             :
-                            <a href={`/so/Editcv/${singalcv && singalcv._id}`}>
+                            <Link to={`/so/Editcv/${singalcv && singalcv._id}`}>
                             <button className="edit"><i className="fa-solid fa-brush"></i> Diyaarso Hada</button>
-                            </a>
+                            </Link>
                             }
                             </div>
                             <div className="close">

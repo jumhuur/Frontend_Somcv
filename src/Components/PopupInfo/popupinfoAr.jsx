@@ -19,9 +19,9 @@ function PopupInfoAr({active,onclickpop,singalcv}){
                             <button className="edit"><i className="fa-solid fa-right-to-bracket"></i> تسجيل الدخول</button>
                             </Link>
                             :
-                            <a href={`/ar/Editcv/${singalcv && singalcv._id}`}>
+                            <Link to={`/ar/Editcv/${singalcv && singalcv._id}`}>
                             <button className="edit"><i className="fa-solid fa-brush"></i> جهز الان</button>
-                            </a>
+                            </Link>
                             }
                             </div>
                             <div className="close">

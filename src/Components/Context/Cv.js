@@ -3,17 +3,7 @@ import React, { useContext, useEffect, useReducer, useState } from "react";
 import { useProtectedPage } from "./Auth";
 import {ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import {Storage} from "../firebase";
-import {
-  CvRadiuse,
-  INITIAL_STATE,
-  ACTIONS,
-  UsersReduse,
-  ACTIONS_USER,
-  INITIAL_STATE_USER,
-  DownloadReduse,
-  ACTIONS_DOWNLOAD,
-  INITIAL_STATE_DOWNLOAD
-} from "../Hooks/Rediuses"
+import {CvRadiuse,INITIAL_STATE,ACTIONS} from "../Hooks/Rediuses"
 const Cvcontext = React.createContext()
 // isticmaalka context-ga 
 export function Usecvcontext(){
