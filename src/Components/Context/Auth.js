@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useReducer, useState } from "react"
-import axios from "axios"
 import {AuthRadiuse, INITIAL_STATE, ACTIONS} from "../Hooks/AuthReduse";
 const ProtectPages = React.createContext()
 // isticmaalka 

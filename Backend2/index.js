@@ -7,6 +7,7 @@ const  cors = require("cors");
 const app = express()
 const cvRouter = require('./Routes/Cv.js')
 const UserRouter = require('./Routes/Users')
+const DwonloadRouter = require("./Routes/Download")
 
 
 
@@ -26,6 +27,7 @@ app.use(cors({
 // rounting 
 app.use('/Api', cvRouter)
 app.use('/Api', UserRouter)
+app.use('/Api', DwonloadRouter)
 mongoose.set("strictQuery", false)
 mongoose.connect(process.env.MONGO_URI)
 .then(() => {

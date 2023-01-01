@@ -13,13 +13,13 @@ function PopupInfoAr({active,onclickpop,singalcv}){
                     <div className="popup">
                         <div className="heead_info_pop">
                             <div className="buttons">
-                                <h2>شكل السيرة الذاتية {singalcv && singalcv[0].id}</h2>
+                                <h2>شكل السيرة الذاتية {singalcv && singalcv.Magac}</h2>
                             {!CrentUser ? 
                             <Link to={"/ar/Login"}>
                             <button className="edit"><i className="fa-solid fa-right-to-bracket"></i> تسجيل الدخول</button>
                             </Link>
                             :
-                            <a href={`/ar/Editcv/${singalcv && singalcv[0].id}`}>
+                            <a href={`/ar/Editcv/${singalcv && singalcv._id}`}>
                             <button className="edit"><i className="fa-solid fa-brush"></i> جهز الان</button>
                             </a>
                             }
@@ -37,9 +37,9 @@ function PopupInfoAr({active,onclickpop,singalcv}){
                         </div>
                     <div className="cv">
                         <div className="cv_image">
-                        {singalcv && singalcv[0].id === 1615 ?
+                        {singalcv && singalcv._id === 1615 ?
                         <TemplateAr cv={singalcv}/>
-                        :singalcv && singalcv[0].id === 1616 ?
+                        :singalcv && singalcv._id === 1616 ?
                         <Template2Ar cv={singalcv}/>
                         :<></>
                         } 

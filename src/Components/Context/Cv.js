@@ -3,7 +3,17 @@ import React, { useContext, useEffect, useReducer, useState } from "react";
 import { useProtectedPage } from "./Auth";
 import {ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import {Storage} from "../firebase";
-import {CvRadiuse , INITIAL_STATE, ACTIONS} from "../Hooks/cvRediuse"
+import {
+  CvRadiuse,
+  INITIAL_STATE,
+  ACTIONS,
+  UsersReduse,
+  ACTIONS_USER,
+  INITIAL_STATE_USER,
+  DownloadReduse,
+  ACTIONS_DOWNLOAD,
+  INITIAL_STATE_DOWNLOAD
+} from "../Hooks/Rediuses"
 const Cvcontext = React.createContext()
 // isticmaalka context-ga 
 export function Usecvcontext(){
@@ -13,6 +23,7 @@ export function Usecvcontext(){
 export function CvcontextProvaider({children}) {
     const {CrentUser,get} = useProtectedPage()
     const [cv,setcv] = useState(null)
+    const [Allusers,setUsers] = useState(null)
     const [download_info,setdownload_info] = useState({
       Name:CrentUser && CrentUser.Name,
       Lacagta:cv && cv.Price
@@ -157,18 +168,16 @@ try{
       // GET ALL DATA CVS
       const Getallcv = async() => {
         const response = await fetch('http://localhost:8080/Api/Allcv')
+        const response1 = await fetch('http://localhost:8080/Api/AllUser')
         const res = await response.json()
+        const res1 = await response1.json()
         if(response.ok){
-          dispatch({type: ACTIONS.GET_DATA , payload:res})
+          dispatch({type: ACTIONS.GET_DATA , payload:res, AllUsers:res1})
         }
       }
-    // get all downloads
-    const getalldownloads = async () => {
-      const data = await axios.get("http://localhost:8800/Api/Alldownloads");
-      return setdownload(data.data)
-    }
     const value = {
         cv,
+        Allusers,
         Onchange_inputs,
         HangdaleUpdate,
         info,
@@ -181,18 +190,16 @@ try{
         download,
         Onchange_inputs_download,
         create_dowanload,
-        //getsingalcv
-        state,
-        dispatch,
         setcv,
-        Getallcv
+        Getallcv,
+        //GetallUsers
     }
     useEffect(() => {
       setcv(state.allcv)
+      setUsers(state.AllUsers)
     })
     useEffect(() => {
     Getallcv()
-      getalldownloads()
     },[])
     return (
         <Cvcontext.Provider value={value}>

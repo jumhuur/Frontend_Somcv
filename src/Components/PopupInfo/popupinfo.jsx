@@ -14,7 +14,7 @@ function PopupInfo({active,onclickpop,singalcv}){
                     <div className="popup">
                         <div className="heead_info_pop">
                             <div className="buttons">
-                                <h2>Cv Format Overview {singalcv && singalcv._id}</h2>
+                                <h2>Cv Format Overview {singalcv && singalcv.Magac}</h2>
                             {!CrentUser ? 
                             <Link to={"/Login"}>
                             <button className="edit"><i className="fa-solid fa-right-to-bracket"></i> Login Now</button>

@@ -13,13 +13,13 @@ function PopupInfoSo({active,onclickpop,singalcv}){
                     <div className="popup">
                         <div className="heead_info_pop">
                             <div className="buttons">
-                                <h2>Aragtida Qaabka Cv-ga {singalcv && singalcv[0].id}</h2>
+                                <h2>Aragtida Qaabka Cv-ga {singalcv && singalcv.Magac}</h2>
                             {!CrentUser ? 
                             <Link to={"/so/Login"}>
                             <button className="edit"><i className="fa-solid fa-right-to-bracket"></i> Gal Akonkaga</button>
                             </Link>
                             :
-                            <a href={`/so/Editcv/${singalcv && singalcv[0].id}`}>
+                            <a href={`/so/Editcv/${singalcv && singalcv._id}`}>
                             <button className="edit"><i className="fa-solid fa-brush"></i> Diyaarso Hada</button>
                             </a>
                             }
@@ -37,9 +37,9 @@ function PopupInfoSo({active,onclickpop,singalcv}){
                         </div>
                     <div className="cv">
                         <div className="cv_image">
-                        {singalcv && singalcv[0].id === 1615 ?
+                        {singalcv && singalcv._id === 1615 ?
                         <TemplateSo cv={singalcv}/>
-                        :singalcv && singalcv[0].id === 1616 ?
+                        :singalcv && singalcv._id === 1616 ?
                         <Template2So cv={singalcv}/>
                         :<></>
                         } 

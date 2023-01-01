@@ -16,49 +16,39 @@ function HomeSo () {
     const [active,setactive] = useState(false)
     const [active_vide,setactive_video] = useState(false)
     const Qiimaha = "4"
-    const {cv,download} = Usecvcontext()
+    const {cv,Allusers, download} = Usecvcontext()
     const {user} = useProtectedPage()
-
     // popup activate
     const popup_active = (e) => {
         //e.preventDefault()
         setactive(!active)
-
     }
 
+    // video activate
     const video_active = (e) => {
         e.preventDefault()
         setactive_video(!active_vide)
     }
 
     const [singalcv , setsingalcv] = useState();
-    const id = useLocation().search
+    const id = useLocation().search.split('=')[1]
   
     const onclickbnt = async () => {
         popup_active()
-            try{
-                const getsingalcv = async () => {
-                    const data = await axios.get(`http://localhost:8800/Api/Singalcv/${id}`)
-                        setsingalcv(data && data.data)
-                }
-    
-                await getsingalcv()
-                
-            } catch(err){
-                console.log(err)
-            }
-
     }
 
     useEffect(() => {
         if(id) {
             try{
                 const getsingalcv = async () => {
-                    const data = await axios.get(`http://localhost:8800/Api/Singalcv/${id}`)
-                        setsingalcv(data && data.data)
+                    const data = await fetch(`http://localhost:8080/Api/Cv/${id}`)
+                    data.json()
+                    .then((cvdata) => {
+                    setsingalcv(cvdata)
+                    })
                 }
-    
                 getsingalcv()
+                localStorage.setItem('cv', JSON.stringify(singalcv))
                 
             } catch(err){
                 console.log(err)
@@ -111,7 +101,7 @@ function HomeSo () {
                             </div>
                             <div className="clint">
                             {/* <img src="/Images/client-2.svg" alt="2"/> */}
-                            <h2 className="ltr"><i className="fa-solid fa-user"></i> Isticmalayaasha <span>{user && user.length}</span></h2>
+                            <h2 className="ltr"><i className="fa-solid fa-user"></i> Isticmalayaasha <span>{Allusers && Allusers.length}</span></h2>
                             </div>
                             <div className="clint">
                             {/* <img src="/Images/client-3.svg" alt="3"/> */}

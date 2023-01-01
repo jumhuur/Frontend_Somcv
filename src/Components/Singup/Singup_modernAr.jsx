@@ -1,12 +1,14 @@
 import { useRef, useState } from "react"
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom"
 import { useProtectedPage } from "../Context/Auth"
+import { Usecvcontext } from "../Context/Cv"
 import { Usesingup } from "../Hooks/SinupHock"
 
 function SingupModernAr(){
     // state hoocks 
     const {Singupuser, Looding, Error} = Usesingup()
     const location = useLocation()
+    const {Getallcv} = Usecvcontext()
     const image = useRef()
     const {CrentUser} = useProtectedPage()
     const navigate = useNavigate()
@@ -26,6 +28,7 @@ function SingupModernAr(){
     const Singup_now = async(e) => {
         e.preventDefault()
         Singupuser(inputs.Email,inputs.Password, inputs.Name)
+        Getallcv()
         if(CrentUser){
             location('/ar')
         }

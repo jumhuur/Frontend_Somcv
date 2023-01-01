@@ -16,8 +16,7 @@ function Home () {
     const [active,setactive] = useState(false)
     const [active_vide,setactive_video] = useState(false)
     const Qiimaha = "4"
-    const {cv,download} = Usecvcontext()
-    const {user} = useProtectedPage()
+    const {cv,Allusers,download} = Usecvcontext()
 
     // popup activate
     const popup_active = (e) => {
@@ -103,7 +102,7 @@ function Home () {
                             </div>
                             <div className="clint">
                             {/* <img src="/Images/client-2.svg" alt="2"/> */}
-                            <h2 className="ltr"><i className="fa-solid fa-user"></i> Users <span>{user && user.length}</span></h2>
+                            <h2 className="ltr"><i className="fa-solid fa-user"></i> Users <span>{Allusers && Allusers.length}</span></h2>
                             </div>
                             <div className="clint">
                             {/* <img src="/Images/client-3.svg" alt="3"/> */}

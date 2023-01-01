@@ -5,7 +5,7 @@ const mongoose = require("mongoose")
 // Get All CV
 const GetAllcv  = async(req,res) => {
     try{
-        const cvs = await cvmodel.find({},).sort({createdAt: -1})
+        const cvs = await cvmodel.find({}).sort({createdAt: -1})
         res.status(200).json(cvs)
     } catch(err) {
         console.log({err: err.massage})

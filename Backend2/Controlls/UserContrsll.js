@@ -6,7 +6,12 @@ const CreateToken = (_id) => {
 }
 
 const GetAllUser = async(req,res) => {
-    res.status(200).json({Msg:"Good"})
+    try{
+        const Allusers = await Usermodel.find({}).sort({createdAt: -1})
+        res.status(200).json(Allusers)
+    } catch(err){
+        console.log({err: err.massage})
+    }
 }
 const Getone = async(req,res) => {
     res.status(200).json({Msg:"Good"})
