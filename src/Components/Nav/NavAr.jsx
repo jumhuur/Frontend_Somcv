@@ -1,12 +1,14 @@
 import { useState } from "react";
 import {Link} from "react-router-dom";
 import {useProtectedPage} from "../Context/Auth";
+import { UseLogin } from "../Hooks/LogoutHock";
 import LangNavAr from "./LanguagenavAr";
 import MobileAr from "./n_mobileAr";
 function NavAr(){
-    const {Logout,CrentUser} = useProtectedPage()
+    const {Logout} = UseLogin()
+    const {CrentUser} = useProtectedPage()
     const [q_scroll,setq_scroll]= useState(0)
-    const name = CrentUser && CrentUser.Name;
+    const name = CrentUser && CrentUser.Email.split("@")[0];
     const splitname = name
     const [Lan,setLang] = useState(false)
 
@@ -26,11 +28,7 @@ function NavAr(){
 
     const loged_out = async(e) => {
         e.preventDefault()
-        try{
-            await Logout()
-        } catch(Err){
-            console.log(Err)
-        }
+        Logout()
     }
     return (
         <>

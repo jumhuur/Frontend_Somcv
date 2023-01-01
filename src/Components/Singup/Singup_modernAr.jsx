@@ -1,11 +1,14 @@
 import { useRef, useState } from "react"
-import { Link, Navigate, useNavigate } from "react-router-dom"
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom"
 import { useProtectedPage } from "../Context/Auth"
+import { Usesingup } from "../Hooks/SinupHock"
 
 function SingupModernAr(){
     // state hoocks 
+    const {Singupuser, Looding, Error} = Usesingup()
+    const location = useLocation()
     const image = useRef()
-    const {Singup,CrentUser} = useProtectedPage()
+    const {CrentUser} = useProtectedPage()
     const navigate = useNavigate()
     const [inputs,setinputs] = useState({
         Email: "",
@@ -22,19 +25,9 @@ function SingupModernAr(){
 
     const Singup_now = async(e) => {
         e.preventDefault()
-        try{
-            if(inputs.Email === "" || inputs.Email.length < 4 || inputs.Email.includes('@') === false || inputs.Email.includes('.') === false){
-                seterr('من فضلك أكتب بريد إلكتروني صحيح ومقبول')
-            }else if(inputs.Name === ""){
-                seterr('الإسم مطلوب')
-            }else if(inputs.Password.length < 6){
-                seterr('كلمة المرور سهل جدا ')
-            }  else {
-                await Singup(inputs)
-                navigate('/ar/Login')
-            }
-        } catch(Err){
-            seterr(Err.response.data[1])
+        Singupuser(inputs.Email,inputs.Password, inputs.Name)
+        if(CrentUser){
+            location('/ar')
         }
     }
 
@@ -130,9 +123,9 @@ function SingupModernAr(){
                     <input onChange={Onchange_inputs} type={"email"} placeholder="البريد الإلكتروني" name="Email"/>
                     <input onChange={Onchange_inputs} type={"password"} placeholder="كلمة مرور" name="Password"/>
                     <button onClick={Singup_now} className="submit_btn">تسجيل</button>
-                    {err && 
+                    {Error && 
                     <span className="Massage">
-                       {err}
+                       {Error.split(",")[1]}
                     </span>
                     }
                     <Link to={"/ar/Login"}>

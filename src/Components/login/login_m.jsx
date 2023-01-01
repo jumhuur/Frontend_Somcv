@@ -105,7 +105,7 @@ function LoginModr(){
                             <button onClick={Onclick_login} className="submit_btn">Login</button>
                             {Error && 
                             <span className="Massage">
-                            {Error.substring(0,24)}
+                            {Error.split(",")[1]}
                             </span>
                             }
                             <Link to={"/Register"}>

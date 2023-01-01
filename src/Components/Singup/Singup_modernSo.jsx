@@ -1,11 +1,14 @@
 import { useRef, useState } from "react"
-import { Link, Navigate, useNavigate } from "react-router-dom"
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom"
 import { useProtectedPage } from "../Context/Auth"
+import { Usesingup } from "../Hooks/SinupHock"
 
 function SingupModernSo(){
         // state hoocks 
+        const {Singupuser, Looding, Error} = Usesingup()
+        const location = useLocation()
         const image = useRef()
-        const {Singup,CrentUser} = useProtectedPage()
+        const {CrentUser} = useProtectedPage()
         const navigate = useNavigate()
         const [inputs,setinputs] = useState({
             Email: "",
@@ -22,17 +25,9 @@ function SingupModernSo(){
     
         const Singup_now = async(e) => {
             e.preventDefault()
-            try{
-                if(inputs.Email === "" || inputs.Email.length < 4 || inputs.Email.includes('@') === false || inputs.Email.includes('.') === false){
-                    seterr('Fadlan Qor Email sax Oo La Aqbali Karro !')
-                   }  else {
-                    await Singup(inputs)
-                    navigate('/so/Login')
-                   }
-               
-    
-            } catch(Err){
-                seterr(Err.response.data[0])
+            Singupuser(inputs.Email,inputs.Password,inputs.Name)
+            if(CrentUser){
+                location('/so')
             }
         }
     
@@ -128,9 +123,9 @@ function SingupModernSo(){
                                     <input onChange={Onchange_inputs} type={"email"} placeholder="Emailkaaga" name="Email"/>
                                     <input onChange={Onchange_inputs} type={"password"} placeholder="Passworka" name="Password"/>
                                     <button onClick={Singup_now} className="submit_btn">Diwaan Gali</button>
-                                    {err && 
+                                    {Error && 
                                     <span className="Massage">
-                                    {err}
+                                    {Error.split(",")[0]}
                                     </span>
                                     }
                                     <Link to={"/so/Login"}>

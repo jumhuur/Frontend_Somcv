@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react"
-import { Link, Navigate } from "react-router-dom"
+import { Link, Navigate, useLocation } from "react-router-dom"
 import { useProtectedPage } from "../Context/Auth"
 import { Usecvcontext } from "../Context/Cv"
+import { UseLogin } from "../Hooks/Login"
 
 function LoginModrAr(){
-    const {Login, CrentUser, user} = useProtectedPage()
+    const {Login, Looding, Error} = UseLogin()
+    const locations = useLocation()
+    const {CrentUser, user} = useProtectedPage()
     const {cv,download} = Usecvcontext()
-    const [err,seterr] = useState(null)
     const [inputs,setinputs] = useState({
         Email: "",
         Password: "",
@@ -16,28 +18,13 @@ function LoginModrAr(){
         setinputs((prev) => ({...prev, [e.target.name]:e.target.value }))
     }
 
-
-
     const Onclick_login = async (e) => {
         e.preventDefault()
-        try{
-            if(inputs.Email !== "") {
-                await Login(inputs)
-            }else {
-                seterr("بريدك الإلكتروني فاضي")
-            }
-        } catch(Err){
-            seterr(Err.response.data[1])
-        }
-    }
-    function Check(){
+        Login(inputs.Email,inputs.Password)
         if(CrentUser){
-          return <Navigate to="/" />
+            locations('/ar')
         }
     }
-    useEffect(() => {
-        Check()
-    })
     return (
         <>
         {CrentUser ? 
@@ -112,9 +99,9 @@ function LoginModrAr(){
                     <input onChange={Onchange_inputs} type={"email"} placeholder="البريك الإلكتروني" name="Email" autoComplete="off"/>
                     <input onChange={Onchange_inputs} type={"password"} placeholder="كلمة المرور" name="Password"/>
                     <button onClick={Onclick_login} className="submit_btn">دخول</button>
-                    {err && 
+                    {Error && 
                     <span className="Massage">
-                    {err}
+                    {Error.split(",")[2]}
                      </span>
                     }
                     <Link to={"/ar/Register"}>

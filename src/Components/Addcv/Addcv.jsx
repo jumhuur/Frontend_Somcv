@@ -8,10 +8,10 @@ import {Storage} from "../firebase";
 function Addcv(){
     const {Getallcv} = Usecvcontext()
     const {CrentUser} = useProtectedPage()
+    const [qalad,setqalad] = useState("")
     const [Image,setimage] = useState("")
     const [filename,setfilename] = useState(null)
     const [done,setdone] = useState(false)
-    const [qalad,setqalad] = useState("")
     const image = useRef()
     const location = useNavigate()
     const [cvinfo, setcvinfo] = useState({

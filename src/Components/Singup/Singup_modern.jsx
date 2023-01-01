@@ -8,7 +8,7 @@ function SingupModern(){
         const {Singupuser, Looding, Error} = Usesingup()
         const location = useLocation()
         const image = useRef()
-        const {Singup,CrentUser} = useProtectedPage()
+        const {CrentUser} = useProtectedPage()
         const navigate = useNavigate()
         const [inputs,setinputs] = useState({
             Email: "",
@@ -120,7 +120,7 @@ function SingupModern(){
                                     <button onClick={Singup_now} className="submit_btn">Register</button>
                                     {Error && 
                                     <span className="Massage">
-                                    {Error}
+                                    {Error.split(",")[2]}
                                     </span>
                                     }
                                     <Link to={"/Login"}>

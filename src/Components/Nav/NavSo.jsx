@@ -1,12 +1,14 @@
 import { useState } from "react";
 import {Link} from "react-router-dom";
 import {useProtectedPage} from "../Context/Auth";
+import { UseLogin } from "../Hooks/LogoutHock";
 import LangNavSo from "./LanguagenavSo";
 import MobileSo from "./n_mobileSo";
 function NavSo(){
-    const {Logout,CrentUser} = useProtectedPage()
+    const {Logout} = UseLogin()
+    const {CrentUser} = useProtectedPage()
     const [q_scroll,setq_scroll]= useState(0)
-    const name = CrentUser && CrentUser.Name;
+    const name = CrentUser && CrentUser.Email.split("@")[0];
     const splitname = name
     const [Lan,setLang] = useState(false)
 
