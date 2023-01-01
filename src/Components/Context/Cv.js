@@ -169,10 +169,12 @@ try{
       const Getallcv = async() => {
         const response = await fetch('http://localhost:8080/Api/Allcv')
         const response1 = await fetch('http://localhost:8080/Api/AllUser')
+        const response2 = await fetch('http://localhost:8080/Api/Downloads')
         const res = await response.json()
         const res1 = await response1.json()
+        const res2 = await response2.json()
         if(response.ok){
-          dispatch({type: ACTIONS.GET_DATA , payload:res, AllUsers:res1})
+          dispatch({type: ACTIONS.GET_DATA , payload:res, AllUsers:res1, Downloads:res2})
         }
       }
     const value = {
@@ -197,6 +199,7 @@ try{
     useEffect(() => {
       setcv(state.allcv)
       setUsers(state.AllUsers)
+      setdownload(state.AllDownloads)
     })
     useEffect(() => {
     Getallcv()

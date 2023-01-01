@@ -3,6 +3,7 @@ export  const INITIAL_STATE = {
     error : false,
     allcv: [],
     AllUsers: [],
+    AllDownloads: [],
 }
 
 
@@ -20,6 +21,7 @@ export const CvRadiuse = (state,action) => {
                 loading: true ,
                 allcv: action.payload,
                 AllUsers: action.AllUsers,
+                AllDownloads: action.Downloads,
                 error : true
             }
             default: 
