@@ -47,10 +47,6 @@ function SingupModernAr(){
     }
     return (
         <>
-        {CrentUser ? 
-        <Navigate to="/ar" />
-        :<></>
-        }
         <div className="body_guud" dir="rtl">
             <div className="bidix_design ar">
 
@@ -125,7 +121,24 @@ function SingupModernAr(){
                     <input onChange={Onchange_inputs} type={"text"} placeholder="اسمك" name="Name"/>
                     <input onChange={Onchange_inputs} type={"email"} placeholder="البريد الإلكتروني" name="Email"/>
                     <input onChange={Onchange_inputs} type={"password"} placeholder="كلمة مرور" name="Password"/>
-                    <button onClick={Singup_now} className="submit_btn">تسجيل</button>
+                    <button onClick={Singup_now} className="submit_btn">
+                    {Looding &&
+                                <div class="sk-fading-circle">
+                                    <div class="sk-circle1 sk-circle"></div>
+                                    <div class="sk-circle2 sk-circle"></div>
+                                    <div class="sk-circle3 sk-circle"></div>
+                                    <div class="sk-circle4 sk-circle"></div>
+                                    <div class="sk-circle5 sk-circle"></div>
+                                    <div class="sk-circle6 sk-circle"></div>
+                                    <div class="sk-circle7 sk-circle"></div>
+                                    <div class="sk-circle8 sk-circle"></div>
+                                    <div class="sk-circle9 sk-circle"></div>
+                                    <div class="sk-circle10 sk-circle"></div>
+                                    <div class="sk-circle11 sk-circle"></div>
+                                    <div class="sk-circle12 sk-circle"></div>
+                                </div>
+                            }
+                    تسجيل</button>
                     {Error && 
                     <span className="Massage">
                        {Error.split(",")[1]}

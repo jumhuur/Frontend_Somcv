@@ -46,10 +46,6 @@ function SingupModernSo(){
         }
     return (
         <>
-        {CrentUser ? 
-        <Navigate to="/so" />
-        :<></>
-        }
         <div className="body_guud">
             <div className="bidix_design">
 
@@ -124,7 +120,25 @@ function SingupModernSo(){
                                     <input onChange={Onchange_inputs} type={"text"} placeholder="Magacaaga" name="Name"/>
                                     <input onChange={Onchange_inputs} type={"email"} placeholder="Emailkaaga" name="Email"/>
                                     <input onChange={Onchange_inputs} type={"password"} placeholder="Passworka" name="Password"/>
-                                    <button onClick={Singup_now} className="submit_btn">Diwaan Gali</button>
+                                    <button onClick={Singup_now} className="submit_btn">
+                                    {Looding &&
+                                <div class="sk-fading-circle">
+                                    <div class="sk-circle1 sk-circle"></div>
+                                    <div class="sk-circle2 sk-circle"></div>
+                                    <div class="sk-circle3 sk-circle"></div>
+                                    <div class="sk-circle4 sk-circle"></div>
+                                    <div class="sk-circle5 sk-circle"></div>
+                                    <div class="sk-circle6 sk-circle"></div>
+                                    <div class="sk-circle7 sk-circle"></div>
+                                    <div class="sk-circle8 sk-circle"></div>
+                                    <div class="sk-circle9 sk-circle"></div>
+                                    <div class="sk-circle10 sk-circle"></div>
+                                    <div class="sk-circle11 sk-circle"></div>
+                                    <div class="sk-circle12 sk-circle"></div>
+                                </div>
+                            }
+                                        Diwaan Gali
+                                    </button>
                                     {Error && 
                                     <span className="Massage">
                                     {Error.split(",")[0]}

@@ -44,7 +44,8 @@ function Addcv(){
             method: 'POST',
             body: JSON.stringify(cvinfo),
             headers: {
-                'Content-Type':'application/json'
+                'Content-Type':'application/json',
+                'authorization': `Bearar ${CrentUser.Token}`
             }
         })
          const json = await data.json()
@@ -103,18 +104,6 @@ uploadTask.on('state_changed',
     }
     return (
         <>
-        {!CrentUser ?
-        <Navigate to="/" />
-        :<></>
-        }
-        <>
-        {CrentUser && CrentUser.leval !== "Mamul" ? 
-        <>
-        <Navigate to="/" />
-        </>
-        :<></>
-        }
-        </>
         <div className="container_login">
             <div className="login_card">
                 <form className="login_from">

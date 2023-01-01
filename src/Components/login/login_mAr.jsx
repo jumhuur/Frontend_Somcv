@@ -27,10 +27,6 @@ function LoginModrAr(){
     }
     return (
         <>
-        {CrentUser ? 
-        <Navigate to="/ar" />
-        :<></>
-        }
         <div className="body_guud" dir="rtl">
             <div className="bidix_design ar">
 
@@ -98,7 +94,25 @@ function LoginModrAr(){
                     </span>
                     <input onChange={Onchange_inputs} type={"email"} placeholder="البريك الإلكتروني" name="Email" autoComplete="off"/>
                     <input onChange={Onchange_inputs} type={"password"} placeholder="كلمة المرور" name="Password"/>
-                    <button onClick={Onclick_login} className="submit_btn">دخول</button>
+                    <button onClick={Onclick_login} className="submit_btn">
+                    {Looding &&
+                                <div class="sk-fading-circle">
+                                    <div class="sk-circle1 sk-circle"></div>
+                                    <div class="sk-circle2 sk-circle"></div>
+                                    <div class="sk-circle3 sk-circle"></div>
+                                    <div class="sk-circle4 sk-circle"></div>
+                                    <div class="sk-circle5 sk-circle"></div>
+                                    <div class="sk-circle6 sk-circle"></div>
+                                    <div class="sk-circle7 sk-circle"></div>
+                                    <div class="sk-circle8 sk-circle"></div>
+                                    <div class="sk-circle9 sk-circle"></div>
+                                    <div class="sk-circle10 sk-circle"></div>
+                                    <div class="sk-circle11 sk-circle"></div>
+                                    <div class="sk-circle12 sk-circle"></div>
+                                </div>
+                            }
+                        دخول
+                        </button>
                     {Error && 
                     <span className="Massage">
                     {Error.split(",")[2]}

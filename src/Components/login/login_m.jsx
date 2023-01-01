@@ -31,10 +31,6 @@ function LoginModr(){
     console.log(Error)
     return (
         <>
-        {CrentUser ? 
-        <Navigate to="/" />
-        :<></>
-        }
         <div className="body_guud">
             <div className="bidix_design">
 
@@ -102,7 +98,25 @@ function LoginModr(){
                             </span>
                             <input onInput={Onchange_inputs} type={"email"} placeholder="Emailkaaga" name="Email" autoComplete="off" required/>
                             <input onInput={Onchange_inputs} type={"password"} placeholder="Passworka" name="Password"  required/>
-                            <button onClick={Onclick_login} className="submit_btn">Login</button>
+                            <button onClick={Onclick_login} className="submit_btn">
+                            {Looding &&
+                                <div class="sk-fading-circle">
+                                    <div class="sk-circle1 sk-circle"></div>
+                                    <div class="sk-circle2 sk-circle"></div>
+                                    <div class="sk-circle3 sk-circle"></div>
+                                    <div class="sk-circle4 sk-circle"></div>
+                                    <div class="sk-circle5 sk-circle"></div>
+                                    <div class="sk-circle6 sk-circle"></div>
+                                    <div class="sk-circle7 sk-circle"></div>
+                                    <div class="sk-circle8 sk-circle"></div>
+                                    <div class="sk-circle9 sk-circle"></div>
+                                    <div class="sk-circle10 sk-circle"></div>
+                                    <div class="sk-circle11 sk-circle"></div>
+                                    <div class="sk-circle12 sk-circle"></div>
+                                </div>
+                            }
+                            Login
+                            </button>
                             {Error && 
                             <span className="Massage">
                             {Error.split(",")[1]}

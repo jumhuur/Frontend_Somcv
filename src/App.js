@@ -1,5 +1,5 @@
 import Home from "./Components/Home/Home";
-import {Routes, Route} from "react-router-dom"
+import {Routes, Route, Navigate} from "react-router-dom"
 import Login from "./Components/login/Login";
 import Register from "./Components/Singup/Singup";
 import Editcv from "./Components/Editcv/Editcv";
@@ -22,28 +22,30 @@ import LoginModrSo from "./Components/login/login_mSo";
 import LoginModrAr from "./Components/login/login_mAr";
 import Unuvalibe from "./Components/Notfound/404";
 import UpdateCv from "./Components/Updatecv/Updatecv";
+import { useProtectedPage } from "./Components/Context/Auth";
 function App() {
+  const {CrentUser} = useProtectedPage()
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/ar" element={<HomeAr />} />
         <Route path="/so" element={<HomeSo />} />
-        <Route path="/Login" element={<LoginModr />} />
-        <Route path="ar/Login" element={<LoginModrAr />} />
-        <Route path="so/Login" element={<LoginModrSo />} />
-        <Route path="/Register" element={<SingupModern/>} />
+        <Route path="/Login" element={!CrentUser ?  <LoginModr /> : <Navigate to={"/"} />} />
+        <Route path="ar/Login" element={!CrentUser ? <LoginModrAr /> :  <Navigate to={"/ar"}/>} />
+        <Route path="so/Login" element={!CrentUser ? <LoginModrSo /> :  <Navigate to={'/so'}/>} />
+        <Route path="/Register" element={!CrentUser ? <SingupModern/> : <Navigate to={"/"} />} />
         {/* <Route path="/singup" element={<SingupModern/>} /> */}
-        <Route path="ar/Register" element={<SingupModernAr/>} />
-        <Route path="so/Register" element={<SingupModernSo/>} />
-        <Route path="/Editcv/:id" element={<Editcv/>} />
-        <Route path="/ar/Editcv/:id" element={<EditcvAR/>} />
-        <Route path="/so/Editcv/:id" element={<EditcvSo/>} />
-        <Route path="/Addcv" element={<Addcv />} />
+        <Route path="ar/Register" element={!CrentUser ? <SingupModernAr/> :  <Navigate to={"/ar"}/>} />
+        <Route path="so/Register" element={!CrentUser ?  <SingupModernSo/> :  <Navigate to={'/so'}/>} />
+        <Route path="/Editcv/:id" element={CrentUser ?  <Editcv/> : <Navigate to={"/"} />} />
+        <Route path="/ar/Editcv/:id" element={CrentUser ? <EditcvAR/>: <Navigate to={"/ar"}/>} />
+        <Route path="/so/Editcv/:id" element={CrentUser ? <EditcvSo/> : <Navigate to={'/so'}/>} />
+        <Route path="/Addcv" element={CrentUser ? <Addcv /> :<Navigate to={"/"} />} />
         <Route path="/updateCv/:Id" element={<UpdateCv />} />
-        <Route path="/ar/Addcv" element={<AddcvAr />} />
-        <Route path="/so/Addcv" element={<AddcvSo />} />
-        <Route path="*" element ={<Unuvalibe />} />
+        <Route path="/ar/Addcv" element={CrentUser ?  <AddcvAr />: <Navigate to={"/ar"} />} />
+        <Route path="/so/Addcv" element={CrentUser ?  <AddcvSo /> : <Navigate to={'/so'}/>} />
+        <Route path="*" element ={<Unuvalibe /> } />
       </Routes>
     </div>
   );

@@ -17,6 +17,7 @@ function Home () {
     const [active_vide,setactive_video] = useState(false)
     const Qiimaha = "4"
     const {cv,Allusers,download} = Usecvcontext()
+    const {CrentUser} =useProtectedPage()
 
     // popup activate
     const popup_active = (e) => {

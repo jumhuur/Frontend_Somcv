@@ -48,10 +48,6 @@ function SingupModern(){
         }
     return (
         <>
-        {CrentUser ? 
-        <Navigate to="/" />
-        :<></>
-        }
         <div className="body_guud">
             <div className="bidix_design">
 
@@ -120,7 +116,25 @@ function SingupModern(){
                                     <input onInput={Onchange_inputs} type={"text"} placeholder="Your Name" name="Name"/>
                                     <input onInput={Onchange_inputs} type={"email"} placeholder="Email" name="Email"/>
                                     <input onInput={Onchange_inputs} type={"password"} placeholder="Password" name="Password"/>
-                                    <button onClick={Singup_now} className="submit_btn">Register</button>
+                                    <button onClick={Singup_now} className="submit_btn">
+                                    {Looding &&
+                                <div class="sk-fading-circle">
+                                    <div class="sk-circle1 sk-circle"></div>
+                                    <div class="sk-circle2 sk-circle"></div>
+                                    <div class="sk-circle3 sk-circle"></div>
+                                    <div class="sk-circle4 sk-circle"></div>
+                                    <div class="sk-circle5 sk-circle"></div>
+                                    <div class="sk-circle6 sk-circle"></div>
+                                    <div class="sk-circle7 sk-circle"></div>
+                                    <div class="sk-circle8 sk-circle"></div>
+                                    <div class="sk-circle9 sk-circle"></div>
+                                    <div class="sk-circle10 sk-circle"></div>
+                                    <div class="sk-circle11 sk-circle"></div>
+                                    <div class="sk-circle12 sk-circle"></div>
+                                </div>
+                            }
+                                        Register
+                                    </button>
                                     {Error && 
                                     <span className="Massage">
                                     {Error.split(",")[2]}

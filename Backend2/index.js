@@ -25,9 +25,9 @@ app.use(cors({
 }
 ))
 // rounting 
-app.use('/Api', cvRouter)
 app.use('/Api', UserRouter)
 app.use('/Api', DwonloadRouter)
+app.use('/Api', cvRouter)
 mongoose.set("strictQuery", false)
 mongoose.connect(process.env.MONGO_URI)
 .then(() => {
