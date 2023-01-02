@@ -25,7 +25,6 @@ export function ContextProvider({children}){
         ACTIONS,
         setDatA,
     }
-    console.log('AUTH STATE ', state)
 
     useEffect(() => {
         setDatA()

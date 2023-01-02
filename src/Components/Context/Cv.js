@@ -11,124 +11,148 @@ export function Usecvcontext(){
 }
 
 export function CvcontextProvaider({children}) {
-    const {CrentUser,get} = useProtectedPage()
+  const  [state, dispatch] = useReducer(CvRadiuse, INITIAL_STATE)
+    const {CrentUser} = useProtectedPage()
     const [cv,setcv] = useState(null)
     const [Allusers,setUsers] = useState(null)
     const [download_info,setdownload_info] = useState({
-      Name:CrentUser && CrentUser.Name,
+      Name:CrentUser && CrentUser._id,
       Lacagta:cv && cv.Price
     })
     const [download,setdownload] = useState();
     const [image ,setimage] = useState("")
     const [progimg ,setProgimg] = useState('');
     const [done,setdone] = useState(false)
-    const Id = CrentUser && CrentUser.Id
-    const info_user = useState([CrentUser])
-    const [info,setinfo] = useState({
-      Name: CrentUser && CrentUser.Name,
-      Jobtitle:CrentUser && CrentUser.Jobtitle,
-      Tell: CrentUser && CrentUser.Tell,
-      Location: CrentUser && CrentUser.Location,
-      Cvemail: CrentUser && CrentUser.Cvemail,
-      Image: CrentUser && CrentUser.Image,
-      Edyear1: CrentUser && CrentUser.Edyear1,
-      Eddesc1: CrentUser && CrentUser.Eddesc1,
-      Edunivername1: CrentUser && CrentUser.Edunivername1,
-      Edyear2: CrentUser && CrentUser.Edyear2,
-      Eddesc2: CrentUser && CrentUser.Eddesc2,
-      Edunivername2: CrentUser && CrentUser.Edunivername2,
-      Edyear3: CrentUser && CrentUser.Edyear3,
-      Eddesc3: CrentUser && CrentUser.Eddesc3,
-      Edunivername3: CrentUser && CrentUser.Edunivername3,
-      Langname1: CrentUser && CrentUser.Langname1,
-      Langprog1: CrentUser && CrentUser.Langprog1,
-      Langname2: CrentUser && CrentUser.Langname2,
-      Langprog2: CrentUser && CrentUser.Langprog2,
-      Langname3: CrentUser && CrentUser.Langname3,
-      Langprog3: CrentUser && CrentUser.Langprog3,
-      Profile: CrentUser && CrentUser.Profile,
-      Exyear1: CrentUser && CrentUser.Exyear1,
-      Excompnay1: CrentUser && CrentUser.Excompnay1,
-      Exjob1: CrentUser && CrentUser.Exjob1,
-      Exdesc1: CrentUser && CrentUser.Exdesc1,
-      Exyear2: CrentUser && CrentUser.Exyear2,
-      Excompnay2: CrentUser && CrentUser.Excompnay2,
-      Exjob2: CrentUser && CrentUser.Exjob2,
-      Exdesc2: CrentUser && CrentUser.Exdesc2,
-      Exyear3: CrentUser && CrentUser.Exyear3,
-      Excompnay3: CrentUser && CrentUser.Excompnay3,
-      Exjob3: CrentUser && CrentUser.Exjob3,
-      Exdesc3: CrentUser && CrentUser.Exdesc3,
-      Skillname: CrentUser && CrentUser.Skillname,
-      Skillprog: CrentUser && CrentUser.Skillprog,
-      Skillname1: CrentUser && CrentUser.Skillname1,
-      Skillprog1: CrentUser && CrentUser.Skillprog1,
-      Skillname2: CrentUser && CrentUser.Skillname2,
-      Skillprog2: CrentUser && CrentUser.Skillprog2,
-      Skillname3: CrentUser && CrentUser.Skillname3,
-      Skillprog3: CrentUser && CrentUser.Skillprog3,
-      Skillname4: CrentUser && CrentUser.Skillname4,
-      Skillprog4: CrentUser && CrentUser.Skillprog4,
-      Skillname5: CrentUser && CrentUser.Skillname5,
-      Skillprog5: CrentUser && CrentUser.Skillprog5,
-      Skillname6: CrentUser && CrentUser.Skillname6,
-      Skillprog6: CrentUser && CrentUser.Skillprog6,
-      Skillname7: CrentUser && CrentUser.Skillname7,
-      Skillprog7: CrentUser && CrentUser.Skillprog7,
-      Inters1: CrentUser && CrentUser.Inters1,
-      Inters2: CrentUser && CrentUser.Inters2,
-      Inters3: CrentUser && CrentUser.Inters3,
-      Inters4: CrentUser && CrentUser.Inters4,
-  })
+    const Id = CrentUser && CrentUser._id
+        const [info,setinfo] = useState({
+        Name: '',
+        Jobtitle:'',
+        Tell: '',
+        Location:'',
+        Cvemail: '',
+        Image: ``,
+        Edyear1: '',
+        Eddesc1: '',
+        Edunivername1: '',
+        Edyear2: '',
+        Eddesc2: '',
+        Edunivername2: '',
+        Edyear3: '',
+        Eddesc3: '',
+        Edunivername3: '',
+        Langname1:'',
+        Langprog1: '',
+        Langname2: '',
+        Langprog2: '',
+        Langname3: '',
+        Langprog3: '',
+        Profile: '',
+        Exyear1: '',
+        Excompnay1: '',
+        Exjob1: '',
+        Exdesc1: '',
+        Exyear2: '',
+        Excompnay2: '',
+        Exjob2:'',
+        Exdesc2: '',
+        Exyear3:'',
+        Excompnay3: '',
+        Exjob3: '',
+        Exdesc3: '',
+        Skillname: '',
+        Skillprog: '',
+        Skillname1: '',
+        Skillprog1: '',
+        Skillname2: '',
+        Skillprog2: '',
+        Skillname3: '',
+        Skillprog3: '',
+        Skillname4: '',
+        Skillprog4: '',
+        Skillname5: '',
+        Skillprog5: '',
+        Skillname6: '',
+        Skillprog6: '',
+        Skillname7: '',
+        Skillprog7: '',
+        Inters1: '',
+        Inters2: '',
+        Inters3: '',
+        Inters4: '',
+    })
+    // const Fetch = async() => {
+    //     try{
+    //     } catch(err){
+    //         console.log(err)
+    //     }
+    // }
 
-const storageRef = ref(Storage, `images/${image.name}${Id}`);
 
-const uploadcvimage = () => {
-const uploadTask = uploadBytesResumable(storageRef, image);
-uploadTask.on('state_changed', 
-  (snapshot) => {
-    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-    setProgimg(progress.toFixed(1))
-    console.log('Upload is ' + progress + '% done');
-    switch (snapshot.state) {
-      case 'paused':
-        console.log('Upload is paused');
-        break;
-      case 'running':
-        console.log('Upload is running');
-        break;
-    }
-  }, 
-  (error) => {
-    // Handle unsuccessful uploads
-  }, 
-  () => {
-    // Handle successful uploads on complete
-    // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-      console.log('File available at', downloadURL);
-      info.Image = downloadURL
-      setdone(true)
-    });
+  const Onchange_inputs =(e) => {
+      setinfo((prev) => ({...prev, [e.target.name]:e.target.value }))
   }
-);
-}
+  // const [c01,setc01] = useState("")
+  // function onchange({target}){
+  //     let file = target.files[0];
+  //     if(file){
+  //         let file_name = file.name.substring(0,30);
+  //         //let file_zise = file.size / 1024 / 1024
+  //         //let file_time = file.duration;
+  //         const arrsplited = []
+  //         arrsplited.push(file_name.split("."))
+  //         console.log(arrsplited.length)
+  //         setfilename(file_name.substring(0,10))
+  //     }
+  //     setimage(file)
+  // }
+
+
+
+    const storageRef = ref(Storage, `images/${image.name}${Id}`);
+    const uploadcvimage = () => {
+    const uploadTask = uploadBytesResumable(storageRef, image);
+    uploadTask.on('state_changed', 
+    (snapshot) => {
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        setProgimg(progress.toFixed(1))
+        console.log('Upload is ' + progress + '% done');
+        switch (snapshot.state) {
+        case 'paused':
+            console.log('Upload is paused');
+            break;
+        case 'running':
+            console.log('Upload is running');
+            break;
+        }
+    }, 
+    (error) => {
+        // Handle unsuccessful uploads
+    }, 
+    () => {
+        // Handle successful uploads on complete
+        // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+        console.log('File available at', downloadURL);
+        info.Image = downloadURL
+        setdone(true)
+        });
+    }
+    );
+    }
 
 
 
 
 
 
-const Onchange_inputs =(e) => {
-    setinfo((prev) => ({...prev, [e.target.name]:e.target.value }))
-}
 const HangdaleUpdate =  async(e) => {
     e.preventDefault()
-    const data =  await fetch(`http://localhost:8080/Api/Updatecv/${info._id}`,{
+    const data =  await fetch(`http://localhost:8080/Api/UpdateUsercv/${info._id}`,{
       method: 'PATCH',
       body: JSON.stringify(info),
       headers: {
-          'Content-Type':'application/json'
+          'Content-Type':'application/json',
+          'authorization': `Bearar ${CrentUser.Token}`
       }
     })
     const json = data.json()
@@ -139,7 +163,6 @@ const HangdaleUpdate =  async(e) => {
       console.log('updated')
       //get()
     }
-
 }
 
 const Onchange_inputs_download = (e) => {
@@ -153,44 +176,68 @@ try{
 } catch(err){
   console.log(err)
 }
-}  
-    const  [state, dispatch] = useReducer(CvRadiuse, INITIAL_STATE)
+} 
       // GET ALL DATA CVS
       const Getallcv = async() => {
         const response = await fetch('http://localhost:8080/Api/Allcv')
         const response1 = await fetch('http://localhost:8080/Api/AllUser')
         const response2 = await fetch('http://localhost:8080/Api/Downloads')
+        const response3 = await fetch("http://localhost:8080/Api/OneUser", {
+          headers: {
+            'authorization': `Bearar ${CrentUser.Token}`
+          }
+        })
         const res = await response.json()
         const res1 = await response1.json()
         const res2 = await response2.json()
+        const res3 = await response3.json()
         if(response.ok){
-          dispatch({type: ACTIONS.GET_DATA , payload:res, AllUsers:res1, Downloads:res2})
+          dispatch({type: ACTIONS.GET_DATA , payload:res, AllUsers:res1, Downloads:res2, Onecv:res3[0]})
+          //setinfo(state.OnecvUser)
         }
       }
+
+      const GetInfoCv = async() => {
+        const response3 = await fetch("http://localhost:8080/Api/OneUser", {
+            headers: {
+              'authorization': `Bearar ${CrentUser.Token}`
+            }
+          })
+        const json = response3.json()
+        .then((data) => {
+            setinfo(data[0])
+        })
+    }
+    
     const value = {
         cv,
         Allusers,
-        Onchange_inputs,
         HangdaleUpdate,
-        info,
-        setinfo,
+        Onchange_inputs,
         uploadcvimage,
-        setimage,
-        progimg,
-        done,
-        setdone,
         download,
         Onchange_inputs_download,
         create_dowanload,
-        setcv,
         Getallcv,
-        //GetallUsers
+        info,
+        done,
+        progimg,
+        setimage,
+        state,
+        setinfo,
+        GetInfoCv,
+        uploadcvimage
     }
     useEffect(() => {
       setcv(state.allcv)
       setUsers(state.AllUsers)
       setdownload(state.AllDownloads)
     })
+
+    useEffect(() => {
+      GetInfoCv()
+    },[])
+
     useEffect(() => {
     Getallcv()
     },[])

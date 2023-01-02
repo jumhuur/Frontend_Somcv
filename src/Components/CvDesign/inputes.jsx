@@ -1,18 +1,21 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import { Usecvcontext } from "../Context/Cv"
 function Feilds({color1,color2,c1,c2}){
     const {
-        HangdaleUpdate,
-        Onchange_inputs,
-        info,
+        Onchange_inputs_download,
         uploadcvimage,
-        setimage,
-        progimg,
+        HangdaleUpdate,
+        cv,
+        info,
+        Onchange_inputs,
         done,
         setdone,
-        Onchange_inputs_download,
-        cv
+        progimg,
+        setimage,
+        GetInfoCv
     } = Usecvcontext()
+
     const [filename,setfilename] = useState(null)
     // const [c01,setc01] = useState("")
     function onchange({target}){
@@ -28,6 +31,10 @@ function Feilds({color1,color2,c1,c2}){
         }
         setimage(file)
     }
+    
+    useEffect(() => {
+        GetInfoCv()
+      },[])
     return (
         <>
             <div className="container_feilds">

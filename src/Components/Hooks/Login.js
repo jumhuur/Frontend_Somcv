@@ -1,7 +1,7 @@
 import { useState } from "react"
 import {useProtectedPage} from "../Context/Auth"
 
-export const UseLogin  = () => {
+export const UseLogin  = (req) => {
     const [Error, setError] = useState(null)
     const [Looding, setLooding] = useState(false)
     const {dispatch ,ACTIONS,setDatA} = useProtectedPage()
@@ -13,6 +13,7 @@ export const UseLogin  = () => {
             headers : {"Content-Type": "application/json"},
             body: JSON.stringify({Email,Password})
         })
+
     
         const json = await response.json()
     

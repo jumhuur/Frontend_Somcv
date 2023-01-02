@@ -18,7 +18,7 @@ const requeredAuth = async(req,res, next) => {
     try{
 
         const {_id} = jwt.verify(Token, process.env.SECRET)
-        req.User = usermodel.findOne({_id}).select('_id')
+        req.User = await usermodel.findOne({_id}).select('_id')
         next()
 
     } catch(err){

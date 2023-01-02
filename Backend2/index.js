@@ -8,6 +8,7 @@ const app = express()
 const cvRouter = require('./Routes/Cv.js')
 const UserRouter = require('./Routes/Users')
 const DwonloadRouter = require("./Routes/Download")
+const UsercvRouters = require("./Routes/UserCv")
 
 
 
@@ -28,6 +29,7 @@ app.use(cors({
 app.use('/Api', UserRouter)
 app.use('/Api', DwonloadRouter)
 app.use('/Api', cvRouter)
+app.use('/Api', UsercvRouters)
 mongoose.set("strictQuery", false)
 mongoose.connect(process.env.MONGO_URI)
 .then(() => {

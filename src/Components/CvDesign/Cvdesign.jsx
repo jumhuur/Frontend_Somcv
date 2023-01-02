@@ -25,7 +25,6 @@ function CVdesign({cv}) {
     }
 
     Bugscroll()
-
     
     //pdf samayn 
     const ref = React.createRef()
@@ -52,12 +51,12 @@ function CVdesign({cv}) {
         <div className="haye">
         <div ref={ref} className="design_cv_containers">
             <div className="leval1" id="leval1">
-            { cv && cv._id === "63ad711f28224e162448935d" ?
+            { cv && cv._id === "63b1e786932481632f967f2a" ?
            
             <Template cv={cv} color1={color1} color2={color2}/>
-            : cv && cv._id === "63ad54c8af6c2744ec2373b8" ?
+            : cv && cv._id === "63b01e5f71489ef1e996d28d" ?
             <Template2 cv={cv} color1={color1} color2={color2}/>
-            :cv && cv._id === 1617 ? 
+            :cv && cv._id === "63b01da971489ef1e996d282" ? 
             <Template3 cv={cv} color1={color1} color2={color2}/>
             :
             <></>

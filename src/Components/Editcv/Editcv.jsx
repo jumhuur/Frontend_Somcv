@@ -1,5 +1,5 @@
 import axios from "axios"
-import { useEffect } from "react"
+import { useEffect, useReducer } from "react"
 import { useState } from "react"
 import { Navigate, useParams } from "react-router-dom"
 import { useProtectedPage } from "../Context/Auth"
@@ -8,30 +8,27 @@ import CVdesign from "../CvDesign/Cvdesign"
 import Footer from "../Footer/Footer"
 import Nav from "../Nav/Nav"
 
-
 function Editcv(){
     const {id} = useParams()
     const {CrentUser} = useProtectedPage()
     // const {getonecv,onecv} = Usecvcontext()
     const [cv,setcv] = useState('')
+    const [usercv, setusercv] = useState()
     const fetchdata = async () => {
         try {
             const data = await fetch(`http://localhost:8080/Api/Cv/${id}`);
-            data.json()
+            await data.json()
             .then((datacv) => {
                 if(datacv) return setcv(datacv)
             })
-            
-
         } catch(err){
             console.log(err)
         }
     }
 
     useEffect(() => {
-        document.title = "Soomali cv | Pripare Cv"
         fetchdata()
-    },[CrentUser])
+    },[])
 
     return(
         <>
@@ -47,7 +44,7 @@ function Editcv(){
             </div>
         </div>
         </div>
-        <CVdesign cv={cv}/>
+        <CVdesign cv={cv} cuser={usercv}/>
         <Footer />
         </>
     )
