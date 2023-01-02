@@ -184,7 +184,7 @@ try{
         const response2 = await fetch('http://localhost:8080/Api/Downloads')
         const response3 = await fetch("http://localhost:8080/Api/OneUser", {
           headers: {
-            'authorization': `Bearar ${CrentUser.Token}`
+            'authorization': `Bearar ${CrentUser && CrentUser.Token}`
           }
         })
         const res = await response.json()
@@ -200,7 +200,7 @@ try{
       const GetInfoCv = async() => {
         const response3 = await fetch("http://localhost:8080/Api/OneUser", {
             headers: {
-              'authorization': `Bearar ${CrentUser.Token}`
+              'authorization': `Bearar ${CrentUser && CrentUser.Token}`
             }
           })
         const json = response3.json()

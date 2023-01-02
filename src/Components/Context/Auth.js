@@ -15,8 +15,6 @@ export function ContextProvider({children}){
         setCrentUser(JSON.parse(localStorage.getItem('user')) || null)
     }
 
-    console.log(CrentUser)
-
 
     const value = {
         CrentUser,

@@ -40,7 +40,7 @@ function Editcv(){
         <div className="head_edit">
         <div className="haye">
             <div className="qoraal_edit">
-                <p>Diyaarinta cv-ga {cv && cv._id}</p>
+                <p>Diyaarinta cv-ga {cv && cv.Magac}</p>
             </div>
         </div>
         </div>
