@@ -11,13 +11,16 @@ import NavAr from "../Nav/NavAr"
 function EditcvAR(){
     const {id} = useParams()
     const {CrentUser} = useProtectedPage()
+    // const {getonecv,onecv} = Usecvcontext()
     const [cv,setcv] = useState('')
+    const [usercv, setusercv] = useState()
     const fetchdata = async () => {
         try {
-
-            const data = await axios.get(`http://localhost:8800/Api/getonecv/${id}`);
-            if(data) return setcv(data.data)
-
+            const data = await fetch(`http://localhost:8080/Api/Cv/${id}`);
+            await data.json()
+            .then((datacv) => {
+                if(datacv) return setcv(datacv)
+            })
         } catch(err){
             console.log(err)
         }
@@ -25,7 +28,7 @@ function EditcvAR(){
 
     useEffect(() => {
         fetchdata()
-    },[CrentUser])
+    },[])
 
     return(
         <>
@@ -37,11 +40,11 @@ function EditcvAR(){
         <div className="head_edit" dir="rtl">
         <div className="haye">
             <div className="qoraal_edit">
-                <p>صفحة التجهيز سيرة ذاتية {cv && cv[0].id}</p>
+                <p>صفحة التجهيز سيرة ذاتية {cv && cv.Magac}</p>
             </div>
         </div>
         </div>
-        <CVdesignAr cv={cv}/>
+        <CVdesignAr cv={cv} cuser={usercv}/>
         <FooterAr />
         </>
     )

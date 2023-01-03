@@ -97,15 +97,15 @@ function HomeSo () {
                         <div className="clints">
                             <div className="clint">
                             {/* <img src="/Images/client-1.svg" alt="1"/> */}
-                            <h2 className="ltr"><i className="fa-solid fa-cloud-arrow-down"></i> dajisashada <span>{download && download.length}</span></h2>
+                            <h2 className="ltr"><i className="fa-solid fa-cloud-arrow-down"></i> dajisashada <span>({download && download.length})</span></h2>
                             </div>
                             <div className="clint">
                             {/* <img src="/Images/client-2.svg" alt="2"/> */}
-                            <h2 className="ltr"><i className="fa-solid fa-user"></i> Isticmalayaasha <span>{Allusers && Allusers.length}</span></h2>
+                            <h2 className="ltr"><i className="fa-solid fa-user"></i> Isticmalayaasha <span>({Allusers && Allusers.length})</span></h2>
                             </div>
                             <div className="clint">
                             {/* <img src="/Images/client-3.svg" alt="3"/> */}
-                            <h2 className="ltr"><i className="fa-solid fa-file-lines"></i> Nashqadaha <span>{cv && cv.length}</span></h2>
+                            <h2 className="ltr"><i className="fa-solid fa-file-lines"></i> Nashqadaha <span>({cv && cv.length})</span></h2>
                             </div>
                         </div>
                     </div>

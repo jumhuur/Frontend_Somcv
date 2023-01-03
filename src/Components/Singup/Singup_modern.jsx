@@ -22,7 +22,6 @@ function SingupModern(){
     
         const Onchange_inputs =(e) => {
             setinputs((prev) => ({...prev, [e.target.name]:e.target.value }))
-            console.log(inputs)
         }
     
     

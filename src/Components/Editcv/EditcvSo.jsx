@@ -11,13 +11,16 @@ import NavSo from "../Nav/NavSo"
 function EditcvSo(){
     const {id} = useParams()
     const {CrentUser} = useProtectedPage()
+    // const {getonecv,onecv} = Usecvcontext()
     const [cv,setcv] = useState('')
+    const [usercv, setusercv] = useState()
     const fetchdata = async () => {
         try {
-
-            const data = await axios.get(`http://localhost:8800/Api/getonecv/${id}`);
-            if(data) return setcv(data.data)
-
+            const data = await fetch(`http://localhost:8080/Api/Cv/${id}`);
+            await data.json()
+            .then((datacv) => {
+                if(datacv) return setcv(datacv)
+            })
         } catch(err){
             console.log(err)
         }
@@ -25,7 +28,8 @@ function EditcvSo(){
 
     useEffect(() => {
         fetchdata()
-    },[CrentUser])
+    },[])
+
 
     return(
         <>
@@ -37,11 +41,11 @@ function EditcvSo(){
         <div className="head_edit">
         <div className="haye">
             <div className="qoraal_edit">
-                <p>Diyaarinta cv-ga {cv && cv[0].id}</p>
+                <p>Diyaarinta cv-ga {cv && cv.Magac}</p>
             </div>
         </div>
         </div>
-        <CVdesignSo cv={cv}/>
+        <CVdesignSo cv={cv} cuser={usercv}/>
         <FooterSo />
         </>
     )

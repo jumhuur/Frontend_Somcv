@@ -8,7 +8,7 @@ const Newdownload = async(req,res) => {
     const {Name,Price} = req.body;
 
     try{
-        const Download = await DownloadModel.create({Name,Price})
+        const Download = await DownloadModel.Download(Name,Price)
         res.status(200).json(Download)
     } catch(err){
         res.status(400).json({Fariin:
@@ -16,7 +16,6 @@ const Newdownload = async(req,res) => {
              "Wrong is validations",
             "خطأ في التسجيل "
             ]})
-        console.log()
     }
 }
 

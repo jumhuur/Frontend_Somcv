@@ -221,6 +221,7 @@ try{
         Getallcv,
         info,
         done,
+        setdone,
         progimg,
         setimage,
         state,

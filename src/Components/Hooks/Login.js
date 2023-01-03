@@ -1,7 +1,7 @@
 import { useState } from "react"
 import {useProtectedPage} from "../Context/Auth"
 
-export const UseLogin  = (req) => {
+export const UseLogin  = () => {
     const [Error, setError] = useState(null)
     const [Looding, setLooding] = useState(false)
     const {dispatch ,ACTIONS,setDatA} = useProtectedPage()

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import {useProtectedPage} from "../Context/Auth"
 import TemplateAr from "../CvDesign/Template1/TempaleteAr"
 import Template2Ar from "../CvDesign/Template2/Template2Ar"
+import Template3 from "../CvDesign/Template3/Template3"
 function PopupInfoAr({active,onclickpop,singalcv}){
     const {CrentUser} = useProtectedPage()
     return (
@@ -37,10 +38,12 @@ function PopupInfoAr({active,onclickpop,singalcv}){
                         </div>
                     <div className="cv">
                         <div className="cv_image">
-                        {singalcv && singalcv._id === 1615 ?
+                        {singalcv && singalcv._id === "63b1e786932481632f967f2a" ?
                         <TemplateAr cv={singalcv}/>
-                        :singalcv && singalcv._id === 1616 ?
+                        :singalcv && singalcv._id === "63b01e5f71489ef1e996d28d" ?
                         <Template2Ar cv={singalcv}/>
+                        :singalcv && singalcv._id === "63b01da971489ef1e996d282" ?
+                        <Template3 cv={singalcv} />
                         :<></>
                         } 
                       
