@@ -1,10 +1,17 @@
+import { useEffect } from "react"
 import { Link } from "react-router-dom"
 import {useProtectedPage} from "../Context/Auth"
+import { Usecvcontext } from "../Context/Cv"
 import TemplateAr from "../CvDesign/Template1/TempaleteAr"
 import Template2Ar from "../CvDesign/Template2/Template2Ar"
 import Template3 from "../CvDesign/Template3/Template3"
 function PopupInfoAr({active,onclickpop,singalcv}){
     const {CrentUser} = useProtectedPage()
+    const {GetInfoCv} = Usecvcontext()
+
+    useEffect(() => {
+        GetInfoCv()
+    },[])
     return (
         <>
         <div className={active ? "over_vellow_all active" : "over_vellow_all"} dir="rtl">

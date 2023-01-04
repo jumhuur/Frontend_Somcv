@@ -24,6 +24,7 @@ function LoginModr(){
         e.preventDefault()
         Login(inputs.Email,inputs.Password)
         if(CrentUser){
+            GetInfoCv()
             locations('/')
         }
     }

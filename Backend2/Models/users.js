@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const validator = require("validator")
 
 const UserSchema = new schema({
-    Name : {
+    Magac : {
         type: String,
         required: true
     },
@@ -20,8 +20,8 @@ const UserSchema = new schema({
 })
 
 
-UserSchema.statics.singup = async function(Email,Password,Name){
-    if(!Email || !Password || !Name){
+UserSchema.statics.singup = async function(Email,Password,Magac){
+    if(!Email || !Password || !Magac){
         throw Error(["Buuxi Sadexda Meeloodba",
          "جميع الخقول مطلوبة",
           "All fields are required"])
@@ -50,7 +50,7 @@ UserSchema.statics.singup = async function(Email,Password,Name){
     }
     const salt = await bcrypt.genSalt(10)
     const Hash = await bcrypt.hash(Password,salt)
-    const user = await this.create({Email, Password:Hash,Name})
+    const user = await this.create({Email, Password:Hash,Magac})
     return user
 }
 

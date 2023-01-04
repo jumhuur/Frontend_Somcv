@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react"
 import { Link, Navigate, useLocation } from "react-router-dom"
 import { useProtectedPage } from "../Context/Auth"
+import { Usecvcontext } from "../Context/Cv"
 import { UseLogin } from "../Hooks/Login"
 
 function LoginModrSo(){
     const {Login, Looding, Error} = UseLogin()
     const locations = useLocation()
     const {CrentUser} = useProtectedPage()
+    const {cv,download,GetInfoCv} = Usecvcontext()
     const [inputs,setinputs] = useState({
         Email: "",
         Password: "",
@@ -22,6 +24,7 @@ function LoginModrSo(){
         e.preventDefault()
         Login(inputs.Email,inputs.Password)
         if(CrentUser){
+            GetInfoCv()
             locations('/so')
         }
     }

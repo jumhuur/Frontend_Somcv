@@ -8,30 +8,28 @@ function SingupModernAr(){
     // state hoocks 
     const {Singupuser, Looding, Error} = Usesingup()
     const location = useLocation()
-    const {Getallcv,GetInfoCv} = Usecvcontext()
+    const {GetInfoCv} = Usecvcontext()
     const image = useRef()
     const {CrentUser} = useProtectedPage()
-    const navigate = useNavigate()
     const [inputs,setinputs] = useState({
         Email: "",
         Password: "",
-        Name: "",
-        Image:""
+        Magac: "",
     })
-    const [err,seterr] = useState("")
+    //const [err,seterr] = useState("")
 
     const Onchange_inputs =(e) => {
         setinputs((prev) => ({...prev, [e.target.name]:e.target.value }))
+        console.log(inputs)
     }
 
 
     const Singup_now = async(e) => {
         e.preventDefault()
-        Singupuser(inputs.Email,inputs.Password, inputs.Name)
+        Singupuser(inputs.Email, inputs.Password,inputs.Magac)
         if(CrentUser){
-            Getallcv()
             GetInfoCv()
-            location('/ar')
+            location('/')
         }
     }
 
@@ -119,24 +117,24 @@ function SingupModernAr(){
                     <span className="welcome">
                         تسجيل حساب جديد
                     </span>
-                    <input onChange={Onchange_inputs} type={"text"} placeholder="اسمك" name="Name"/>
+                    <input onChange={Onchange_inputs} type={"text"} placeholder="اسمك" name="Magac"/>
                     <input onChange={Onchange_inputs} type={"email"} placeholder="البريد الإلكتروني" name="Email"/>
                     <input onChange={Onchange_inputs} type={"password"} placeholder="كلمة مرور" name="Password"/>
                     <button onClick={Singup_now} className="submit_btn">
                     {Looding &&
-                                <div class="sk-fading-circle">
-                                    <div class="sk-circle1 sk-circle"></div>
-                                    <div class="sk-circle2 sk-circle"></div>
-                                    <div class="sk-circle3 sk-circle"></div>
-                                    <div class="sk-circle4 sk-circle"></div>
-                                    <div class="sk-circle5 sk-circle"></div>
-                                    <div class="sk-circle6 sk-circle"></div>
-                                    <div class="sk-circle7 sk-circle"></div>
-                                    <div class="sk-circle8 sk-circle"></div>
-                                    <div class="sk-circle9 sk-circle"></div>
-                                    <div class="sk-circle10 sk-circle"></div>
-                                    <div class="sk-circle11 sk-circle"></div>
-                                    <div class="sk-circle12 sk-circle"></div>
+                                <div className="sk-fading-circle">
+                                    <div className="sk-circle1 sk-circle"></div>
+                                    <div className="sk-circle2 sk-circle"></div>
+                                    <div className="sk-circle3 sk-circle"></div>
+                                    <div className="sk-circle4 sk-circle"></div>
+                                    <div className="sk-circle5 sk-circle"></div>
+                                    <div className="sk-circle6 sk-circle"></div>
+                                    <div className="sk-circle7 sk-circle"></div>
+                                    <div className="sk-circle8 sk-circle"></div>
+                                    <div className="sk-circle9 sk-circle"></div>
+                                    <div className="sk-circle10 sk-circle"></div>
+                                    <div className="sk-circle11 sk-circle"></div>
+                                    <div className="sk-circle12 sk-circle"></div>
                                 </div>
                             }
                     تسجيل</button>
