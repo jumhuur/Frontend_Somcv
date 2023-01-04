@@ -30,6 +30,11 @@ function FeildsAr({color1,color2,c1,c2}){
         <>
             <div className="container_feilds" dir="rtl">
             <form className="f_feilds">
+            <div className="Feilds_part profile_in">
+                    <button className="save_data save" onClick={HangdaleUpdate}>
+                    <i className="fa-solid fa-cloud"></i> حفظ 
+                    </button>
+                </div>
                 <div className="Feilds_part profile_in">
                 <h2 className="ciwaan_feilds">ألوان غير محدودة</h2>
                 <div className="colors unlimited_color">
@@ -347,11 +352,7 @@ function FeildsAr({color1,color2,c1,c2}){
                 <label className="label_feilds" htmlFor="Name"><span className="delere_Feilds_part"> <i className="fa-solid fa-trash-can"></i></span> اسم الهواية</label>
                 <input value={info.Inters4} onChange={Onchange_inputs} autoComplete="off" name="Inters4" className="feilds_inputs" id="name" type="text" required placeholder="اسم الهواية" />
                 </div>
-                <div className="Feilds_part profile_in">
-                    <button className="save_data" onClick={HangdaleUpdate}>
-                    <i className="fa-solid fa-cloud"></i> إحفظ معلوماتي
-                    </button>
-                </div>
+
             </form>
             </div>
         </>

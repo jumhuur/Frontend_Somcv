@@ -6,6 +6,7 @@ import { useProtectedPage } from "../Context/Auth"
 import { Usecvcontext } from "../Context/Cv"
 import CVdesign from "../CvDesign/Cvdesign"
 import Footer from "../Footer/Footer"
+import Nativications from "../Nativications/Nativication"
 import Nav from "../Nav/Nav"
 
 function Editcv(){

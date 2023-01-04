@@ -12,13 +12,14 @@ import { Usecvcontext } from "../Context/Cv"
 import { useProtectedPage } from "../Context/Auth"
 import { useRef } from "react"
 import {UseDawnload} from "../Hooks/Download";
+import Nativications from "../Nativications/Nativication"
 function CVdesign({cv}) {
     const [color1,setcolor1] = useState("#001d3d")
     const [color2,setcolor2] = useState("#4361ee")
     const {CrentUser} = useProtectedPage()
-    const {create_dowanload} = Usecvcontext()
+    const {create_dowanload, updateDone , Closenativations} = Usecvcontext()
     const {Download} = UseDawnload()
-    const name_id = CrentUser && `${CrentUser.Email.split("@")[0]}`;
+    const name_id = CrentUser && `${CrentUser.Email.split("@")[0]}_2023`;
     const Name = CrentUser && `${CrentUser.Email.split("@")[0]}`;
     const Price = cv && cv.Qiimaha 
     function Bugscroll(){
@@ -66,6 +67,10 @@ function CVdesign({cv}) {
             :
             <></>
             }
+            { updateDone && 
+                <Nativications />
+            }
+            
             </div>
             <div className="previewcv">
             <div className="C_download">
@@ -78,7 +83,6 @@ function CVdesign({cv}) {
             <button  className="save_data" onClick={downloadPdf}><i className="fa-solid fa-download"></i> Download CV</button>
             <button hidden ref={btn_download} onClick={create_dowanload}></button>
             </div>
-
             <Feilds color1={setcolor1} c1={color1}  color2={setcolor2} c2={color2} />
             </div>
             

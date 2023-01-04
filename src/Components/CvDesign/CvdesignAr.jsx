@@ -10,11 +10,12 @@ import { Usecvcontext } from "../Context/Cv";
 import html2canvas from "html2canvas"
 import jsPDF from "jspdf"
 import Template3 from "./Template3/Template3"
+import NativicationsAr from "../Nativications/NativicationAr"
 function CVdesignAr({cv}) {
     const [color1,setcolor1] = useState("#001d3d")
     const [color2,setcolor2] = useState("#4361ee")
     const {CrentUser} = useProtectedPage()
-    const {create_dowanload} = Usecvcontext()
+    const {create_dowanload,updateDone} = Usecvcontext()
     const name_id = CrentUser && `${CrentUser.Email.split("@")[0]}`;
     function Bugscroll(){
         const path = useLocation()
@@ -58,6 +59,9 @@ function CVdesignAr({cv}) {
             <Template3 cv={cv} color1={color1} color2={color2}/>
             :
             <></>
+            }
+            { updateDone && 
+                <NativicationsAr />
             }
             </div>
             <div className="previewcv">

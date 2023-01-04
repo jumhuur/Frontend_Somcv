@@ -7,7 +7,7 @@ import {Usesingup} from "../Hooks/SinupHock";
 function SingupModern(){
         // state hoocks 
         const {Singupuser, Looding, Error} = Usesingup()
-        const {Getallcv} = Usecvcontext()
+        const {Getallcv,GetInfoCv} = Usecvcontext()
         const location = useLocation()
         const image = useRef()
         const {CrentUser} = useProtectedPage()
@@ -28,8 +28,9 @@ function SingupModern(){
         const Singup_now = async(e) => {
             e.preventDefault()
             Singupuser(inputs.Email, inputs.Password,inputs.Name)
-            Getallcv()
             if(CrentUser){
+                Getallcv()
+                GetInfoCv()
                 location('/')
             }
         }

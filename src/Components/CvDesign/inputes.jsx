@@ -39,6 +39,11 @@ function Feilds({color1,color2,c1,c2}){
         <>
             <div className="container_feilds">
             <form className="f_feilds">
+            <div className="Feilds_part profile_in">
+                    <button className="save_data save" onClick={HangdaleUpdate}>
+                    <i className="fa-solid fa-cloud"></i> save
+                    </button>
+                </div>
                 <div className="Feilds_part profile_in">
                 <h2 className="ciwaan_feilds">Unlimited colors</h2>
                 <div className="colors unlimited_color">
@@ -354,11 +359,6 @@ function Feilds({color1,color2,c1,c2}){
                 <label className="label_feilds" htmlFor="Name">Interst Name</label>
                 <input value={info.Inters4} onChange={Onchange_inputs} autoComplete="off" name="Inters4" className="feilds_inputs" id="name" type="text" required placeholder="Interst Name" />
                 <input value={cv && cv.Price} onChange={Onchange_inputs_download} autoComplete="off" name="Lacagta" className="feilds_inputs" id="name" type="text" required placeholder="Interst Name"/>
-                </div>
-                <div className="Feilds_part profile_in">
-                    <button className="save_data" onClick={HangdaleUpdate}>
-                    <i className="fa-solid fa-cloud"></i> save
-                    </button>
                 </div>
             </form>
             </div>

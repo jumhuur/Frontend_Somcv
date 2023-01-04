@@ -6,7 +6,6 @@ const GetOneUserCv = async (req,res) => {
     const User_Id = req.User._id
     try{
         const Usercv = await UsercvModel.find({User_Id}).limit(1)
-        console.log(User_Id)
         if(!Usercv){
             res.status(404).json({msg:"Not Created"})
         } else {

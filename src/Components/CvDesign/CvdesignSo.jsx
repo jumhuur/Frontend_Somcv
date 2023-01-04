@@ -11,12 +11,13 @@ import html2canvas from "html2canvas"
 import jsPDF from "jspdf"
 import { useRef } from "react"
 import Template3 from "./Template3/Template3"
+import NativicationsSo from "../Nativications/NativicationSo"
 function CVdesignSo({cv}) {
     const [color1,setcolor1] = useState("#001d3d")
     const [color2,setcolor2] = useState("#4361ee")
     const {CrentUser} = useProtectedPage()
     const name_id = CrentUser && `${CrentUser.Email.split("@")[0]}`;
-    const {create_dowanload} = Usecvcontext()
+    const {create_dowanload,updateDone} = Usecvcontext()
     function Bugscroll(){
         const path = useLocation()
         useEffect (function(){
@@ -60,6 +61,10 @@ function CVdesignSo({cv}) {
            :
            <></>
            }
+
+        { updateDone && 
+            <NativicationsSo />
+        }
         </div>
             <div className="previewcv">
             <div className="C_download">

@@ -8,7 +8,7 @@ function LoginModr(){
     const {Login, Looding, Error} = UseLogin()
     const locations = useLocation()
     const {CrentUser,user} = useProtectedPage()
-    const {cv,download} = Usecvcontext()
+    const {cv,download,GetInfoCv} = Usecvcontext()
     const [inputs,setinputs] = useState({
         Email: "",
         Password: "",

@@ -23,6 +23,7 @@ export function CvcontextProvaider({children}) {
     const [image ,setimage] = useState("")
     const [progimg ,setProgimg] = useState('');
     const [done,setdone] = useState(false)
+    const [updateDone, setUpdatedone] = useState(false)
     const Id = CrentUser && CrentUser._id
         const [info,setinfo] = useState({
         Name: '',
@@ -80,33 +81,12 @@ export function CvcontextProvaider({children}) {
         Inters3: '',
         Inters4: '',
     })
-    // const Fetch = async() => {
-    //     try{
-    //     } catch(err){
-    //         console.log(err)
-    //     }
-    // }
 
-
+    
   const Onchange_inputs =(e) => {
       setinfo((prev) => ({...prev, [e.target.name]:e.target.value }))
+      setUpdatedone(false)
   }
-  // const [c01,setc01] = useState("")
-  // function onchange({target}){
-  //     let file = target.files[0];
-  //     if(file){
-  //         let file_name = file.name.substring(0,30);
-  //         //let file_zise = file.size / 1024 / 1024
-  //         //let file_time = file.duration;
-  //         const arrsplited = []
-  //         arrsplited.push(file_name.split("."))
-  //         console.log(arrsplited.length)
-  //         setfilename(file_name.substring(0,10))
-  //     }
-  //     setimage(file)
-  // }
-
-
 
     const storageRef = ref(Storage, `images/${image.name}${Id}`);
     const uploadcvimage = () => {
@@ -142,7 +122,11 @@ export function CvcontextProvaider({children}) {
 
 
 
-
+  const Closenativations = () => {
+    setInterval(() => {
+      setUpdatedone(false)
+    }, 7000)
+  }
 
 
 const HangdaleUpdate =  async(e) => {
@@ -160,8 +144,8 @@ const HangdaleUpdate =  async(e) => {
       console.log(json.Fariin)
     }
     if(data.ok){
-      console.log('updated')
-      //get()
+      setUpdatedone(true)
+      Closenativations()
     }
 }
 
@@ -227,7 +211,8 @@ try{
         state,
         setinfo,
         GetInfoCv,
-        uploadcvimage
+        uploadcvimage,
+        updateDone,
     }
     useEffect(() => {
       setcv(state.allcv)

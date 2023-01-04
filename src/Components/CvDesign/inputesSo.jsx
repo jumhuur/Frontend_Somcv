@@ -30,6 +30,11 @@ function FeildsSo({color1,color2,c1,c2}){
         <>
             <div className="container_feilds">
             <form className="f_feilds">
+            <div className="Feilds_part profile_in">
+                    <button className="save_data save" onClick={HangdaleUpdate}>
+                    <i className="fa-solid fa-cloud"></i> Xifdi Macluumadka
+                    </button>
+                </div>
                 <div className="Feilds_part profile_in">
                 <h2 className="ciwaan_feilds">Midabo Aan Xad Lahayn</h2>
                 <div className="colors unlimited_color">
