@@ -20,14 +20,14 @@ app.use((req,res, next) =>  {
 })
 
 app.use(express.json())
-// app.use(cors({
-//     origin:"http://localhost:3000",
-//     credentials: true
-// }
 app.use(cors({
-    origin:"http://5.182.18.172:8800",
+    origin:"http://localhost:3000",
     credentials: true
 }
+// app.use(cors({
+//     origin:"http://5.182.18.172:8800",
+//     credentials: true
+// }
 ))
 // rounting 
 app.use('/Api', UserRouter)

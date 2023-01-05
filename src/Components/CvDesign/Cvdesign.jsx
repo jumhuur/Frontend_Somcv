@@ -67,9 +67,10 @@ function CVdesign({cv}) {
             :
             <></>
             }
-          
+
+            { updateDone && 
                 <Nativications />
-       
+            }
             
             </div>
             <div className="previewcv">

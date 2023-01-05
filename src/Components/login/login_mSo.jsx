@@ -8,7 +8,7 @@ function LoginModrSo(){
     const {Login, Looding, Error} = UseLogin()
     const locations = useLocation()
     const {CrentUser} = useProtectedPage()
-    const {cv,download,GetInfoCv} = Usecvcontext()
+    const {Allusers,cv,download,GetInfoCv} = Usecvcontext()
     const [inputs,setinputs] = useState({
         Email: "",
         Password: "",
@@ -56,30 +56,30 @@ function LoginModrSo(){
                                 <ul className="qodobad_shabakda">
                                     <li className="qo_shabakada">
                                         <div className="icon">
-                                        <i className="fa-solid fa-circle-check"></i>
+                                        <i className="fa-solid fa-cloud-arrow-down"></i>
                                         </div>
                                         <div className="text_qodo">
-                                            <h3>Select</h3>
+                                            <h3>Downloads {download && download.length}</h3>
                                             <p>Dooro mid kamida nashqadaha diyaarsan ee cv-yada</p>
                                         </div>
 
                                     </li>
                                     <li className="qo_shabakada">
                                     <div className="icon">
-                                    <i className="fa-solid fa-brush"></i>
+                                    <i className="fa-solid fa-users"></i>
                                         </div>
                                         <div className="text_qodo">
-                                            <h3>prepair</h3>
+                                            <h3>Users {Allusers && Allusers.length}</h3>
                                             <p>Dooro mid kamida nashqadaha diyaarsan ee cv-yada</p>
                                         </div>
                                     </li>
                                     <li className="qo_shabakada">
                                     <div className="icon">
                                    
-                                    <i className="fa-solid fa-cloud-arrow-down"></i>
+                                    <i className="fa-solid fa-layer-group"></i>
                                         </div>
                                         <div className="text_qodo">
-                                            <h3>Download</h3>
+                                            <h3>Designs {cv && cv.length}</h3>
                                             <p>Dooro mid kamida nashqadaha diyaarsan ee cv-yada</p>
                                         </div>
                                     </li>
@@ -90,15 +90,15 @@ function LoginModrSo(){
                     </div>
                     <div className="midig">
                     <div className="container_login modren">
-            <div className="login_card">
-                <form className="login_from">
-                    <span className="welcome">
-                        Gal Akoon Hore
-                    </span>
-                    <input onChange={Onchange_inputs} type={"email"} placeholder="Emailkaaga" name="Email" autoComplete="off"/>
-                    <input onChange={Onchange_inputs} type={"password"} placeholder="Passwor-kaaga" name="Password"/>
-                    <button onClick={Onclick_login} className="submit_btn">
-                    {Looding &&
+                    <div className="login_card">
+                        <form className="login_from">
+                            <span className="welcome">
+                                Log In Here
+                            </span>
+                            <input onInput={Onchange_inputs} type={"email"} placeholder="Emailkaaga" name="Email" autoComplete="off" required/>
+                            <input onInput={Onchange_inputs} type={"password"} placeholder="Passworka" name="Password"  required/>
+                            <button onClick={Onclick_login} className="submit_btn">
+                            {Looding &&
                                 <div className="sk-fading-circle">
                                     <div className="sk-circle1 sk-circle"></div>
                                     <div className="sk-circle2 sk-circle"></div>
@@ -114,23 +114,22 @@ function LoginModrSo(){
                                     <div className="sk-circle12 sk-circle"></div>
                                 </div>
                             }
-                        Gal
-                        
-                        </button>
-                    {Error && 
-                    <span className="Massage">
-                    {Error.split(",")[0]}
-                     </span>
-                    }
-                    <Link to={"/so/Register"}>
-                    <span>
-                        Samayso Akoon cusub
-                    </span>
-                    </Link>
+                            Login
+                            </button>
+                            {Error && 
+                            <span className="Massage">
+                            {Error.split(",")[1]}
+                            </span>
+                            }
+                            <Link to={"/Register"}>
+                            <span>
+                                Register Now
+                            </span>
+                            </Link>
 
-                </form>
-            </div>
-        </div>
+                        </form>
+                    </div>
+                    </div>
                     </div>
                 </div>
             </div>

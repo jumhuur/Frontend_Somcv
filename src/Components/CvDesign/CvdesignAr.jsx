@@ -11,12 +11,17 @@ import html2canvas from "html2canvas"
 import jsPDF from "jspdf"
 import Template3 from "./Template3/Template3"
 import NativicationsAr from "../Nativications/NativicationAr"
+import {UseDawnload} from "../Hooks/Download";
 function CVdesignAr({cv}) {
     const [color1,setcolor1] = useState("#001d3d")
     const [color2,setcolor2] = useState("#4361ee")
     const {CrentUser} = useProtectedPage()
     const {create_dowanload,updateDone} = Usecvcontext()
+    const {Download} = UseDawnload()
+    const Price = cv && cv.Qiimaha 
     const name_id = CrentUser && `${CrentUser.Email.split("@")[0]}`;
+    const Name = CrentUser && `${CrentUser.Email.split("@")[0]}`;
+
     function Bugscroll(){
         const path = useLocation()
         useEffect (function(){
@@ -37,6 +42,7 @@ function CVdesignAr({cv}) {
            const pdf = new jsPDF("p", "mm", "a4");
            pdf.addImage(imgData, "PNG", 2.20,0,imgWidth, imgHeight);
            pdf.save(`${name_id}.pdf`)
+           Download(Name, Price)
        })
 
        btn_download.current.click()

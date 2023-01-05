@@ -41,7 +41,7 @@ function HomeSo () {
         if(id) {
             try{
                 const getsingalcv = async () => {
-                    const data = await fetch(`http://localhost:8080/Api/Cv/${id}`)
+                    const data = await fetch(`http://localhost:8800/Api/Cv/${id}`)
                     data.json()
                     .then((cvdata) => {
                     setsingalcv(cvdata)

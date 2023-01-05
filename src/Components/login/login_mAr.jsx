@@ -7,8 +7,8 @@ import { UseLogin } from "../Hooks/Login"
 function LoginModrAr(){
     const {Login, Looding, Error} = UseLogin()
     const locations = useLocation()
-    const {CrentUser, user} = useProtectedPage()
-    const {cv,download,GetInfoCv} = Usecvcontext()
+    const {CrentUser} = useProtectedPage()
+    const {Allusers,cv,download,GetInfoCv} = Usecvcontext()
     const [inputs,setinputs] = useState({
         Email: "",
         Password: "",
@@ -67,7 +67,7 @@ function LoginModrAr(){
                                     <i className="fa-solid fa-users"></i>
                                         </div>
                                         <div className="text_qodo">
-                                            <h3>عدد مستخدمين {user && user.length}</h3>
+                                            <h3>عدد مستخدمين {Allusers && Allusers.length}</h3>
                                             <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،</p>
                                         </div>
                                     </li>

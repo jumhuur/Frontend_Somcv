@@ -7,8 +7,8 @@ import {UseLogin} from "../Hooks/Login";
 function LoginModr(){
     const {Login, Looding, Error} = UseLogin()
     const locations = useLocation()
-    const {CrentUser,user} = useProtectedPage()
-    const {cv,download,GetInfoCv} = Usecvcontext()
+    const {CrentUser} = useProtectedPage()
+    const {cv,Allusers,download,GetInfoCv} = Usecvcontext()
     const [inputs,setinputs] = useState({
         Email: "",
         Password: "",
@@ -69,7 +69,7 @@ function LoginModr(){
                                     <i className="fa-solid fa-users"></i>
                                         </div>
                                         <div className="text_qodo">
-                                            <h3>Users {user && user.length}</h3>
+                                            <h3>Users {Allusers && Allusers.length}</h3>
                                             <p>Dooro mid kamida nashqadaha diyaarsan ee cv-yada</p>
                                         </div>
                                     </li>

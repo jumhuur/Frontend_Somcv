@@ -16,7 +16,7 @@ function EditcvSo(){
     const [usercv, setusercv] = useState()
     const fetchdata = async () => {
         try {
-            const data = await fetch(`http://localhost:8080/Api/Cv/${id}`);
+            const data = await fetch(`http://localhost:8800/Api/Cv/${id}`);
             await data.json()
             .then((datacv) => {
                 if(datacv) return setcv(datacv)

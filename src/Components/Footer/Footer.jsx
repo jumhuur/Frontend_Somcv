@@ -17,7 +17,7 @@ function Footer() {
                             <br />
                             cv-yo kala duwan oo nashqad walba leh waxanay kuu hawl 
                             fududaynaysaa inaad diyaarsato cv-qurux badan waxkhti yar 
-                            gudaheed <span>&#169;</span> 2022-2022
+                            gudaheed <span>&#169;</span> 2022-2023
                         </p>
                     </div>
                 </div>

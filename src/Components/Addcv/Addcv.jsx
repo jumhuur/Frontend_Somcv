@@ -40,7 +40,7 @@ function Addcv(){
     }
     const addcv = async(e) => {
         e.preventDefault()
-        const data = await fetch("http://localhost:8080/Api/Addcv" , {
+        const data = await fetch("http://localhost:8800/Api/Addcv" , {
             method: 'POST',
             body: JSON.stringify(cvinfo),
             headers: {

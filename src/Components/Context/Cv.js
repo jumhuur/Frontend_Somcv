@@ -131,7 +131,7 @@ export function CvcontextProvaider({children}) {
 
 const HangdaleUpdate =  async(e) => {
     e.preventDefault()
-    const data =  await fetch(`http://localhost:8080/Api/UpdateUsercv/${info._id}`,{
+    const data =  await fetch(`http://localhost:8800/Api/UpdateUsercv/${info._id}`,{
       method: 'PATCH',
       body: JSON.stringify(info),
       headers: {
@@ -153,20 +153,20 @@ const Onchange_inputs_download = (e) => {
 setdownload_info((prev) => ({...prev, [e.target.name]:e.target.value }))
 }
 
-const create_dowanload = async(e) => {
-e.preventDefault()
-try{
-  await axios.post("http://localhost:8800/Api/downloads/", download_info)
-} catch(err){
-  console.log(err)
-}
-} 
+// const create_dowanload = async(e) => {
+// e.preventDefault()
+// try{
+//   await axios.post("http://localhost:8800/Api/downloads/", download_info)
+// } catch(err){
+//   console.log(err)
+// }
+// } 
       // GET ALL DATA CVS
       const Getallcv = async() => {
-        const response = await fetch('http://localhost:8080/Api/Allcv')
-        const response1 = await fetch('http://localhost:8080/Api/AllUser')
-        const response2 = await fetch('http://localhost:8080/Api/Downloads')
-        const response3 = await fetch("http://localhost:8080/Api/OneUser", {
+        const response = await fetch('http://localhost:8800/Api/Allcv')
+        const response1 = await fetch('http://localhost:8800/Api/AllUser')
+        const response2 = await fetch('http://localhost:8800/Api/Downloads')
+        const response3 = await fetch("http://localhost:8800/Api/OneUser", {
           headers: {
             'authorization': `Bearar ${CrentUser && CrentUser.Token}`
           }
@@ -182,7 +182,7 @@ try{
       }
 
       const GetInfoCv = async() => {
-        const response3 = await fetch("http://localhost:8080/Api/OneUser", {
+        const response3 = await fetch("http://localhost:8800/Api/OneUser", {
             headers: {
               'authorization': `Bearar ${CrentUser && CrentUser.Token}`
             }
@@ -201,7 +201,6 @@ try{
         uploadcvimage,
         download,
         Onchange_inputs_download,
-        create_dowanload,
         Getallcv,
         info,
         done,

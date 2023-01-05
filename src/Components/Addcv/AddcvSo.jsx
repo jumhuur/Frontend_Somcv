@@ -2,12 +2,16 @@ import axios from "axios"
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage"
 import { useRef } from "react"
 import { useState } from "react"
-import {Link, Navigate } from "react-router-dom"
+import {Link, Navigate, useNavigate } from "react-router-dom"
 import { useProtectedPage } from "../Context/Auth"
+import { Usecvcontext } from "../Context/Cv"
 import {Storage} from "../firebase";
 
 function AddcvSo(){
+    const {Getallcv} = Usecvcontext()
     const {CrentUser} = useProtectedPage()
+    const [qalad,setqalad] = useState("")
+    const location = useNavigate()
     const [Image,setimage] = useState("")
     const [filename,setfilename] = useState(null)
     const [done,setdone] = useState(false)
@@ -41,14 +45,24 @@ function AddcvSo(){
 
     const addcv = async(e) => {
         e.preventDefault()
-        try {
-            const data = await axios.post("http://localhost:8800/Api/addcv", cvinfo)
-            return data.data
-        } catch(err){
-            console.log(err)
-            seterr(err)
-        }
+        const data = await fetch("http://localhost:8800/Api/Addcv" , {
+            method: 'POST',
+            body: JSON.stringify(cvinfo),
+            headers: {
+                'Content-Type':'application/json'
+            }
+        })
+         const json = await data.json()
+         if(!data.ok){
+            setqalad(json.Fariin[1])
+            console.log(json.Fariin[2])
+         }
 
+         if(data.ok){
+            setqalad(null)
+            Getallcv()
+            location('/')
+        }
     }
 
 

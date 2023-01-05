@@ -10,7 +10,7 @@ export const Usesingup  = () => {
     const Singupuser = async(Email,Password,Magac) => {
         setLooding(true)
         setError(false)
-        const response = await fetch("http://localhost:8080/Api/RegisterUser", {
+        const response = await fetch("http://localhost:8800/Api/RegisterUser", {
             method: "POST",
             headers : {"Content-Type": "application/json"},
             body: JSON.stringify({Email,Password,Magac})
