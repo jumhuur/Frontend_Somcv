@@ -20,11 +20,11 @@ export function CvcontextProvaider({children}) {
       Lacagta:cv && cv.Price
     })
     const [download,setdownload] = useState();
-    const [image ,setimage] = useState("")
+    const [image ,setimage] = useState("/Images/User.png")
     const [progimg ,setProgimg] = useState('');
     const [done,setdone] = useState(false)
     const [updateDone, setUpdatedone] = useState(false)
-    const Id = CrentUser && CrentUser._id
+    const Id = CrentUser && CrentUser.Email
         const [info,setinfo] = useState({
         Name: '',
         Jobtitle:'',
@@ -88,7 +88,7 @@ export function CvcontextProvaider({children}) {
       setUpdatedone(false)
   }
 
-    const storageRef = ref(Storage, `images/${image.name}${Id}`);
+    const storageRef = ref(Storage, `images/${Id}${image.name}`);
     const uploadcvimage = () => {
     const uploadTask = uploadBytesResumable(storageRef, image);
     uploadTask.on('state_changed', 

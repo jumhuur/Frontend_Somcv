@@ -1,0 +1,351 @@
+import { Link } from "react-router-dom"
+
+function JobsDesign() {
+    return (
+        <>
+        <div className="job_haye">
+        <div className="haye">
+            <div className="jobs_Design">
+                <div className="filters">
+                    <form action="" className="selet_qayb">
+                        <h2><i class="fa-solid fa-filter"></i> Kala shaandhaynta</h2>
+                        <input className="qayb" type={"search"} required name="search" placeholder="Web Developer ..."/> 
+                        <div className="qayb_filter">
+                            <h2><i className="fa-solid fa-list-ul"></i> Dooro Wakhtiga</h2>
+                            <div className="doorasho">
+                            <input type={"checkbox"} name="Time" id="All"/>
+                            <label htmlFor="All"> All</label>
+                            </div>
+                            <div className="doorasho">
+                            <input type={"checkbox"} name="Time" id="full"/>
+                            <label htmlFor="full"> full-time</label>
+                            </div>
+                            <div className="doorasho">
+                            <input type={"checkbox"}  name="Time" id="part1"/>
+                            <label htmlFor="part1"> Morrning</label>
+                            </div>
+                            
+                            <div className="doorasho">
+                            <input type={"checkbox"} name="Time" id="part2"/>
+                            <label htmlFor="part2"> afternoun</label>
+                            </div>
+                            <div className="doorasho">
+                            <input type={"checkbox"} name="Time" id="Temporary"/>
+                            <label htmlFor="Temporary"> Temporary</label>
+                            </div>
+                            <div className="doorasho">
+                            <input type={"checkbox"} name="Time" id="Freelance"/>
+                            <label htmlFor="Freelance"> Freelance</label>
+                            
+                            </div>
+                            <div className="doorasho">
+                            <input type={"checkbox"} name="Time" id="Internship"/>
+                            <label htmlFor="Internship"> Internship</label>
+                            </div>
+                            </div>
+                            <div className="qayb_filter">
+                            <h2><i className="fa-solid fa-list-ul"></i> Dooro Wakhtiga</h2>
+                            <div className="doorasho">
+                            <input type={"checkbox"} name="Time" id="full"/>
+                            <label htmlFor="full"> full-time</label>
+                            </div>
+                            <div className="doorasho">
+                            <input type={"checkbox"}  name="Time" id="part1"/>
+                            <label htmlFor="part1"> Morrning</label>
+                            </div>
+                            <div className="doorasho">
+                            <input type={"checkbox"} name="Time" id="part2"/>
+                            <label htmlFor="part2"> afternoun</label>
+                            </div>
+                            </div>
+                            <div id="country" name="country" className="qayb_filter">
+                                <h2><i className="fa-solid fa-list-ul"></i> Wadanka</h2>
+                                <div className="doorasho">
+                                <input type={"checkbox"} id="" />
+                                <label value="SML">Soomaliland</label>
+                                </div>
+                                <div className="doorasho">
+                                <input type={"checkbox"} id="" />
+                                <label value="SO">Soomaaliya</label>
+                                </div>
+                                <div className="doorasho">
+                                <input type={"checkbox"} id="" />
+                                <label value="DJ">Jabuuti</label>
+                                </div>
+                                <div className="doorasho">
+                                <input type={"checkbox"} id="" />
+                                <label value="ET">Itoobiya</label>
+                                </div>
+                                <div className="doorasho">
+                                <input type={"checkbox"} id="" />
+                                <label value="ER">Ereteriya</label>
+                                </div>
+                                <div className="doorasho">
+                                <input type={"checkbox"} id="" />
+                                <label value="KE">Kenya</label>
+                                </div>
+                                </div>
+                            <div className="qayb_filter">
+                            <h2><i className="fa-solid fa-list-ul"></i> Dooro Magaalada</h2>
+                                <div className="doorasho">
+                                <input type={"checkbox"} />
+                                <label>Hargeisa</label>
+                                </div>
+                                <div className="doorasho">
+                                <input type={"checkbox"} />
+                                <label>Muqdiso</label>
+                                </div>
+                                <div className="doorasho">
+                                <input type={"checkbox"} />
+                                <label>Boorama</label>
+                                </div>
+                                <div className="doorasho">
+                                <input type={"checkbox"} />
+                                <label>Burco </label>
+                                </div>
+                                <div className="doorasho">
+                                <input type={"checkbox"} />
+                                <label>Berbera</label>  
+                                </div>
+                                <div className="doorasho">
+                                <input type={"checkbox"} />
+                                <label>Gabilay</label>
+                                </div>
+                                <div className="doorasho">
+                                <input type={"checkbox"} />
+                                <label>Boosaaso</label>
+                                </div>
+                                <div className="doorasho">
+                                <input type={"checkbox"} />
+                                <label>Jigjiga</label>
+                                </div>
+                                <div className="doorasho">
+                                <input type={"checkbox"} />
+                                <label>Garoowe</label>
+                                </div>
+                                <div className="doorasho">
+                                <input type={"checkbox"} />
+                                <label>Addis abab</label>
+                                </div>
+                                <div className="doorasho">
+                                <input type={"checkbox"} />
+                                <label>Jigjiga</label>
+                                </div>
+                                <div className="doorasho">
+                                <input type={"checkbox"} />
+                                <label>Jigjiga</label>
+                                </div>
+                                <div className="doorasho">
+                                <input type={"checkbox"} />
+                                <label>Jigjiga</label>
+                                </div>
+                                <div className="doorasho">
+                                <input type={"checkbox"} />
+                                <label>Jigjiga</label>
+                                </div>
+                                <div className="doorasho">
+                                <input type={"checkbox"} />
+                                <label>Jigjiga</label>
+                                </div>
+                           
+                            </div>
+                    </form>
+                </div>
+                <div className="jobs">
+                <div className="filtter_dush">
+                    <div className="inf_and_title">
+                    <h2 className="ciwaan_jobs">Job list (235) jobs</h2>
+                    </div>
+                    <div className="selector_qaybta">
+                        <form action="" className="selet_qayb">
+                            <select className="qayb">
+                                <option>Dooro Qaybta</option>
+                                <option>Qaybta 2aad</option>
+                                <option>Qaybta 3aad</option>
+                                <option>Qaybta 4aad</option>
+                                <option>Qaybta 5aad</option>
+                                <option>Qaybta 6aad</option>
+                            </select>
+                            {/* <select className="qayb">
+                                <option>Dooro Wakhtiga</option>
+                                <option>full-time</option>
+                                <option>Part-time</option>
+                            </select>
+                            <select className="qayb">
+                                <option>Dooro Magaalada</option>
+                                <option>Hargeisa</option>
+                                <option>Muqdiso</option>
+                                <option>Boorama</option>
+                                <option>Burco </option>
+                                <option>Berbera</option>
+                                <option>Gabilay</option>
+                                <option>Boosaaso</option>
+                            </select> */}
+                        </form>
+                    </div>
+                </div>
+                <Link to={"/"}>
+                <div className="jobs_in_job">
+                    <div className="logo_job">
+                        <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="sawir_shaqo" />
+                    </div>
+                    <div className="info_and_title">
+                        <div className="ciwaan_shaqo">
+                            <h2>React js Developer</h2>
+                            <div className="info">
+                            <h3><i className="fa-solid fa-location-dot"></i> Hargeis</h3>
+                            <h3><i className="fa-regular fa-clock"></i> Full-Time</h3>
+                            <h3><i className="fa-solid fa-user-tie"></i> 265</h3>
+                        </div>
+                        </div>
+                    </div>
+                    <div className="actions_btn">
+                        <button className="btn_job_applay">Applay</button>
+                        <h3><i className="fa-regular fa-clock"></i> 3 days ago</h3>
+                    </div>
+                </div>
+                </Link>
+                <div className="jobs_in_job">
+                    <div className="logo_job">
+                        <img src="/Images/Web.png" alt="sawir_shaqo" />
+                    </div>
+                    <div className="info_and_title">
+                        <div className="ciwaan_shaqo">
+                            <h2>Python and django Developer</h2>
+                            <div className="info">
+                            <h3><i className="fa-solid fa-location-dot"></i> Hargeis</h3>
+                            <h3><i className="fa-regular fa-clock"></i> Full-Time</h3>
+                            <h3><i className="fa-solid fa-user-tie"></i> 65</h3>
+                        </div>
+                        </div>
+                    </div>
+                    <div className="actions_btn">
+                        <button className="btn_job_applay">Applay</button>
+                        <h3><i className="fa-regular fa-clock"></i> 9 days ago</h3>
+                    </div>
+                </div>
+                <div className="jobs_in_job">
+                    <div className="logo_job">
+                        <img src="https://preview.colorlib.com/theme/jobsco/assets/img/icon/1.svg" alt="sawir_shaqo" />
+                    </div>
+                    <div className="info_and_title">
+                        <div className="ciwaan_shaqo">
+                            <h2>Python and react js Developer</h2>
+                            <div className="info">
+                            <h3><i className="fa-solid fa-location-dot"></i> Hargeis</h3>
+                            <h3><i className="fa-regular fa-clock"></i> Full-Time</h3>
+                            <h3><i className="fa-solid fa-user-tie"></i> 65</h3>
+                        </div>
+                        </div>
+                    </div>
+                    <div className="actions_btn">
+                        <button className="btn_job_applay">Applay</button>
+                        <h3><i className="fa-regular fa-clock"></i> 9 days ago</h3>
+                    </div>
+                </div>
+                <div className="jobs_in_job">
+                    <div className="logo_job">
+                        <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80" alt="sawir_shaqo" />
+                    </div>
+                    <div className="info_and_title">
+                        <div className="ciwaan_shaqo">
+                            <h2>Mern stack Developer</h2>
+                            <div className="info">
+                            <h3><i className="fa-solid fa-location-dot"></i> Hargeis</h3>
+                            <h3><i className="fa-regular fa-clock"></i> Full-Time</h3>
+                            <h3><i className="fa-solid fa-user-tie"></i> 65</h3>
+                        </div>
+                        </div>
+                    </div>
+                    <div className="actions_btn">
+                        <button className="btn_job_applay">Applay</button>
+                        <h3><i className="fa-regular fa-clock"></i> 9 days ago</h3>
+                    </div>
+                </div>
+                <div className="jobs_in_job">
+                    <div className="logo_job">
+                        <img src="https://preview.colorlib.com/theme/jobsco/assets/img/icon/4.svg" alt="sawir_shaqo" />
+                    </div>
+                    <div className="info_and_title">
+                        <div className="ciwaan_shaqo">
+                            <h2>Rubby and reails Developer</h2>
+                            <div className="info">
+                            <h3><i className="fa-solid fa-location-dot"></i> Hargeis</h3>
+                            <h3><i className="fa-regular fa-clock"></i> Full-Time</h3>
+                            <h3><i className="fa-solid fa-user-tie"></i> 65</h3>
+                        </div>
+                        </div>
+                    </div>
+                    <div className="actions_btn">
+                        <button className="btn_job_applay">Applay</button>
+                        <h3><i className="fa-regular fa-clock"></i> 9 days ago</h3>
+                    </div>
+                </div>
+                <div className="jobs_in_job">
+                    <div className="logo_job">
+                        <img src="https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGpvYnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="sawir_shaqo" />
+                    </div>
+                    <div className="info_and_title">
+                        <div className="ciwaan_shaqo">
+                            <h2>Python and django Developer</h2>
+                            <div className="info">
+                            <h3><i className="fa-solid fa-location-dot"></i> Hargeis</h3>
+                            <h3><i className="fa-regular fa-clock"></i> Full-Time</h3>
+                            <h3><i className="fa-solid fa-user-tie"></i> 65</h3>
+                        </div>
+                        </div>
+                    </div>
+                    <div className="actions_btn">
+                        <button className="btn_job_applay">Applay</button>
+                        <h3><i className="fa-regular fa-clock"></i> 9 days ago</h3>
+                    </div>
+                </div>
+                <div className="jobs_in_job">
+                    <div className="logo_job">
+                        <img src="https://images.unsplash.com/file-1636585210491-f28ca34ea8ecimage?dpr=2&auto=format&fit=crop&w=416&q=60" alt="sawir_shaqo" />
+                    </div>
+                    <div className="info_and_title">
+                        <div className="ciwaan_shaqo">
+                            <h2>Python and django Developer</h2>
+                            <div className="info">
+                            <h3><i className="fa-solid fa-location-dot"></i> Hargeis</h3>
+                            <h3><i className="fa-regular fa-clock"></i> Full-Time</h3>
+                            <h3><i className="fa-solid fa-user-tie"></i> 65</h3>
+                        </div>
+                        </div>
+                    </div>
+                    <div className="actions_btn">
+                        <button className="btn_job_applay">Applay</button>
+                        <h3><i className="fa-regular fa-clock"></i> 9 days ago</h3>
+                    </div>
+                </div>
+                <div className="jobs_in_job">
+                    <div className="logo_job">
+                        <img src="/Images/Web.png" alt="sawir_shaqo" />
+                    </div>
+                    <div className="info_and_title">
+                        <div className="ciwaan_shaqo">
+                            <h2>Python and django Developer</h2>
+                            <div className="info">
+                            <h3><i className="fa-solid fa-location-dot"></i> Hargeis</h3>
+                            <h3><i className="fa-regular fa-clock"></i> Full-Time</h3>
+                            <h3><i className="fa-solid fa-user-tie"></i> 65</h3>
+                        </div>
+                        </div>
+                    </div>
+                    <div className="actions_btn">
+                        <button className="btn_job_applay">Applay</button>
+                        <h3><i className="fa-regular fa-clock"></i> 9 days ago</h3>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+        </>
+    )
+}
+
+
+export default JobsDesign

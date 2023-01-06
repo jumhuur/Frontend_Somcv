@@ -11,13 +11,14 @@ import "./Home.css"
 import { Usecvcontext } from "../Context/Cv";
 import { useProtectedPage } from "../Context/Auth";
 import HelpVideo from "../Video/video";
+import JobsDesign from "../Jobs/JobsDesign/JobsDesign";
 function Home () {
     const language = localStorage.getItem('lan');
     const [active,setactive] = useState(false)
     const [active_vide,setactive_video] = useState(false)
     const Qiimaha = "4"
     const {cv,Allusers,download} = Usecvcontext()
-    const {CrentUser} =useProtectedPage()
+    const {CrentUser} = useProtectedPage()
 
     // popup activate
     const popup_active = (e) => {
@@ -120,6 +121,7 @@ function Home () {
         </div>
     </section>
     <PopupInfo active={active} onclickpop={popup_active} singalcv={singalcv}  />
+    {/* <JobsDesign /> */}
     <Tips />  
     <Designs click={onclickbnt}/>
     <Footer />

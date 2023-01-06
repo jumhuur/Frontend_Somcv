@@ -1,8 +1,10 @@
 :root {
 --main: #071c4d;
  --main2 : #2466ff;
+ --mainbck: #F6F9FE;
  --qoraalo_ciwaano : #ffffff;
  --qoraalo_content: #616368;
+ --qoraalo_gaara: #98989a;
  --_shafaaf: #cdcdcd;
  --btn_Hover: #0344db;
 }
@@ -2224,6 +2226,325 @@ div.nativ div.massage{
   flex: 5;
   font-size: 17px;
 }
+
+
+
+/*----------------------------JOBS ALL -------------*/
+div.job_haye{
+  background-color: var(--mainbck);
+  padding: 80px 0px;
+}
+div.jobs_Design{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-flow: wrap row;
+  gap: 3%;
+  padding: 0px 20px;
+}
+
+div.jobs_Design div.filters{
+  flex: 2;
+  height: calc(201px * 8);
+  background-color:var(--qoraalo_ciwaano);
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+
+}
+
+div.jobs_Design div.filters div.filtter_dush{
+  width: 100%;
+  background-color: var(--qoraalo_ciwaano);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: wrap row;
+  padding: 15px 0px;
+  border-radius: 7px;
+}
+
+div.jobs_Design div.filters form.selet_qayb{
+  width: 100%;
+  height: 100%;
+}
+
+div.jobs_Design div.filters form.selet_qayb h2{
+  font-size: 16px;
+  font-family: sans-serif;
+  font-family: "font";
+  text-transform: capitalize;
+  color: var(--qoraalo_content);
+  font-weight: normal;
+  margin: 25px 20px;
+}
+
+div.jobs_Design div.filters form.selet_qayb .qayb{
+  width: 90%;
+  height: 45px;
+  border-radius: 7px;
+  color: var(--qoraalo_content);
+  outline: none;
+  border: none;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-family: "font";
+  text-transform: capitalize;
+  padding: 5px 5px;
+  border: solid 1.50px var(--_shafaaf);
+  margin: 15px 15px;
+  background-color: var(--qoraalo_ciwaano);
+}
+
+div.jobs_Design div.filters form.selet_qayb input.qayb{
+  padding: 15px 15px;
+}
+
+div.jobs_Design div.filters form.selet_qayb div.qayb_filter{
+  width: 100%;
+  height: fit-content;
+  padding: 15px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: wrap column;
+}
+
+div.jobs_Design div.filters form.selet_qayb div.qayb_filter h2{
+  font-size: 20px;
+  font-family: sans-serif;
+  font-family: "font";
+  text-transform: capitalize;
+  color: var(--qoraalo_content);
+  font-weight: normal;
+  margin: 15px 15px;
+}
+
+div.jobs_Design div.filters form.selet_qayb div.qayb_filter h2 i {
+  color: var(--main2);
+}
+
+div.jobs_Design div.filters form.selet_qayb div.qayb_filter div.doorasho{
+  width: 70%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: wrap row;
+  padding: 5px 20px ;
+  gap: 10px;
+}
+
+div.jobs_Design div.filters form.selet_qayb div.qayb_filter div.doorasho input{
+  width: 20px;
+  height: 20px;
+}
+
+div.jobs_Design div.filters form.selet_qayb div.qayb_filter div.doorasho label{
+  font-size: 17px;
+  font-family: sans-serif;
+  font-family: "font";
+  text-transform: capitalize;
+  color: var(--qoraalo_content);
+  font-weight: normal;
+}
+
+div.jobs_Design div.filters form.selet_qayb select.qayb option{
+  font-family: sans-serif;
+  font-family: "font";
+}
+
+
+div.jobs_Design div.jobs{
+  flex: 5;
+  height: 100%;
+  transition: all 0.4s ease-in-out;
+}
+
+div.jobs_Design div.jobs div.filtter_dush{
+  width: 100%;
+  background-color: var(--qoraalo_ciwaano);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: wrap row;
+  padding: 15px 0px;
+  border-radius: 7px;
+}
+
+div.selector_qaybta form.selet_qayb{
+  width: 100%;
+  height: 100%;
+}
+
+div.selector_qaybta form.selet_qayb select.qayb{
+  width: 300px;
+  height: 45px;
+  border-radius: 7px;
+  color: var(--qoraalo_content);
+  outline: none;
+  border: none;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-family: "font";
+  text-transform: capitalize;
+  padding: 5px 5px;
+  border: solid 1.50px var(--_shafaaf);
+  margin: 5px 15px;
+  background-color: var(--qoraalo_ciwaano);
+}
+
+div.selector_qaybta form.selet_qayb select.qayb option{
+  font-family: sans-serif;
+  font-family: "font";
+}
+
+div.jobs_Design div.jobs div.filtter_dush div.inf_and_title h2.ciwaan_jobs{
+  font-size: 16px;
+  font-family: sans-serif;
+  font-family: "font";
+  text-transform: capitalize;
+  color: var(--qoraalo_content);
+  font-weight: normal;
+  margin: 0px 25px;
+}
+
+
+div.jobs_Design div.jobs div.jobs_in_job{
+  width: 100%;
+  height: 100%;
+  background-color: var(--qoraalo_ciwaano);
+  margin: 20px 0px;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap row;
+  transition: all 0.4s ease-in-out;
+  border: solid 0.50px var(--qoraalo_ciwaano);
+}
+
+div.jobs_Design div.jobs div.jobs_in_job:hover{
+  border: solid 0.50px var(--main2);
+}
+
+div.jobs_Design div.jobs div.jobs_in_job div.logo_job{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border-radius: 20px;
+  border: solid 1.50px var(--_shafaaf);
+  overflow: hidden;
+}
+
+div.jobs_Design div.jobs div.jobs_in_job div.logo_job > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+div.jobs_Design div.jobs div.jobs_in_job div.info_and_title{
+  width: 60%;
+  height: 170px;
+  padding: 10px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  cursor: pointer;
+}
+
+div.jobs_Design div.jobs div.jobs_in_job div.info_and_title div.ciwaan_shaqo{
+  width: 100%;
+  height: 65%;
+  padding: 0px 55px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: wrap column;
+}
+
+div.jobs_Design div.jobs div.jobs_in_job div.info_and_title div.info {
+  width: 100%;
+  height: 35%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: wrap row;
+  color: var(--qoraalo_content);
+  gap: 25px;
+  padding: 0px 0px;
+}
+
+div.jobs_Design div.jobs div.jobs_in_job div.info_and_title div.info  h3 {
+  color: var(--qoraalo_gaara);
+  font-size: 15px;
+  font-weight: normal;
+}
+
+div.jobs_Design div.jobs div.jobs_in_job div.info_and_title div.info  h3 i {
+  color: var(--qoraalo_gaara);
+}
+div.jobs_Design div.jobs div.jobs_in_job div.info_and_title div.ciwaan_shaqo > h2 {
+  font-size: 22px;
+  font-family: sans-serif;
+  font-family: "font";
+  text-transform: capitalize;
+  color: var(--main2);
+  font-weight: normal;
+}
+
+div.jobs_Design div.jobs div.jobs_in_job div.actions_btn{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+}
+
+
+
+div.jobs_Design div.jobs div.jobs_in_job div.actions_btn button.btn_job_applay{
+  width: 155px;
+  background-color: var(--main2);
+  color: var(--qoraalo_ciwaano);
+  font-size: 16px;
+  font-family: sans-serif;
+  font-family: "font";
+  transition: all 0.4s;
+  border-radius: 7px;
+  height: 50px;
+  outline: none;
+  border: none;
+  transition: all 0.4 ease-in-out;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+div.jobs_Design div.jobs div.jobs_in_job div.actions_btn button.btn_job_applay:hover{
+  background-color: var(--qoraalo_ciwaano);
+  border: solid 1px var(--main2);
+  color: var(--main2);
+}
+
+div.jobs_Design div.jobs div.jobs_in_job div.actions_btn h3 {
+  color: var(--qoraalo_gaara);
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
+}
+
+
+
+
+
+
 
 /* loading ----*/
 .sk-fading-circle {

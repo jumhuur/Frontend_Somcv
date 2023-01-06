@@ -42,7 +42,7 @@ function UpdateCv(){
     }
 
     const GetInfoCv = async() => {
-        const date  = await fetch(`http://localhost:8080/Api/Cv/${Id}`)
+        const date  = await fetch(`http://localhost:8800/Api/Cv/${Id}`)
         const json = date.json()
         .then((data) => {
             setcvinfo(data)
@@ -50,7 +50,7 @@ function UpdateCv(){
     }
     const addcv = async(e) => {
         e.preventDefault()
-        const data = await fetch(`http://localhost:8080/Api/Updatecv/${Id}` , {
+        const data = await fetch(`http://localhost:8800/Api/Updatecv/${Id}` , {
             method: 'PATCH',
             body: JSON.stringify(cvinfo),
             headers: {
