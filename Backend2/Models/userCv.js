@@ -266,6 +266,16 @@ const UserSchema = new schema({
         required: false
     },
 
+    Color1: {
+        type: String,
+        required: false
+    },
+
+    Color2: {
+        type: String,
+        required: false
+    },
+
     User_Id : {
         type: String,
         required: true

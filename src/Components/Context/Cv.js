@@ -80,12 +80,15 @@ export function CvcontextProvaider({children}) {
         Inters2: '',
         Inters3: '',
         Inters4: '',
+        Color1 : "",
+        Color2: ""
     })
 
     
   const Onchange_inputs =(e) => {
       setinfo((prev) => ({...prev, [e.target.name]:e.target.value }))
       setUpdatedone(false)
+      console.log(info)
   }
 
     const storageRef = ref(Storage, `images/${Id}${image.name}`);

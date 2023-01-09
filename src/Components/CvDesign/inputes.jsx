@@ -358,6 +358,8 @@ function Feilds({color1,color2,c1,c2}){
                 <input value={info.Inters3} onChange={Onchange_inputs} autoComplete="off" name="Inters3" className="feilds_inputs" id="name" type="text" required placeholder="Interst Name" />
                 <label className="label_feilds" htmlFor="Name">Interst Name</label>
                 <input value={info.Inters4} onChange={Onchange_inputs} autoComplete="off" name="Inters4" className="feilds_inputs" id="name" type="text" required placeholder="Interst Name" />
+                <input value={info.Color1} onChange={Onchange_inputs} autoComplete="off" name="Color1" className="feilds_inputs" id="name" type="text" required placeholder="Interst Name" hidden />
+                <input value={info.Color2} onChange={Onchange_inputs} autoComplete="off" name="Color2" className="feilds_inputs" id="name" type="text" required placeholder="Interst Name" hidden/>
                 <input value={cv && cv.Price} onChange={Onchange_inputs_download} autoComplete="off" name="Lacagta" className="feilds_inputs" id="name" type="text" required placeholder="Interst Name"/>
                 </div>
             </form>

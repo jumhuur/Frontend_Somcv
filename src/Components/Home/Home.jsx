@@ -121,7 +121,7 @@ function Home () {
         </div>
     </section>
     <PopupInfo active={active} onclickpop={popup_active} singalcv={singalcv}  />
-    {/* <JobsDesign /> */}
+    <JobsDesign />
     <Tips />  
     <Designs click={onclickbnt}/>
     <Footer />
