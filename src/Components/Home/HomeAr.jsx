@@ -11,6 +11,7 @@ import PopupInfoAr from "../PopupInfo/popupinfoAr";
 import { Usecvcontext } from "../Context/Cv";
 import { useProtectedPage } from "../Context/Auth";
 import HelpVideo from "../Video/video";
+import JobsDesignAr from "../Jobs/JobsDesign/JobsDesignAr";
 function HomeAr () {
     const language = localStorage.getItem('lan')
     const [active,setactive] = useState(false)
@@ -120,8 +121,9 @@ function HomeAr () {
         </div>
     </section>
     <PopupInfoAr active={active} onclickpop={popup_active} singalcv={singalcv}  />
-    <TipsAr />  
+   <JobsDesignAr />
     <DesignsAr click={onclickbnt}/>
+    <TipsAr />  
     <FooterAr />
     </>
     )

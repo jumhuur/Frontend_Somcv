@@ -41,7 +41,7 @@ function Nav(){
                 <img src={q_scroll > 20 ? "/Images/logo-color.png": "/Images/logo-color.png"} alt="Logo" />
                 </Link>
                 <Link to={'/'}>
-                <h2 className="logo_desc cadaan_logo">soomali cv</h2>
+                {/* <h2 className="logo_desc cadaan_logo">soomali cv</h2> */}
                 </Link>
             </div>
             <div onClick={activenav_mobile} className="nav_icon_mobile cadaan_mbl">
@@ -175,7 +175,7 @@ function Nav(){
                 <img src={q_scroll > 20 ? "/Images/logo-white.png": "/Images/logo-white.png"} alt="Logo" />
                 </Link>
                 <Link to={'/'}>
-                <h2 className="logo_desc">soomali cv</h2>
+                {/* <h2 className="logo_desc">soomali cv</h2> */}
                 </Link>
             </div>
             <div onClick={activenav_mobile} className="nav_icon_mobile">

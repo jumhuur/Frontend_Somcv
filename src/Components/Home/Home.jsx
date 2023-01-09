@@ -122,8 +122,8 @@ function Home () {
     </section>
     <PopupInfo active={active} onclickpop={popup_active} singalcv={singalcv}  />
     <JobsDesign />
-    <Tips />  
     <Designs click={onclickbnt}/>
+    <Tips />  
     <Footer />
     </>
     )

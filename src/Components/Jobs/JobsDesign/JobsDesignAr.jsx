@@ -1,22 +1,22 @@
 import { Link } from "react-router-dom"
-import Fillters from "./fillters"
+import FilltersAr from "./filltersAr"
 
-function JobsDesign() {
+function JobsDesignAr() {
     return (
         <>
-        <div className="job_haye">
+        <div className="job_haye" dir="rtl">
         <div className="">
             <div className="jobs_Design">
-                <Fillters />
+                <FilltersAr />
                 <div className="jobs">
                 <div className="filtter_dush">
                     <div className="inf_and_title">
-                    <h2 className="ciwaan_jobs">Job list (235) jobs</h2>
+                    <h2 className="ciwaan_jobs">يوجد (235) وظيفة</h2>
                     </div>
                     <div className="selector_qaybta">
                         <form action="" className="selet_qayb">
                             <select className="qayb">
-                                <option>Dooro Qaybta</option>
+                                <option>إجتر قسم وظيفة</option>
                                 <option>Qaybta 2aad</option>
                                 <option>Qaybta 3aad</option>
                                 <option>Qaybta 4aad</option>
@@ -41,160 +41,160 @@ function JobsDesign() {
                         </form>
                     </div>
                 </div>
-                <div className="jobs_in_job n_ar">
+                <div className="jobs_in_job ar">
                     <div className="logo_job">
                         <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="sawir_shaqo" />
                     </div>
                     <div className="info_and_title">
                         <div className="ciwaan_shaqo">
-                            <h2>React js Developer</h2>
+                            <h2>مظور مواقع بالغة جافا سكريبت </h2>
                             <div className="info">
-                            <h3><i className="fa-solid fa-location-dot"></i> Hargeis</h3>
-                            <h3><i className="fa-regular fa-clock"></i> Full-Time</h3>
+                            <h3><i className="fa-solid fa-location-dot"></i> هرجيسا </h3>
+                            <h3><i className="fa-regular fa-clock"></i> دوام كامل</h3>
                             <h3><i className="fa-solid fa-user-tie"></i> 265</h3>
                         </div>
                         </div>
                     </div>
-                    <div className="actions_btn">
-                        <button className="btn_job_applay">Applay</button>
+                    <div className="actions_btn" dir="ltr">
+                        <button className="btn_job_applay">قدم طالبك</button>
                         <h3><i className="fa-regular fa-clock"></i> 3 days ago</h3>
                     </div>
                 </div>
-                <div className="jobs_in_job n_ar">
+                <div className="jobs_in_job ar">
                     <div className="logo_job">
                         <img src="/Images/Web.png" alt="sawir_shaqo" />
                     </div>
                     <div className="info_and_title">
                         <div className="ciwaan_shaqo">
-                            <h2>Python and django Developer</h2>
+                            <h2>طبيب الأسنان محترف </h2>
                             <div className="info">
-                            <h3><i className="fa-solid fa-location-dot"></i> Hargeis</h3>
-                            <h3><i className="fa-regular fa-clock"></i> Full-Time</h3>
+                            <h3><i className="fa-solid fa-location-dot"></i> بورما </h3>
+                            <h3><i className="fa-regular fa-clock"></i> دوام جزئي</h3>
                             <h3><i className="fa-solid fa-user-tie"></i> 65</h3>
                         </div>
                         </div>
                     </div>
-                    <div className="actions_btn">
-                        <button className="btn_job_applay">Applay</button>
+                    <div className="actions_btn" dir="ltr">
+                        <button className="btn_job_applay">قدم طالبك</button>
                         <h3><i className="fa-regular fa-clock"></i> 9 days ago</h3>
                     </div>
                 </div>
-                <div className="jobs_in_job n_ar">
+                <div className="jobs_in_job ar">
                     <div className="logo_job">
                         <img src="https://preview.colorlib.com/theme/jobsco/assets/img/icon/1.svg" alt="sawir_shaqo" />
                     </div>
                     <div className="info_and_title">
                         <div className="ciwaan_shaqo">
-                            <h2>Python and react js Developer</h2>
+                            <h2>مدرسة اللغة العربية </h2>
                             <div className="info">
-                            <h3><i className="fa-solid fa-location-dot"></i> Hargeis</h3>
-                            <h3><i className="fa-regular fa-clock"></i> Full-Time</h3>
+                            <h3><i className="fa-solid fa-location-dot"></i> برعو </h3>
+                            <h3><i className="fa-regular fa-clock"></i> دوام كامل </h3>
                             <h3><i className="fa-solid fa-user-tie"></i> 65</h3>
                         </div>
                         </div>
                     </div>
-                    <div className="actions_btn">
-                        <button className="btn_job_applay">Applay</button>
+                    <div className="actions_btn" dir="ltr">
+                        <button className="btn_job_applay">قدم طالبك</button>
                         <h3><i className="fa-regular fa-clock"></i> 9 days ago</h3>
                     </div>
                 </div>
-                <div className="jobs_in_job n_ar">
+                <div className="jobs_in_job ar">
                     <div className="logo_job">
                         <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80" alt="sawir_shaqo" />
                     </div>
                     <div className="info_and_title">
                         <div className="ciwaan_shaqo">
-                            <h2>Mern stack Developer</h2>
+                            <h2>مدير معهد </h2>
                             <div className="info">
-                            <h3><i className="fa-solid fa-location-dot"></i> Hargeis</h3>
-                            <h3><i className="fa-regular fa-clock"></i> Full-Time</h3>
-                            <h3><i className="fa-solid fa-user-tie"></i> 65</h3>
+                            <h3><i className="fa-solid fa-location-dot"></i> جبلي </h3>
+                            <h3><i className="fa-regular fa-clock"></i> دام جزئي</h3>
+                            <h3><i className="fa-solid fa-user-tie"></i> 105</h3>
                         </div>
                         </div>
                     </div>
-                    <div className="actions_btn">
-                        <button className="btn_job_applay">Applay</button>
-                        <h3><i className="fa-regular fa-clock"></i> 9 days ago</h3>
+                    <div className="actions_btn" dir="ltr">
+                        <button className="btn_job_applay">قدم طالبك</button>
+                        <h3><i className="fa-regular fa-clock"></i> 16 days ago</h3>
                     </div>
                 </div>
-                <div className="jobs_in_job n_ar">
+                <div className="jobs_in_job ar">
                     <div className="logo_job">
                         <img src="https://preview.colorlib.com/theme/jobsco/assets/img/icon/4.svg" alt="sawir_shaqo" />
                     </div>
                     <div className="info_and_title">
                         <div className="ciwaan_shaqo">
-                            <h2>Rubby and reails Developer</h2>
+                            <h2>محاسب بنكي </h2>
                             <div className="info">
-                            <h3><i className="fa-solid fa-location-dot"></i> Hargeis</h3>
-                            <h3><i className="fa-regular fa-clock"></i> Full-Time</h3>
-                            <h3><i className="fa-solid fa-user-tie"></i> 65</h3>
+                            <h3><i className="fa-solid fa-location-dot"></i> هرجيسا</h3>
+                            <h3><i className="fa-regular fa-clock"></i> دوام جزئي</h3>
+                            <h3><i className="fa-solid fa-user-tie"></i> 22</h3>
                         </div>
                         </div>
                     </div>
-                    <div className="actions_btn">
-                        <button className="btn_job_applay">Applay</button>
-                        <h3><i className="fa-regular fa-clock"></i> 9 days ago</h3>
+                    <div className="actions_btn" dir="ltr">
+                        <button className="btn_job_applay">قدم طالبك</button>
+                        <h3><i className="fa-regular fa-clock"></i> 11 days ago</h3>
                     </div>
                 </div>
-                <div className="jobs_in_job n_ar">
+                <div className="jobs_in_job ar">
                     <div className="logo_job">
                         <img src="https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGpvYnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="sawir_shaqo" />
                     </div>
                     <div className="info_and_title">
                         <div className="ciwaan_shaqo">
-                            <h2>front end developer neded</h2>
+                            <h2>مشرف أنظمة دولية </h2>
                             <div className="info">
-                            <h3><i className="fa-solid fa-location-dot"></i> Hargeis</h3>
-                            <h3><i className="fa-regular fa-clock"></i> Full-Time</h3>
-                            <h3><i className="fa-solid fa-user-tie"></i> 65</h3>
+                            <h3><i className="fa-solid fa-location-dot"></i> هرجيسا</h3>
+                            <h3><i className="fa-regular fa-clock"></i> دوام كامل</h3>
+                            <h3><i className="fa-solid fa-user-tie"></i> 1652</h3>
                         </div>
                         </div>
                     </div>
-                    <div className="actions_btn">
-                        <button className="btn_job_applay">Applay</button>
-                        <h3><i className="fa-regular fa-clock"></i> 9 days ago</h3>
+                    <div className="actions_btn" dir="ltr">
+                        <button className="btn_job_applay">قدم طالبك</button>
+                        <h3><i className="fa-regular fa-clock"></i> 17 days ago</h3>
                     </div>
                 </div>
-                <div className="jobs_in_job n_ar">
+                <div className="jobs_in_job ar">
                     <div className="logo_job">
                         <img src="https://images.unsplash.com/file-1636585210491-f28ca34ea8ecimage?dpr=2&auto=format&fit=crop&w=416&q=60" alt="sawir_shaqo" />
                     </div>
                     <div className="info_and_title">
                         <div className="ciwaan_shaqo">
-                            <h2>express and node js developer</h2>
+                            <h2>مطور تطبيقات الهوتف - الأندرويد </h2>
                             <div className="info">
-                            <h3><i className="fa-solid fa-location-dot"></i> Hargeis</h3>
-                            <h3><i className="fa-regular fa-clock"></i> Full-Time</h3>
-                            <h3><i className="fa-solid fa-user-tie"></i> 65</h3>
+                            <h3><i className="fa-solid fa-location-dot"></i> بربرى </h3>
+                            <h3><i className="fa-regular fa-clock"></i> دوام كامل</h3>
+                            <h3><i className="fa-solid fa-user-tie"></i> 5</h3>
                         </div>
                         </div>
                     </div>
-                    <div className="actions_btn">
+                    <div className="actions_btn" dir="ltr">
                         <button className="btn_job_applay">Applay</button>
-                        <h3><i className="fa-regular fa-clock"></i> 9 days ago</h3>
+                        <h3><i className="fa-regular fa-clock"></i> 22 days ago</h3>
                     </div>
                 </div>
-                <div className="jobs_in_job n_ar">
+                <div className="jobs_in_job ar">
                     <div className="logo_job">
                         <img src="/Images/Web.png" alt="sawir_shaqo" />
                     </div>
                     <div className="info_and_title">
                         <div className="ciwaan_shaqo">
-                            <h2>Driver Texi Neded</h2>
+                            <h2>سائق سيارة التوصيل مع مسؤولية التوصيل</h2>
                             <div className="info">
-                            <h3><i className="fa-solid fa-location-dot"></i> Hargeis</h3>
-                            <h3><i className="fa-regular fa-clock"></i> Full-Time</h3>
-                            <h3><i className="fa-solid fa-user-tie"></i> 65</h3>
+                            <h3><i className="fa-solid fa-location-dot"></i> هرجيسا</h3>
+                            <h3><i className="fa-regular fa-clock"></i> دام كامل</h3>
+                            <h3><i className="fa-solid fa-user-tie"></i> 12</h3>
                         </div>
                         </div>
                     </div>
-                    <div className="actions_btn">
+                    <div className="actions_btn" dir="ltr">
                         <button className="btn_job_applay">Applay</button>
-                        <h3><i className="fa-regular fa-clock"></i> 9 days ago</h3>
+                        <h3><i className="fa-regular fa-clock"></i> 26 days ago</h3>
                     </div>
                 </div>
                 <div className="dhamaad">
-                    <button><i className="fa-solid fa-circle-arrow-right"></i> Borwse All Jobs</button>
+                    <button><i className="fa-solid fa-circle-arrow-left"></i> تصفح جميع الوظائف </button>
                 </div>
                 </div>
             </div>
@@ -206,4 +206,4 @@ function JobsDesign() {
 }
 
 
-export default JobsDesign
+export default JobsDesignAr
