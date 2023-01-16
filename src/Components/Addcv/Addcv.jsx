@@ -36,7 +36,6 @@ function Addcv(){
             setfilename(file_name.substring(0,10))
         }
         setimage(file)
-        console.log(cvinfo)
     }
     const addcv = async(e) => {
         e.preventDefault()

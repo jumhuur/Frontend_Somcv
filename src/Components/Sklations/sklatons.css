@@ -1,0 +1,60 @@
+/* skl basic styl */
+
+.skl_ton.title{
+    width: 50%;
+    height: 20px;
+    background-color: #dee2e6;
+    border-radius: 5px;
+    margin: 25px 0px;
+}
+
+
+.skl_ton.text{
+    width: 100%;
+    height: 15px;
+    background-color: #dee2e6;
+    border-radius: 5px;
+}
+
+
+.skl_ton.image{
+    width: 301px;
+    height: 250px;
+    background-color: #dee2e6;
+    border-radius: 5px;
+}
+
+.skl_ton.price{
+    width: 25%;
+    height: 15px;
+    background-color: #dee2e6;
+    border-radius: 5px;
+}
+
+
+
+
+
+/* dhex mar style --------  */
+div.Haye_dhexmare{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation: Loading 2s infinite;
+}
+
+
+div.Haye_dhexmare div.dhexmare{
+    width: 50%;
+    height: 100%;
+    background: rgb(255, 255, 255, 0.2);
+    transform: skewX(-20deg);
+}
+
+
+
+@keyframes Loading {
+    0% {transform: translateX(-150%);}
+    50% {transform: translateX(-60%);}
+    100% {transform: translateX(150%);}
+}

@@ -1,5 +1,6 @@
 import {Link} from "react-router-dom";
 import {Usecvcontext} from "../Context/Cv";
+import Cvskl from "../Sklations/cvskl";
 function DesignsSo({click}) {
     const {cv} = Usecvcontext()
     return (
@@ -28,6 +29,10 @@ function DesignsSo({click}) {
                        </Link>
                     </div>
                     </div>
+                    ))}
+
+                    {!cv && [0,1,2,3,4,5,6,7,8].map((Num) => (
+                        <Cvskl key={Num} />
                     ))}
                 </div>
             </div>

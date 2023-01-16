@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import {Link} from "react-router-dom";
 import { useProtectedPage } from "../Context/Auth";
 import {Usecvcontext} from "../Context/Cv";
+import Cvskl from "../Sklations/cvskl";
 function Designs({click}) {
     const {cv} = Usecvcontext()
     const {CrentUser} = useProtectedPage()
@@ -39,8 +40,13 @@ function Designs({click}) {
                         <img src={cvdata.Image}  alt="design_temp"/>
                        </Link>
                     </div>
-                    </div>
+                    </div>  
                     ))}
+
+                    {!cv && [0,1,2,3,4,5,6,7,8].map((Num) => (
+                        <Cvskl key={Num} />
+                    ))}
+
                 </div>
             </div>
         </div>
