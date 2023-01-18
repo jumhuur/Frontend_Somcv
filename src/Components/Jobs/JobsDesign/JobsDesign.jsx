@@ -1,7 +1,10 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
+import Jobskalaton from "../../Sklations/jobsskl"
 import Fillters from "./fillters"
 
 function JobsDesign() {
+    const [jobs,setjobs] = useState(null)
     return (
         <>
         <div className="job_haye">
@@ -23,25 +26,10 @@ function JobsDesign() {
                                 <option>Qaybta 5aad</option>
                                 <option>Qaybta 6aad</option>
                             </select>
-                            {/* <select className="qayb">
-                                <option>Dooro Wakhtiga</option>
-                                <option>full-time</option>
-                                <option>Part-time</option>
-                            </select>
-                            <select className="qayb">
-                                <option>Dooro Magaalada</option>
-                                <option>Hargeisa</option>
-                                <option>Muqdiso</option>
-                                <option>Boorama</option>
-                                <option>Burco </option>
-                                <option>Berbera</option>
-                                <option>Gabilay</option>
-                                <option>Boosaaso</option>
-                            </select> */}
                         </form>
                     </div>
                 </div>
-                <div className="jobs_in_job n_ar">
+                {/* <div className="jobs_in_job n_ar">
                     <div className="logo_job">
                         <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="sawir_shaqo" />
                     </div>
@@ -49,10 +37,10 @@ function JobsDesign() {
                         <div className="ciwaan_shaqo">
                             <h2>React js Developer</h2>
                             <div className="info">
-                            <h3><i className="fa-solid fa-location-dot"></i> Hargeis</h3>
-                            <h3><i className="fa-regular fa-clock"></i> Full-Time</h3>
-                            <h3><i className="fa-solid fa-user-tie"></i> 265</h3>
-                        </div>
+                                <h3><i className="fa-solid fa-location-dot"></i> Hargeis</h3>
+                                <h3><i className="fa-regular fa-clock"></i> Full-Time</h3>
+                                <h3><i className="fa-solid fa-user-tie"></i> 265</h3>
+                            </div>
                         </div>
                     </div>
                     <div className="actions_btn">
@@ -192,7 +180,33 @@ function JobsDesign() {
                         <button className="btn_job_applay">Applay</button>
                         <h3><i className="fa-regular fa-clock"></i> 9 days ago</h3>
                     </div>
-                </div>
+                </div> */}
+                {jobs && [0,1,2,3,4,5,6,7].map((key) => (
+                 <div className="jobs_in_job n_ar" key={key}>
+                 <div className="logo_job">
+                     <img src="/Images/Web.png" alt="sawir_shaqo" />
+                 </div>
+                 <div className="info_and_title">
+                     <div className="ciwaan_shaqo">
+                         <h2>Driver Texi Neded</h2>
+                         <div className="info">
+                         <h3><i className="fa-solid fa-location-dot"></i> Hargeis</h3>
+                         <h3><i className="fa-regular fa-clock"></i> Full-Time</h3>
+                         <h3><i className="fa-solid fa-user-tie"></i> 65</h3>
+                     </div>
+                     </div>
+                 </div>
+                 <div className="actions_btn">
+                     <button className="btn_job_applay">Applay</button>
+                     <h3><i className="fa-regular fa-clock"></i> 9 days ago</h3>
+                 </div>
+                </div> 
+                ))}
+
+                {!jobs && [0,1,2,3,4,5,6,7].map((n) => (
+                    <Jobskalaton key={n} />
+                ))}
+                
                 <div className="dhamaad">
                     <button><i className="fa-solid fa-circle-arrow-right"></i> Borwse All Jobs</button>
                 </div>

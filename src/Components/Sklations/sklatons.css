@@ -24,12 +24,38 @@
     border-radius: 5px;
 }
 
+
+.skl_ton.image_job{
+    width: 100%;
+    height: 100%;
+    background-color: #dee2e6;
+    border-radius: 5px;
+}
+
 .skl_ton.price{
     width: 25%;
     height: 15px;
     background-color: #dee2e6;
     border-radius: 5px;
 }
+
+/* .skl_ton.price_job{
+    width: 25%;
+    height: 15px;
+    background-color: #dee2e6;
+    border-radius: 5px;
+    margin-left: 35px;
+} */
+
+.skl_ton.btn{
+    width: 135px;
+    height: 45px;
+    background-color: #dee2e6;
+    border-radius: 5px;
+    margin: 5px 0px;
+}
+
+
 
 
 
@@ -40,14 +66,14 @@ div.Haye_dhexmare{
     width: 100%;
     height: 100%;
     position: absolute;
-    animation: Loading 2s infinite;
+    animation: Loading 2.50s infinite;
 }
 
 
 div.Haye_dhexmare div.dhexmare{
     width: 50%;
     height: 100%;
-    background: rgb(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.274);
     transform: skewX(-20deg);
 }
 

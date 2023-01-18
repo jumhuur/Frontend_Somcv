@@ -2429,7 +2429,10 @@ div.jobs_Design div.jobs div.jobs_in_job{
   border: solid 0.50px var(--qoraalo_ciwaano);
   border-left: solid 2px var(--qoraalo_ciwaano);
   border-right: solid 2px var(--qoraalo_ciwaano);
+  overflow: hidden;
+  position: relative;
 }
+
 
 div.jobs_Design div.jobs div.jobs_in_job.n_ar:hover{
   border-left: solid 2px var(--main2);
@@ -2492,6 +2495,11 @@ div.jobs_Design div.jobs div.jobs_in_job div.info_and_title div.info {
   color: var(--qoraalo_content);
   gap: 25px;
   padding: 0px 0px;
+}
+
+div.jobs_Design div.jobs div.jobs_in_job div.info_and_title div.info.sk{
+  justify-content: center;
+  align-items: flex-start;
 }
 
 div.jobs_Design div.jobs div.jobs_in_job div.info_and_title div.info  h3 {

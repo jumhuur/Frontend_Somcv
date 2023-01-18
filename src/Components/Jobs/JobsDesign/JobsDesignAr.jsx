@@ -1,7 +1,10 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
+import Jobskalaton from "../../Sklations/jobsskl"
 import FilltersAr from "./filltersAr"
 
 function JobsDesignAr() {
+    const [jobs, setjobs] = useState(null)
     return (
         <>
         <div className="job_haye" dir="rtl">
@@ -11,7 +14,14 @@ function JobsDesignAr() {
                 <div className="jobs">
                 <div className="filtter_dush">
                     <div className="inf_and_title">
+                    {jobs  && 
                     <h2 className="ciwaan_jobs">يوجد (235) وظيفة</h2>
+                    }
+
+                    {!jobs &&
+                    <h2 className="ciwaan_jobs">إنتظر قليلا من فضلك !</h2>
+                    }
+                    
                     </div>
                     <div className="selector_qaybta">
                         <form action="" className="selet_qayb">
@@ -41,7 +51,7 @@ function JobsDesignAr() {
                         </form>
                     </div>
                 </div>
-                <div className="jobs_in_job ar">
+                {/* <div className="jobs_in_job ar">
                     <div className="logo_job">
                         <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="sawir_shaqo" />
                     </div>
@@ -192,7 +202,32 @@ function JobsDesignAr() {
                         <button className="btn_job_applay">Applay</button>
                         <h3><i className="fa-regular fa-clock"></i> 26 days ago</h3>
                     </div>
+                </div> */}
+                {jobs && [0,1,2,3,4,5,6,7].map((key) => (
+                <div className="jobs_in_job ar">
+                <div className="logo_job">
+                    <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="sawir_shaqo" />
                 </div>
+                <div className="info_and_title">
+                    <div className="ciwaan_shaqo">
+                        <h2>مظور مواقع بالغة جافا سكريبت </h2>
+                        <div className="info">
+                        <h3><i className="fa-solid fa-location-dot"></i> هرجيسا </h3>
+                        <h3><i className="fa-regular fa-clock"></i> دوام كامل</h3>
+                        <h3><i className="fa-solid fa-user-tie"></i> 265</h3>
+                    </div>
+                    </div>
+                </div>
+                <div className="actions_btn" dir="ltr">
+                    <button className="btn_job_applay">قدم طالبك</button>
+                    <h3><i className="fa-regular fa-clock"></i> 3 days ago</h3>
+                </div>
+                </div>
+                ))}
+
+                {!jobs && [0,1,2,3,4,5,6,7].map((n) => (
+                    <Jobskalaton key={n} />
+                ))}
                 <div className="dhamaad">
                     <button><i className="fa-solid fa-circle-arrow-left"></i> تصفح جميع الوظائف </button>
                 </div>
