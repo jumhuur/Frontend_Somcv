@@ -2938,6 +2938,29 @@ div.jobs_Design div.jobs div.dhamaad > button:hover{
       right: 147px;
       bottom: 101px;
     }
+
+
+    /*----------------------job responsive -----------------*/
+    div.jobs_Design div.jobs div.jobs_in_job {
+      flex-flow: wrap column;
+    }
+
+    div.jobs_Design div.jobs div.jobs_in_job div.logo_job{
+      width: 300px;
+      height: 200px;
+      border-radius: 10px;
+      margin: 25px 0px;
+    }
+
+
+    div.jobs_Design div.jobs div.jobs_in_job div.info_and_title{
+      width: 100%;
+    }
+
+    div.jobs_Design div.jobs div.jobs_in_job div.actions_btn {
+      width: 95%;
+      margin: 21px 0px;
+    }
   }
   
   @media (min-width: 576px) and (max-width: 768px) {
@@ -3033,6 +3056,29 @@ div.jobs_Design div.jobs div.dhamaad > button:hover{
     div.body_guud div.Midig_design div.geed_cusub{
       display: none;
     }
+
+
+        /*----------------------job responsive -----------------*/
+        div.jobs_Design div.jobs div.jobs_in_job {
+          flex-flow: wrap column;
+        }
+    
+        div.jobs_Design div.jobs div.jobs_in_job div.logo_job{
+          width: 300px;
+          height: 200px;
+          border-radius: 10px;
+          margin: 25px 0px;
+        }
+    
+    
+        div.jobs_Design div.jobs div.jobs_in_job div.info_and_title{
+          width: 100%;
+        }
+    
+        div.jobs_Design div.jobs div.jobs_in_job div.actions_btn {
+          width: 95%;
+          margin: 21px 0px;
+        }
 
 
   }

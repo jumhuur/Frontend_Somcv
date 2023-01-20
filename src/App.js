@@ -23,6 +23,7 @@ import LoginModrAr from "./Components/login/login_mAr";
 import Unuvalibe from "./Components/Notfound/404";
 import UpdateCv from "./Components/Updatecv/Updatecv";
 import { useProtectedPage } from "./Components/Context/Auth";
+import OneJob from "./Components/Jobs/OneJob/OneJob";
 function App() {
   const {CrentUser} = useProtectedPage()
   return (
@@ -45,6 +46,7 @@ function App() {
         <Route path="/updateCv/:Id" element={<UpdateCv />} />
         <Route path="/ar/Addcv" element={CrentUser ?  <AddcvAr />: <Navigate to={"/ar"} />} />
         <Route path="/so/Addcv" element={CrentUser ?  <AddcvSo /> : <Navigate to={'/so'}/>} />
+        <Route path="/job/:Id" element ={<OneJob />} />
         <Route path="*" element ={<Unuvalibe /> } />
       </Routes>
     </div>

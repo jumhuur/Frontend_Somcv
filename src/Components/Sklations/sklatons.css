@@ -6,6 +6,7 @@
     background-color: #dee2e6;
     border-radius: 5px;
     margin: 25px 0px;
+    animation: Animate_el ease-in-out 2.5s infinite;
 }
 
 
@@ -14,6 +15,7 @@
     height: 15px;
     background-color: #dee2e6;
     border-radius: 5px;
+    animation: Animate_el ease-in-out 2.5s infinite;
 }
 
 
@@ -22,6 +24,7 @@
     height: 250px;
     background-color: #dee2e6;
     border-radius: 5px;
+    animation: Animate_el ease-in-out 2.5s infinite;
 }
 
 
@@ -30,6 +33,7 @@
     height: 100%;
     background-color: #dee2e6;
     border-radius: 5px;
+    animation: Animate_el ease-in-out 2.5s infinite;
 }
 
 .skl_ton.price{
@@ -37,6 +41,7 @@
     height: 15px;
     background-color: #dee2e6;
     border-radius: 5px;
+    animation: Animate_el ease-in-out 2.5s infinite;
 }
 
 /* .skl_ton.price_job{
@@ -53,6 +58,7 @@
     background-color: #dee2e6;
     border-radius: 5px;
     margin: 5px 0px;
+    animation: Animate_el ease-in-out 2.5s infinite alternate;
 }
 
 
@@ -66,7 +72,7 @@ div.Haye_dhexmare{
     width: 100%;
     height: 100%;
     position: absolute;
-    animation: Loading 2.50s infinite;
+    animation: Loading 2s infinite;
 }
 
 
@@ -79,6 +85,18 @@ div.Haye_dhexmare div.dhexmare{
 
 
 
+
+@keyframes Animate_el {
+    50% {
+        background-color: #fdfdfd;
+    }
+
+    100% {
+        
+        background-color: #dee2e6;
+    }
+    
+}
 @keyframes Loading {
     0% {transform: translateX(-150%);}
     50% {transform: translateX(-60%);}

@@ -181,13 +181,14 @@ function JobsDesign() {
                         <h3><i className="fa-regular fa-clock"></i> 9 days ago</h3>
                     </div>
                 </div> */}
-                {jobs && [0,1,2,3,4,5,6,7].map((key) => (
+                {!jobs && [689870,689871,689872,689873,689874,689875,689876,689877].map((key) => (
                  <div className="jobs_in_job n_ar" key={key}>
                  <div className="logo_job">
                      <img src="/Images/Web.png" alt="sawir_shaqo" />
                  </div>
                  <div className="info_and_title">
-                     <div className="ciwaan_shaqo">
+                    <Link to={`/job/${key}`}>
+                        <div className="ciwaan_shaqo">
                          <h2>Driver Texi Neded</h2>
                          <div className="info">
                          <h3><i className="fa-solid fa-location-dot"></i> Hargeis</h3>
@@ -195,6 +196,7 @@ function JobsDesign() {
                          <h3><i className="fa-solid fa-user-tie"></i> 65</h3>
                      </div>
                      </div>
+                     </Link>  
                  </div>
                  <div className="actions_btn">
                      <button className="btn_job_applay">Applay</button>
@@ -203,7 +205,7 @@ function JobsDesign() {
                 </div> 
                 ))}
 
-                {!jobs && [0,1,2,3,4,5,6,7].map((n) => (
+                {jobs && [0,1,2,3,4,5,6,7].map((n) => (
                     <Jobskalaton key={n} />
                 ))}
                 
