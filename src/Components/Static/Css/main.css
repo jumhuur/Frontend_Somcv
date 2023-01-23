@@ -1,7 +1,7 @@
 :root {
 --main: #071c4d;
  --main2 : #2466ff;
- --mainbck: #F6F9FE;
+ --mainbck: #f8f8f8;
  --qoraalo_ciwaano : #ffffff;
  --qoraalo_content: #616368;
  --qoraalo_gaara: #98989a;
@@ -65,7 +65,15 @@ p {
   background: #555;
 }
   
-.haye,
+.haye{
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
 .xajiye{
     width: 100%;
     padding-left: 15px;
@@ -1410,8 +1418,7 @@ div.head_edit .qoraal_edit{
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  /* flex-flow: wrap column; */
-  padding: 0px 15px;
+  padding: 0px 110px;
 }
 
 div.head_edit .qoraal_edit p {
@@ -2595,6 +2602,211 @@ div.jobs_Design div.jobs div.dhamaad > button:hover{
 
 
 
+/*----------------- one job page -------------------------*/
+div.Xajiye_guud.onejob{
+  background-color: var(--mainbck);
+  height: 100%;
+}
+div.job_one_container{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 10px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap row;
+  gap: 40px;
+}
+
+
+div.job_one_container div {
+  margin: 3% 0px;
+  border-radius: 3px;
+}
+
+
+div.job_one_container div.qayb_midi{
+  flex: 3.50;
+  padding: 10px 7px;
+  height: 100%;
+  background-color: var(--qoraalo_ciwaano);
+}
+
+
+div.job_one_container div.qayb_midi div.jobs_in_job{
+  width: 100%;
+  height: 100%;
+  background-color: var(--qoraalo_ciwaano);
+  margin: 20px 0px;
+  border-radius: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap row;
+  transition: all 0.4s ease-in-out;
+  border: solid 0.50px var(--qoraalo_ciwaano);
+  border-bottom: solid 1px var(--_shafaaf);
+  overflow: hidden;
+  position: relative;
+}
+
+
+div.job_one_container div.qayb_midi div.jobs_in_job div.logo_job{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border-radius: 20px;
+  border: solid 1.50px var(--_shafaaf);
+  overflow: hidden;
+}
+
+div.job_one_container div.qayb_midi div.jobs_in_job div.logo_job > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+div.job_one_container div.qayb_midi div.jobs_in_job div.info_and_title{
+  width: 60%;
+  height: 90px;
+  padding: 10px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  cursor: pointer;
+}
+
+div.job_one_container div.qayb_midi div.jobs_in_job div.info_and_title div.ciwaan_shaqo{
+  width: 100%;
+  height: 65%;
+  padding: 0px 55px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: wrap column;
+}
+
+div.job_one_container div.qayb_midi div.jobs_in_job div.info_and_title div.info {
+  width: 100%;
+  height: 35%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: wrap row;
+  color: var(--qoraalo_content);
+  gap: 25px;
+  padding: 0px 0px;
+}
+
+div.job_one_container div.qayb_midi div.jobs_in_job div.info_and_title div.info.sk{
+  justify-content: center;
+  align-items: flex-start;
+}
+
+div.job_one_container div.qayb_midi div.jobs_in_job div.info_and_title div.info  h3 {
+  color: var(--qoraalo_gaara);
+  font-size: 15px;
+  font-weight: normal;
+}
+
+div.job_one_container div.qayb_midi div.jobs_in_job div.info_and_title div.info  h3 i {
+  color: var(--qoraalo_gaara);
+}
+div.job_one_container div.qayb_midi div.jobs_in_job div.info_and_title div.ciwaan_shaqo > h2 {
+  font-size: 22px;
+  font-family: sans-serif;
+  font-family: "font";
+  text-transform: capitalize;
+  color: var(--main2);
+  font-weight: normal;
+}
+
+div.job_one_container div.qayb_midi div.jobs_in_job div.actions_btn{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+}
+
+
+
+div.job_one_container div.qayb_midi div.jobs_in_job div.actions_btn button.btn_job_applay{
+  width: 155px;
+  background-color: var(--main2);
+  color: var(--qoraalo_ciwaano);
+  font-size: 16px;
+  font-family: sans-serif;
+  font-family: "font";
+  transition: all 0.4s;
+  border-radius: 7px;
+  height: 50px;
+  outline: none;
+  border: none;
+  transition: all 0.4 ease-in-out;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+div.job_one_container div.qayb_midi div.jobs_in_job div.actions_btn button.btn_job_applay:hover{
+  background-color: var(--qoraalo_ciwaano);
+  border: solid 1px var(--main2);
+  color: var(--main2);
+}
+
+div.job_one_container div.qayb_midi div.jobs_in_job div.actions_btn h3 {
+  color: var(--qoraalo_gaara);
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
+}
+
+div.job_one_container div.qayb_midi div.dhamaad {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+}
+
+div.job_one_container div.qayb_midi div.dhamaad > button{
+  width: 45%;
+  background-color: var(--main2);
+  color: var(--qoraalo_ciwaano);
+  font-size: 16px;
+  font-family: sans-serif;
+  font-family: "font";
+  transition: all 0.4s;
+  border-radius: 7px;
+  height: 60px;
+  outline: none;
+  border: none;
+  transition: all 0.4 ease-in-out;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: all 0.4s ease-in-out;
+}
+
+div.job_one_container div.qayb_midi div.dhamaad > button:hover{
+  background-color: var(--btn_Hover);
+}
+
+
+div.job_one_container div.qayb_bidix{
+  flex: 1.50;
+  background-color: var(--qoraalo_ciwaano);
+  height: 800px;
+  position: relative;
+}
+
+
+
+
 
 
 /* loading ----*/
@@ -2961,6 +3173,10 @@ div.jobs_Design div.jobs div.dhamaad > button:hover{
       width: 95%;
       margin: 21px 0px;
     }
+
+    div.jobs_Design div.jobs div.dhamaad > button{
+      width: 90%;
+    }
   }
   
   @media (min-width: 576px) and (max-width: 768px) {
@@ -3058,35 +3274,43 @@ div.jobs_Design div.jobs div.dhamaad > button:hover{
     }
 
 
-        /*----------------------job responsive -----------------*/
-        div.jobs_Design div.jobs div.jobs_in_job {
-          flex-flow: wrap column;
-        }
-    
-        div.jobs_Design div.jobs div.jobs_in_job div.logo_job{
-          width: 300px;
-          height: 200px;
-          border-radius: 10px;
-          margin: 25px 0px;
-        }
-    
-    
-        div.jobs_Design div.jobs div.jobs_in_job div.info_and_title{
-          width: 100%;
-        }
-    
-        div.jobs_Design div.jobs div.jobs_in_job div.actions_btn {
-          width: 95%;
-          margin: 21px 0px;
-        }
+    /*----------------------job responsive -----------------*/
+    div.jobs_Design div.jobs div.jobs_in_job {
+      flex-flow: wrap column;
+    }
+
+    div.jobs_Design div.jobs div.jobs_in_job div.logo_job{
+      width: 300px;
+      height: 200px;
+      border-radius: 10px;
+      margin: 25px 0px;
+    }
+
+
+    div.jobs_Design div.jobs div.jobs_in_job div.info_and_title{
+      width: 100%;
+    }
+
+    div.jobs_Design div.jobs div.jobs_in_job div.actions_btn {
+      width: 95%;
+      margin: 21px 0px;
+    }
+
+
+    div.jobs_Design div.jobs div.dhamaad > button{
+      width: 60%;
+    }
 
 
   }
 
   @media (min-width: 768px) and (max-width: 992px) {
-    .xajiye,
     .haye {
       max-width: 540px;
+    }
+
+    .xajiye {
+      max-width: 700px;
     }
 
     nav.Nav div.actions{
@@ -3173,9 +3397,12 @@ div.jobs_Design div.jobs div.dhamaad > button:hover{
 
 }
   @media (min-width: 992px) and (max-width: 1200px) {
-      .xajiye,
       .haye {
         max-width: 960px;
+      }
+
+      .xajiye {
+        max-width: 1100px;
       }
 
       
@@ -3220,9 +3447,12 @@ div.jobs_Design div.jobs div.dhamaad > button:hover{
       }
   }
   @media (min-width: 1200px) and (max-width:1400px) {
-      .xajiye,
       .haye {
         max-width: 1140px;
+      }
+
+      .xajiye {
+        max-width: 1300px;
       }
 
       div.nav_mobile{
