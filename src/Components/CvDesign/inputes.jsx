@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { useState } from "react";
 import { Usecvcontext } from "../Context/Cv"
 function Feilds({color1,color2,c1,c2}){
     const {
@@ -13,10 +12,12 @@ function Feilds({color1,color2,c1,c2}){
         setdone,
         progimg,
         setimage,
-        GetInfoCv
+        GetInfoCv,
+        filename,
+        setfilename
     } = Usecvcontext()
 
-    const [filename,setfilename] = useState(null)
+    //const [filename,setfilename] = useState(null) waxaan u wareejiyay xaga context-ka
     // const [c01,setc01] = useState("")
     function onchange({target}){
         let file = target.files[0];
@@ -360,7 +361,7 @@ function Feilds({color1,color2,c1,c2}){
                 <input value={info.Inters4} onChange={Onchange_inputs} autoComplete="off" name="Inters4" className="feilds_inputs" id="name" type="text" required placeholder="Interst Name" />
                 <input value={info.Color1} onChange={Onchange_inputs} autoComplete="off" name="Color1" className="feilds_inputs" id="name" type="text" required placeholder="Interst Name" hidden />
                 <input value={info.Color2} onChange={Onchange_inputs} autoComplete="off" name="Color2" className="feilds_inputs" id="name" type="text" required placeholder="Interst Name" hidden/>
-                <input value={cv && cv.Price} onChange={Onchange_inputs_download} autoComplete="off" name="Lacagta" className="feilds_inputs" id="name" type="text" required placeholder="Interst Name"/>
+                <input value={cv && cv.Price} onChange={Onchange_inputs_download} autoComplete="off" name="Lacagta" className="feilds_inputs" id="name" type="text" required placeholder="Interst Name" hidden/>
                 </div>
             </form>
             </div>

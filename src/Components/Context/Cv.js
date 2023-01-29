@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useContext, useEffect, useReducer, useState } from "react";
 import { useProtectedPage } from "./Auth";
 import {ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
@@ -25,6 +24,7 @@ export function CvcontextProvaider({children}) {
     const [done,setdone] = useState(false)
     const [updateDone, setUpdatedone] = useState(false)
     const Id = CrentUser && CrentUser.Email
+    const [filename,setfilename] = useState(null)
         const [info,setinfo] = useState({
         Name: '',
         Jobtitle:'',
@@ -149,6 +149,8 @@ const HangdaleUpdate =  async(e) => {
     if(data.ok){
       setUpdatedone(true)
       Closenativations()
+      setdone(false)
+      setfilename(null)
     }
 }
 
@@ -215,6 +217,8 @@ setdownload_info((prev) => ({...prev, [e.target.name]:e.target.value }))
         GetInfoCv,
         uploadcvimage,
         updateDone,
+        filename,
+        setfilename
     }
     useEffect(() => {
       setcv(state.allcv)

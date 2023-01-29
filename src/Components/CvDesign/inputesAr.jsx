@@ -1,18 +1,22 @@
-import { useState } from "react";
+import { useEffect} from "react";
 import { Usecvcontext } from "../Context/Cv"
 function FeildsAr({color1,color2,c1,c2}){
     const {
         HangdaleUpdate,
         Onchange_inputs,
         info,
+        cv,
         uploadcvimage,
         setimage,
         progimg,
         done,
         setdone,
-        Onchange_inputs_download
+        GetInfoCv,
+        Onchange_inputs_download,
+        filename,
+        setfilename
     } = Usecvcontext()
-    const [filename,setfilename] = useState(null)
+    //const [filename,setfilename] = useState(null) waxaan u wareejiyay
     function onchange({target}){
         let file = target.files[0];
         if(file){
@@ -26,6 +30,9 @@ function FeildsAr({color1,color2,c1,c2}){
         }
         setimage(file)
     }
+    useEffect(() => {
+        GetInfoCv()
+    },[])
     return (
         <>
             <div className="container_feilds" dir="rtl">
@@ -351,6 +358,7 @@ function FeildsAr({color1,color2,c1,c2}){
                 <input value={info.Inters3} onChange={Onchange_inputs} autoComplete="off" name="Inters3" className="feilds_inputs" id="name" type="text" required placeholder="اسم الهواية" />
                 <label className="label_feilds" htmlFor="Name"><span className="delere_Feilds_part"> <i className="fa-solid fa-trash-can"></i></span> اسم الهواية</label>
                 <input value={info.Inters4} onChange={Onchange_inputs} autoComplete="off" name="Inters4" className="feilds_inputs" id="name" type="text" required placeholder="اسم الهواية" />
+                <input value={cv && cv.Price} onChange={Onchange_inputs_download} autoComplete="off" name="Lacagta" className="feilds_inputs" id="name" type="text" required placeholder="Interst Name" hidden/>
                 </div>
 
             </form>

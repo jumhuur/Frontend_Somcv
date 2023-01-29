@@ -1,18 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Usecvcontext } from "../Context/Cv"
 function FeildsSo({color1,color2,c1,c2}){
     const {
         HangdaleUpdate,
         Onchange_inputs,
         info,
+        cv,
+        GetInfoCv,
         uploadcvimage,
         setimage,
         progimg,
         done,
         setdone,
-        Onchange_inputs_download
+        Onchange_inputs_download,
+        filename,
+        setfilename
     } = Usecvcontext()
-    const [filename,setfilename] = useState(null)
+    //const [filename,setfilename] = useState(null) waan wareejiyay
     function onchange({target}){
         let file = target.files[0];
         if(file){
@@ -26,6 +30,10 @@ function FeildsSo({color1,color2,c1,c2}){
         }
         setimage(file)
     }
+
+    useEffect(() => {
+        GetInfoCv()
+    },[])
     return (
         <>
             <div className="container_feilds">
@@ -349,11 +357,7 @@ function FeildsSo({color1,color2,c1,c2}){
                 <input value={info.Inters3} onChange={Onchange_inputs} autoComplete="off" name="Inters3" className="feilds_inputs" id="name" type="text" required placeholder="Interst Name" />
                 <label className="label_feilds" htmlFor="Name">Interst Name</label>
                 <input value={info.Inters4} onChange={Onchange_inputs} autoComplete="off" name="Inters4" className="feilds_inputs" id="name" type="text" required placeholder="Interst Name" />
-                </div>
-                <div className="Feilds_part profile_in">
-                    <button className="save_data" onClick={HangdaleUpdate}>
-                    <i className="fa-solid fa-cloud"></i> Xifdi Macluumadka
-                    </button>
+                <input value={cv && cv.Price} onChange={Onchange_inputs_download} autoComplete="off" name="Lacagta" className="feilds_inputs" id="name" type="text" required placeholder="Interst Name" hidden/>
                 </div>
             </form>
             </div>

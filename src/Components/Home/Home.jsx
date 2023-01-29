@@ -11,7 +11,7 @@ import "./Home.css"
 import { Usecvcontext } from "../Context/Cv";
 import { useProtectedPage } from "../Context/Auth";
 import HelpVideo from "../Video/video";
-import JobsDesign from "../Jobs/JobsDesign/JobsDesign";
+import JobsDesign from "../Jobs/JobsDesign/JobsDesign"; 
 function Home () {
     const language = localStorage.getItem('lan');
     const [active,setactive] = useState(false)
@@ -57,11 +57,10 @@ function Home () {
             }
         }
     },[id])
-   
 
 
     // change image evry loading 
-    const arr_images = ['Home1.svg','Home4.svg']
+    const arr_images = ['Home1.svg','Home4.svg',"Home5.png"]
     const roundom_number = Math.ceil(Math.random() * arr_images.length - 1)
     return (
     <>

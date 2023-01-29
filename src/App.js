@@ -1,15 +1,9 @@
 import Home from "./Components/Home/Home";
 import {Routes, Route, Navigate} from "react-router-dom"
-import Login from "./Components/login/Login";
-import Register from "./Components/Singup/Singup";
 import Editcv from "./Components/Editcv/Editcv";
 import HomeAr from "./Components/Home/HomeAr";
 import EditcvAR from "./Components/Editcv/EditcvAr";
-import RegisterAr from "./Components/Singup/SingupAr";
-import LoginAr from "./Components/login/LoginAr";
 import HomeSo from "./Components/Home/HomeSo";
-import LoginSo from "./Components/login/LoginSo";
-import RegisterSo from "./Components/Singup/SingupSo";
 import EditcvSo from "./Components/Editcv/EditcvSo";
 import Addcv from "./Components/Addcv/Addcv";
 import AddcvAr from "./Components/Addcv/AddcvAr";
