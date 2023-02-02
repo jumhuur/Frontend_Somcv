@@ -18,8 +18,12 @@ import Unuvalibe from "./Components/Notfound/404";
 import UpdateCv from "./Components/Updatecv/Updatecv";
 import { useProtectedPage } from "./Components/Context/Auth";
 import OneJob from "./Components/Jobs/OneJob/OneJob";
+import NotFound_EN from "./Components/Notfound/404";
+import NotFound_AR from "./Components/Notfound/404Ar";
+import NotFound_SO from "./Components/Notfound/404So";
 function App() {
   const {CrentUser} = useProtectedPage()
+  const lang = localStorage.getItem('lan');
   return (
     <div className="App">
       <Routes>
@@ -41,7 +45,7 @@ function App() {
         <Route path="/ar/Addcv" element={CrentUser ?  <AddcvAr />: <Navigate to={"/ar"} />} />
         <Route path="/so/Addcv" element={CrentUser ?  <AddcvSo /> : <Navigate to={'/so'}/>} />
         <Route path="/job/:Id" element ={<OneJob />} />
-        <Route path="*" element ={<Unuvalibe /> } />
+        <Route path="*" element ={lang == "so" ? <NotFound_SO/> :lang == "Ar" ? <NotFound_AR/> : <NotFound_EN />  } />
       </Routes>
     </div>
   );

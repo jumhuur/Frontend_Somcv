@@ -456,6 +456,10 @@ div.Home_conten div.haye div.home_Parts div.side.left  div.actions_home{
   gap: 20px;
 }
 
+div.Home_conten div.haye div.home_Parts div.side.left  div.actions_home > a {
+  width: 100%;
+}
+
 div.Home_conten div.haye div.home_Parts div.side.left  div.actions_home button{
   height: 50px;
   width: 100%;

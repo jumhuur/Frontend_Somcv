@@ -50,7 +50,10 @@ function Nav(){
             <div className="nav_links">
                 <ul className="links_items">
                     <li className="items_nav">
-                       Home
+                        <Link to="/">
+                        Home
+                        </Link>
+                       
                     </li>
                     <li className="items_nav">
                     About

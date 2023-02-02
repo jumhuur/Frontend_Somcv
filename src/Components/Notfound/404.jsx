@@ -1,21 +1,11 @@
 import NotFound from "./notFound";
-import NotFoundAr from "./notFoundAr";
-import NotFoundSo from "./notFoundSo";
-
-function Unuvalibe(){
-    const lang = localStorage.getItem('Lan');
+function NotFound_EN(){
     return (
         <>
-        {lang === "Ar" ?
-        <NotFoundAr/>
-        :lang === "So" ? 
-        <NotFoundSo />
-        :
         <NotFound />
-        }
         </>
     )
 }
 
 
-export default Unuvalibe
+export default NotFound_EN
