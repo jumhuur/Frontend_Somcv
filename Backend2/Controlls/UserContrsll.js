@@ -29,7 +29,7 @@ const singup  = async(req,res) => {
         //const User_Id = req.User._id
         const cv = await UsercvModel.create({User_Id:user._id, Name, Image, Location, CreatedAt, leval, Jobtitle, Tell, Cvemail, Edyear1, Eddesc1, Edunivername1, Edyear2, Eddesc2, Edunivername2, Edyear3, Eddesc3, Edunivername3, Langname1, Langprog1, Langname2, Langprog2, Langname3, Langprog3, Profile, Exyear1, Excompnay1, Exjob1, Exdesc1, Exyear2, Excompnay2, Exjob2, Exdesc2, Exyear3, Excompnay3, Exjob3, Exdesc3, Skillname, Skillprog, Skillname1, Skillprog1, Skillname2, Skillprog2, Skillname3, Skillprog3, Skillname4, Skillprog4, Skillname5, Skillprog5, Skillname6, Skillprog6, Skillname7, Skillprog7, Inters1, Inters2, Inters3, Inters4,Ref1,Ref1Com,Ref1Tel,Ref2,Ref2Com,Ref2Tel,Ref3,Ref3Com,Ref3Tel })
         //res.status(200).json(cv)
-        res.status(200).json({Email, Token})
+        res.status(200).json({Magac,Email, Token})
     } catch(error){
         res.status(400).json({error:error.message})
         console.log(error.message)
@@ -43,8 +43,10 @@ const Login  = async(req,res) => {
         const user  = await Usermodel.Login(Email,Password)
         // create token 
         const Token = CreateToken(user._id)
-        res.status(200).json({Email, Token})
-
+        //Get name of user 
+        const Magac = user.Magac
+        //console.log(user)
+        res.status(200).json({Magac,Email,Token})
     } catch(error){
         res.status(400).json({error:error.message})
         console.log(error.message)

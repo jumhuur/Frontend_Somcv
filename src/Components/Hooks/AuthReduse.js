@@ -1,3 +1,4 @@
+/* eslint-disable no-duplicate-case */
 export  const INITIAL_STATE = {
     loading : false ,
     error : false,
@@ -28,12 +29,12 @@ export const AuthRadiuse = (state,action) => {
                 error : true
             }
         case ACTIONS.SET_DATA:
-            case ACTIONS.LOGOUT:
-                return {
-                    User: action.payload,
-                    Usercv: action.Usercv
-                }
-            default: 
+        case ACTIONS.LOGOUT:
+            return {
+                User: action.payload,
+                Usercv: action.Usercv
+            }
+        default: 
             return state;
     }
 }

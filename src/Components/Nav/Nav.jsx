@@ -8,7 +8,7 @@ function Nav(){
     const {Logout} = UseLogin()
     const {CrentUser} = useProtectedPage()
     const [q_scroll,setq_scroll]= useState(0)
-    const name = CrentUser && CrentUser.Email.split("@")[0];
+    const name = CrentUser && CrentUser.Magac;
     const splitname = name
     const [Lan,setLang] = useState(false)
 

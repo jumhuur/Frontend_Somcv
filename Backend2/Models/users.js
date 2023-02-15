@@ -20,6 +20,9 @@ const UserSchema = new schema({
 })
 
 
+
+// sing up 
+
 UserSchema.statics.singup = async function(Email,Password,Magac){
     if(!Email || !Password || !Magac){
         throw Error(["Buuxi Sadexda Meeloodba",
@@ -54,6 +57,9 @@ UserSchema.statics.singup = async function(Email,Password,Magac){
     return user
 }
 
+
+
+// Login functions 
 
 UserSchema.statics.Login = async function(Email,Password) {
     if(!Email || !Password){
