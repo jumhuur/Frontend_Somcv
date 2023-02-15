@@ -62,7 +62,7 @@ function HomeAr () {
 
 
     // change image evry loading 
-    const arr_images = ['Home1.svg','Home4.svg',"Home5.png"]
+    const arr_images = ['02.png' ,"Home5.png"]
     const roundom_number = Math.ceil(Math.random() * arr_images.length - 1)
     return (
     <>
