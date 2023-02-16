@@ -118,8 +118,8 @@ function HomeSo () {
         </div>
     </section>
     <PopupInfoSo active={active} onclickpop={popup_active} singalcv={singalcv}  />
-    <TipsSo />  
     <DesignsSo click={onclickbnt}/>
+    <TipsSo />  
     <FooterSo />
     </>
     )

@@ -121,7 +121,6 @@ function HomeAr () {
         </div>
     </section>
     <PopupInfoAr active={active} onclickpop={popup_active} singalcv={singalcv}  />
-   <JobsDesignAr />
     <DesignsAr click={onclickbnt}/>
     <TipsAr />  
     <FooterAr />

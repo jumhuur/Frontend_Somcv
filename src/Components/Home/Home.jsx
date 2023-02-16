@@ -1,17 +1,15 @@
-import {json, Navigate, useLocation } from "react-router-dom";
+import {Navigate, useLocation } from "react-router-dom";
 import Nav from "../Nav/Nav";
 import Tips from "../Tips/Tips";
 import Designs from "../Designs/Designs";
 import Footer from "../Footer/Footer";
 import PopupInfo from "../PopupInfo/popupinfo";
 import { useState } from "react";
-import axios from "axios";
 import { useEffect } from "react";
 import "./Home.css"
 import { Usecvcontext } from "../Context/Cv";
 import { useProtectedPage } from "../Context/Auth";
 import HelpVideo from "../Video/video";
-import JobsDesign from "../Jobs/JobsDesign/JobsDesign"; 
 function Home () {
     const language = localStorage.getItem('lan');
     const [active,setactive] = useState(false)
@@ -120,7 +118,6 @@ function Home () {
         </div>
     </section>
     <PopupInfo active={active} onclickpop={popup_active} singalcv={singalcv}  />
-    <JobsDesign />
     <Designs click={onclickbnt}/>
     <Tips />  
     <Footer />
