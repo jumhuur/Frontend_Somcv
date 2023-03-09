@@ -83,8 +83,8 @@ UserSchema.statics.Login = async function(Email,Password) {
     if(!match){
         throw Error([
             "Passworkaagu Waa Qalad !",
-            "Your Password Is In correct !",
-            'كلمة المرور غير صحيحة'
+            'كلمة المرور غير صحيحة',
+            "Your Password Is In correct !"
     ])
     }
 

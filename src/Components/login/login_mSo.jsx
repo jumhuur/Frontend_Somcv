@@ -59,7 +59,7 @@ function LoginModrSo(){
                                         <i className="fa-solid fa-cloud-arrow-down"></i>
                                         </div>
                                         <div className="text_qodo">
-                                            <h3>Downloads {download && download.length}</h3>
+                                            <h3>Dajisashada {download && download.length}</h3>
                                             <p>Dooro mid kamida nashqadaha diyaarsan ee cv-yada</p>
                                         </div>
 
@@ -69,7 +69,7 @@ function LoginModrSo(){
                                     <i className="fa-solid fa-users"></i>
                                         </div>
                                         <div className="text_qodo">
-                                            <h3>Users {Allusers && Allusers.length}</h3>
+                                            <h3>Isticmaale {Allusers && Allusers.length}</h3>
                                             <p>Dooro mid kamida nashqadaha diyaarsan ee cv-yada</p>
                                         </div>
                                     </li>
@@ -79,7 +79,7 @@ function LoginModrSo(){
                                     <i className="fa-solid fa-layer-group"></i>
                                         </div>
                                         <div className="text_qodo">
-                                            <h3>Designs {cv && cv.length}</h3>
+                                            <h3>Nashqado {cv && cv.length}</h3>
                                             <p>Dooro mid kamida nashqadaha diyaarsan ee cv-yada</p>
                                         </div>
                                     </li>
@@ -93,7 +93,7 @@ function LoginModrSo(){
                     <div className="login_card">
                         <form className="login_from">
                             <span className="welcome">
-                                Log In Here
+                                Ka Gal Akoon Hore Halkan
                             </span>
                             <input onInput={Onchange_inputs} type={"email"} placeholder="Emailkaaga" name="Email" autoComplete="off" required/>
                             <input onInput={Onchange_inputs} type={"password"} placeholder="Passworka" name="Password"  required/>
@@ -118,12 +118,12 @@ function LoginModrSo(){
                             </button>
                             {Error && 
                             <span className="Massage">
-                            {Error.split(",")[1]}
+                            {Error.split(",")[0]}
                             </span>
                             }
-                            <Link to={"/Register"}>
+                            <Link to={"/so/Register"}>
                             <span>
-                                Register Now
+                                Akoon Cusub
                             </span>
                             </Link>
 

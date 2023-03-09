@@ -19,8 +19,8 @@ function CVdesign({cv}) {
     const {CrentUser} = useProtectedPage()
     const {create_dowanload, updateDone , Closenativations} = Usecvcontext()
     const {Download} = UseDawnload()
-    const name_id = CrentUser && `${CrentUser.Email.split("@")[0]}_2023`;
-    const Name = CrentUser && `${CrentUser.Email.split("@")[0]}`;
+    const name_id = CrentUser && `${CrentUser.Magac}_2023`;
+    const Name = CrentUser && `${CrentUser.Magac}`;
     const Price = cv && cv.Qiimaha 
     function Bugscroll(){
         const path = useLocation()

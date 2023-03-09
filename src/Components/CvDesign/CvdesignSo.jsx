@@ -17,11 +17,11 @@ function CVdesignSo({cv}) {
     const [color1,setcolor1] = useState("#001d3d")
     const [color2,setcolor2] = useState("#4361ee")
     const {CrentUser} = useProtectedPage()
-    const name_id = CrentUser && `${CrentUser.Email.split("@")[0]}`;
+    const name_id = CrentUser && `${CrentUser.Magac}_2023`;
+    const Name = CrentUser && `${CrentUser.Magac}`;
     const {create_dowanload,updateDone} = Usecvcontext()
     const {Download} = UseDawnload()
     const Price = cv && cv.Qiimaha 
-    const Name = CrentUser && `${CrentUser.Email.split("@")[0]}`;
     function Bugscroll(){
         const path = useLocation()
         useEffect (function(){

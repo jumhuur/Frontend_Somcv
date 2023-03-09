@@ -19,8 +19,8 @@ function CVdesignAr({cv}) {
     const {create_dowanload,updateDone} = Usecvcontext()
     const {Download} = UseDawnload()
     const Price = cv && cv.Qiimaha 
-    const name_id = CrentUser && `${CrentUser.Email.split("@")[0]}`;
-    const Name = CrentUser && `${CrentUser.Email.split("@")[0]}`;
+    const name_id = CrentUser && `${CrentUser.Magac}_2023`;
+    const Name = CrentUser && `${CrentUser.Magac}`;
 
     function Bugscroll(){
         const path = useLocation()
