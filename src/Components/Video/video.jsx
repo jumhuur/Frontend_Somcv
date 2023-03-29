@@ -26,7 +26,6 @@ function  HelpVideo({active,func}){
                 />
                 :<></>
                 }
-
                 </div>
             </div>
         </div>

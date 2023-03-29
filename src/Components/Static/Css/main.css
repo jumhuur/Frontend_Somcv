@@ -1082,6 +1082,28 @@ div.ciwaan > div.ciwaan_adv span {
 /*-------------------------- dhamaad Design ---------------------------------*/
 
 
+/*-----------------------------slide -----------------------------*/
+div.slide{
+  width: 100%;
+  height: 100%;
+  background-color: var(--main2);
+  margin: 10px 0px;
+}
+
+.slide_cards{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap row;
+}
+
+div.card{
+  width: 50px;
+  height: 200px;
+  margin: 0px 15px;
+  background-color: var(--qoraalo_content);
+}
+
 /*-------------------------- footer ---------------------------------*/
 div.footer {
   width: 100%;

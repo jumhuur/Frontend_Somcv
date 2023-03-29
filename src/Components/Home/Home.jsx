@@ -10,6 +10,7 @@ import "./Home.css"
 import { Usecvcontext } from "../Context/Cv";
 import { useProtectedPage } from "../Context/Auth";
 import HelpVideo from "../Video/video";
+import Slide from "../Slide/Slide";
 function Home () {
     const language = localStorage.getItem('lan');
     const [active,setactive] = useState(false)
@@ -119,6 +120,7 @@ function Home () {
         </div>
     </section>
     <PopupInfo active={active} onclickpop={popup_active} singalcv={singalcv}  />
+    {/* <Slide /> */}
     <Designs click={onclickbnt}/>
     <Tips />  
     <Footer />

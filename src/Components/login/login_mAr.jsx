@@ -116,7 +116,7 @@ function LoginModrAr(){
                         </button>
                     {Error && 
                     <span className="Massage">
-                    {Error.split(",")[2]}
+                    {Error.split(",")[1]}
                      </span>
                     }
                     <Link to={"/ar/Register"}>
