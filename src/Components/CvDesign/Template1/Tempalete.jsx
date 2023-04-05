@@ -5,6 +5,7 @@ import React from "react";
 function Template({cv,color1,color2}){
     const {CrentUser} = useProtectedPage()
     const {info} = Usecvcontext()
+    console.log(info)
     return (
         <>
         <div className={Styletemp1.page_cv_container}>

@@ -1,6 +1,5 @@
 import {Navigate, useLocation } from "react-router-dom";
 import { useState } from "react";
-import axios from "axios";
 import { useEffect } from "react";
 import "./Home.css"
 import NavSo from "../Nav/NavSo";
@@ -54,13 +53,13 @@ function HomeSo () {
                 console.log(err)
             }
         }
-    },[id])
+    },[singalcv,id])
    
 
 
     // change image evry loading 
     // const arr_images = ['02.png' ,"Home5.png"]
-    const arr_images = ["Home1.svg"]
+    const arr_images = ["H1.svg","H.svg","H2.svg"]
     const roundom_number = Math.ceil(Math.random() * arr_images.length - 1)
     return (
     <>
