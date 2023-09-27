@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(
   cors(
     {
-      origin: "https://frontend-somcv-txca.vercel.app/",
+      origin: "https://somcv.vercel.app/",
       credentials: true,
     }
     // app.use(cors({
