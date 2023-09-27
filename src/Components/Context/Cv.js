@@ -162,7 +162,7 @@ export function CvcontextProvaider({ children }) {
   // const create_dowanload = async(e) => {
   // e.preventDefault()
   // try{
-  //   await axios.post("http://localhost:8800/Api/downloads/", download_info)
+  //   await axios.post("https://frontend-somcv.vercel.app/sApi/downloads/", download_info)
   // } catch(err){
   //   console.log(err)
   // }
@@ -201,11 +201,14 @@ export function CvcontextProvaider({ children }) {
   };
 
   const GetInfoCv = async () => {
-    const response3 = await fetch("http://localhost:8800/Api/OneUser", {
-      headers: {
-        authorization: `Bearar ${CrentUser && CrentUser.Token}`,
-      },
-    });
+    const response3 = await fetch(
+      "https://frontend-somcv.vercel.app/sApi/OneUser",
+      {
+        headers: {
+          authorization: `Bearar ${CrentUser && CrentUser.Token}`,
+        },
+      }
+    );
     const json = response3.json().then((data) => {
       setinfo(data[0]);
     });
