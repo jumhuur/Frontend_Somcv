@@ -12,8 +12,8 @@ const UsercvRouters = require("./Routes/UserCv");
 
 // init Midallware
 app.use((req, res, next) => {
-  // res.header("Access-Control-Allow-Origin", true);
-  // res.header("Access-Control-Allow-Private-Network", true);
+  res.header("Access-Control-Allow-Origin", true);
+  res.header("Access-Control-Allow-Private-Network", true);
   next();
 });
 
