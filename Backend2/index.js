@@ -20,7 +20,11 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://somcv.vercel.app",
+    origin: [
+      "https://somcv.vercel.app",
+      "https://somcv-git-main-jumhuur.vercel.app/",
+      "https://somcv-d8ud6ngsl-jumhuur.vercel.app/",
+    ],
     credentials: true,
   })
 );
