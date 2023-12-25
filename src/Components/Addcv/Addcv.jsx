@@ -63,7 +63,7 @@ function Addcv() {
   const storageRef = ref(Storage, `Cvimages/${Date.now()}${Image.name}`);
 
   const uploadcvimage = () => {
-    const uploadTask = uploadBytesResumable(storageRef, Image);
+    const uploadTask = uploadBytesResumable(storageRef, Image[0]);
     uploadTask.on(
       "state_changed",
       (snapshot) => {

@@ -42,9 +42,7 @@ function Home() {
     if (id) {
       try {
         const getsingalcv = async () => {
-          const data = await fetch(
-            `https://frontend-somcv.vercel.app/Api/Cv/${id}`
-          );
+          const data = await fetch(`http://localhost:8800/Api/Cv/${id}`);
           data.json().then((cvdata) => {
             setsingalcv(cvdata);
           });

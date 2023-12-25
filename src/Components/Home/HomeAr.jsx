@@ -11,7 +11,6 @@ import PopupInfoAr from "../PopupInfo/popupinfoAr";
 import { Usecvcontext } from "../Context/Cv";
 import { useProtectedPage } from "../Context/Auth";
 import HelpVideo from "../Video/video";
-import JobsDesignAr from "../Jobs/JobsDesign/JobsDesignAr";
 function HomeAr() {
   const language = localStorage.getItem("lan");
   const [active, setactive] = useState(false);
@@ -43,9 +42,7 @@ function HomeAr() {
     if (id) {
       try {
         const getsingalcv = async () => {
-          const data = await fetch(
-            `https://frontend-somcv.vercel.app/Api/Cv/${id}`
-          );
+          const data = await fetch(`http://localhost:8800/Api/Cv/${id}`);
           data.json().then((cvdata) => {
             setsingalcv(cvdata);
           });

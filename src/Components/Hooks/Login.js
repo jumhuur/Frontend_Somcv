@@ -8,14 +8,11 @@ export const UseLogin = () => {
   const Login = async (Email, Password) => {
     setLooding(true);
     setError(false);
-    const response = await fetch(
-      "https://frontend-somcv.vercel.app/Api/Login",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ Email, Password }),
-      }
-    );
+    const response = await fetch("http://localhost:8800/Api/Login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ Email, Password }),
+    });
 
     const json = await response.json();
 

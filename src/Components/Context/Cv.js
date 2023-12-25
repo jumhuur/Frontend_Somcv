@@ -8,7 +8,6 @@ const Cvcontext = React.createContext();
 export function Usecvcontext() {
   return useContext(Cvcontext);
 }
-
 export function CvcontextProvaider({ children }) {
   const [state, dispatch] = useReducer(CvRadiuse, INITIAL_STATE);
   const { CrentUser } = useProtectedPage();
@@ -19,7 +18,7 @@ export function CvcontextProvaider({ children }) {
     Lacagta: cv && cv.Price,
   });
   const [download, setdownload] = useState();
-  const [image, setimage] = useState("/Images/User.png");
+  const [image, setimage] = useState("http://localhost:8800/Images/User.png");
   const [progimg, setProgimg] = useState("");
   const [done, setdone] = useState(false);
   const [updateDone, setUpdatedone] = useState(false);
@@ -133,7 +132,7 @@ export function CvcontextProvaider({ children }) {
   const HangdaleUpdate = async (e) => {
     e.preventDefault();
     const data = await fetch(
-      `https://frontend-somcv.vercel.app/Api/UpdateUsercv/${info._id}`,
+      `http://localhost:8800/Api/UpdateUsercv/${info._id}`,
       {
         method: "PATCH",
         body: JSON.stringify(info),
@@ -162,28 +161,21 @@ export function CvcontextProvaider({ children }) {
   // const create_dowanload = async(e) => {
   // e.preventDefault()
   // try{
-  //   await axios.post("https://frontend-somcv.vercel.app/sApi/downloads/", download_info)
+  //   await axios.post("http://localhost:8800/sApi/downloads/", download_info)
   // } catch(err){
   //   console.log(err)
   // }
   // }
   // GET ALL DATA CVS
   const Getallcv = async () => {
-    const response = await fetch("https://frontend-somcv.vercel.app/Api/Allcv");
-    const response1 = await fetch(
-      "https://frontend-somcv.vercel.app/Api/AllUser"
-    );
-    const response2 = await fetch(
-      "https://frontend-somcv.vercel.app/Api/Downloads"
-    );
-    const response3 = await fetch(
-      "https://frontend-somcv.vercel.app/Api/OneUser",
-      {
-        headers: {
-          authorization: `Bearar ${CrentUser && CrentUser.Token}`,
-        },
-      }
-    );
+    const response = await fetch("http://localhost:8800/Api/Allcv");
+    const response1 = await fetch("http://localhost:8800/Api/AllUser");
+    const response2 = await fetch("http://localhost:8800/Api/Downloads");
+    const response3 = await fetch("http://localhost:8800/Api/OneUser", {
+      headers: {
+        authorization: `Bearar ${CrentUser && CrentUser.Token}`,
+      },
+    });
     const res = await response.json();
     const res1 = await response1.json();
     const res2 = await response2.json();
@@ -201,14 +193,11 @@ export function CvcontextProvaider({ children }) {
   };
 
   const GetInfoCv = async () => {
-    const response3 = await fetch(
-      "https://frontend-somcv.vercel.app/sApi/OneUser",
-      {
-        headers: {
-          authorization: `Bearar ${CrentUser && CrentUser.Token}`,
-        },
-      }
-    );
+    const response3 = await fetch("http://localhost:8800/Api/OneUser", {
+      headers: {
+        authorization: `Bearar ${CrentUser && CrentUser.Token}`,
+      },
+    });
     const json = response3.json().then((data) => {
       setinfo(data[0]);
     });
@@ -231,7 +220,6 @@ export function CvcontextProvaider({ children }) {
     state,
     setinfo,
     GetInfoCv,
-    uploadcvimage,
     updateDone,
     filename,
     setfilename,

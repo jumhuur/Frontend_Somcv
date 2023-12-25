@@ -10,14 +10,11 @@ export const Usesingup = () => {
   const Singupuser = async (Email, Password, Magac) => {
     setLooding(true);
     setError(false);
-    const response = await fetch(
-      "https://frontend-somcv.vercel.app/Api/RegisterUser",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ Email, Password, Magac }),
-      }
-    );
+    const response = await fetch("http://localhost:8800/Api/RegisterUser", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ Email, Password, Magac }),
+    });
 
     const json = await response.json();
 
