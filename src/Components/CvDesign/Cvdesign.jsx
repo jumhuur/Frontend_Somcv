@@ -33,10 +33,8 @@ function CVdesign({ cv }) {
   }
 
   Bugscroll();
-
   //pdf samayn
   const ref = React.createRef();
-
   // samaynta download pdf using html2canvas and jspdf
   const btn_download = useRef();
   const downloadPdf = () => {

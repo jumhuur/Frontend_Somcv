@@ -9,6 +9,7 @@ const cvRouter = require("./Routes/Cv.js");
 const UserRouter = require("./Routes/Users");
 const DwonloadRouter = require("./Routes/Download");
 const UsercvRouters = require("./Routes/UserCv");
+const SendMessages = require("./Routes/Message.js");
 
 // init Midallware
 app.use((req, res, next) => {
@@ -25,6 +26,7 @@ app.use(
   })
 );
 // rounting
+app.use("/Api", SendMessages);
 app.use("/Api", UserRouter);
 app.use("/Api", DwonloadRouter);
 app.use("/Api", cvRouter);
