@@ -2,8 +2,9 @@ const Usermodel = require("../Models/users");
 const UsercvModel = require("../Models/userCv");
 const jwt = require("jsonwebtoken");
 
+const Epxin = 1 * 24 * 60 * 60; // 1 day
 const CreateToken = (_id) => {
-  return jwt.sign({ _id }, process.env.SECRET, { expiresIn: "3d" });
+  return jwt.sign({ _id }, process.env.SECRET, { expiresIn: Epxin });
 };
 
 const GetAllUser = async (req, res) => {
@@ -178,7 +179,13 @@ const Login = async (req, res) => {
     //Get name of user
     const Magac = user.Magac;
     //console.log(user)
-    res.status(200).json({ Magac, Email, Token });
+    res.cookie("Token", Token, {
+      httpOnly: true,
+      secure: false,
+      maxAge: Epxin * 1000,
+    });
+
+    res.status(200).json({ Magac, Email, Token, Epxin });
   } catch (error) {
     res.status(400).json({ error: error.message });
     console.log(error.message);

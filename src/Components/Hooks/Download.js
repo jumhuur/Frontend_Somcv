@@ -6,7 +6,7 @@ export const UseDawnload = () => {
   const [Looding, setLooding] = useState(false);
   // download massage
   const SentMassage = async (Name_shaqsi, Qiimaha) => {
-    const Massage = `Hanbalyo !! Cv Cusub Ayuu Download-garaystay ${Name_shaqsi} oo Qiimihiisu Yahay $${Qiimaha}`;
+    const Massage = `Ku Soo Dhawaaw Shabakada SoomaliCv Cv Cusub Ayuu Download-garaystay ${Name_shaqsi.toLocaleUpperCase()} oo Qiimihiisu Yahay $${Qiimaha}`;
     const send = await fetch(`http://localhost:8800/Api/Message`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
