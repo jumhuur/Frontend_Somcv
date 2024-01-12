@@ -22,7 +22,7 @@ function Template({ cv, color1, color2 }) {
               }}
             >
               <img
-                src={CrentUser ? info.Image : "/Images/User.png"}
+                src={CrentUser ? "/Images/Avatar.png" : "/Images/User.png"}
                 alt="image_user"
               />
             </div>
@@ -34,7 +34,7 @@ function Template({ cv, color1, color2 }) {
               <span></span>
             </div>
             <div className={Styletemp1.person_contects}>
-              <h2 className={Styletemp1.ciwaan}>CONTECT INFO</h2>
+              <h2 className={Styletemp1.ciwaan}>CONTACT INFO</h2>
               <ul className={Styletemp1.ul_contect}>
                 <li className={Styletemp1.list_contect}>
                   <i
