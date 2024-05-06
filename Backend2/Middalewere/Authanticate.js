@@ -1,32 +1,25 @@
-const jwt = require("jsonwebtoken")
-const usermodel = require("../Models/users")
+const jwt = require("jsonwebtoken");
+const usermodel = require("../Models/users");
 
+const requeredAuth = async (req, res, next) => {
+  //ubinta shakhsiga
 
-const requeredAuth = async(req,res, next) => {
+  const { authorization } = req.headers;
 
-    //ubinta shakhsiga 
+  if (!authorization) {
+    return res.status(401).json({ err: "Lama Hubin Galidaada" });
+  }
 
-    const {authorization} = req.headers
+  const Token = authorization.split(" ")[1];
+  console.log(Token);
 
-    if(!authorization){
-        return res.status(401).json({err:"Lama Hubin Galidaada"})
+  try {
+    const { _id } = jwt.verify(Token, process.env.SECRET);
+    req.User = await usermodel.findOne({ _id }).select("_id");
+    next();
+  } catch (err) {
+    res.status(401).json({ err: "Lama Xaqiijin isticmaalahan" });
+  }
+};
 
-    }
-
-    const Token = authorization.split(" ")[1]
-
-    try{
-
-        const {_id} = jwt.verify(Token, process.env.SECRET)
-        req.User = await usermodel.findOne({_id}).select('_id')
-        next()
-
-    } catch(err){
-        res.status(401).json({err: "Lama Xaqiijin isticmaalahan"})
-
-    }
-
-}
-
-
-module.exports = requeredAuth
+module.exports = requeredAuth;
