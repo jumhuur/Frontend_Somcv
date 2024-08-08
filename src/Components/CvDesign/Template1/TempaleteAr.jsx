@@ -17,7 +17,7 @@ function TemplateAr({ color1, color2 }) {
               className={Styletemp1.image}
               style={{
                 backgroundImage: `Url(${
-                  CrentUser ? info.Image : "/Images/User.png"
+                  CrentUser ? info.Image : "/Images/user.png"
                 })`,
               }}
             >

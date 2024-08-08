@@ -18,8 +18,11 @@ function CVdesignAr({ cv }) {
   const { CrentUser } = useProtectedPage();
   const { create_dowanload, updateDone } = Usecvcontext();
   const { Download } = UseDawnload();
+  const date = new Date();
+  const Sanad = date.getFullYear();
+  const Milisecconds = date.getMilliseconds();
+  const name_id = CrentUser && `${CrentUser.Magac}_${Sanad}_${Milisecconds}`;
   const Price = cv && cv.Qiimaha;
-  const name_id = CrentUser && `${CrentUser.Magac}_2023`;
   const Name = CrentUser && `${CrentUser.Magac}`;
 
   function Bugscroll() {

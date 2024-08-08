@@ -17,7 +17,10 @@ function CVdesignSo({ cv }) {
   const [color1, setcolor1] = useState("#001d3d");
   const [color2, setcolor2] = useState("#4361ee");
   const { CrentUser } = useProtectedPage();
-  const name_id = CrentUser && `${CrentUser.Magac}_2023`;
+  const date = new Date();
+  const Sanad = date.getFullYear();
+  const Milisecconds = date.getMilliseconds();
+  const name_id = CrentUser && `${CrentUser.Magac}_${Sanad}_${Milisecconds}`;
   const Name = CrentUser && `${CrentUser.Magac}`;
   const { create_dowanload, updateDone } = Usecvcontext();
   const { Download } = UseDawnload();
