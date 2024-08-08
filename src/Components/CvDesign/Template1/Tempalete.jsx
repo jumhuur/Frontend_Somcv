@@ -22,7 +22,7 @@ function Template({ cv, color1, color2 }) {
               }}
             >
               <img
-                src={CrentUser ? "/Images/Avatar.png" : "/Images/User.png"}
+                src={CrentUser ? "/Images/user.png" : "/Images/user.png"}
                 alt="image_user"
               />
             </div>

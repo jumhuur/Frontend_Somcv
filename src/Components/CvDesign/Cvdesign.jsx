@@ -59,7 +59,7 @@ function CVdesign({ cv }) {
       <div className="haye">
         <div ref={ref} className="design_cv_containers">
           <div className="leval1" id="leval1">
-            {cv && cv._id === "645b74f4e010f1c9f077465a" ? (
+            {cv && cv._id === "66b4de136bfa0197afcc1628" ? (
               <Template cv={cv} color1={color1} color2={color2} />
             ) : cv && cv._id === "645b74afe010f1c9f077464b" ? (
               <Template2 cv={cv} color1={color1} color2={color2} />

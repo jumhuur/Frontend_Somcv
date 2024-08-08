@@ -22,7 +22,7 @@ function TemplateAr({ color1, color2 }) {
               }}
             >
               <img
-                src={CrentUser ? info.Image : "/Images/User.png"}
+                src={CrentUser ? info.Image : "/Images/user.png"}
                 alt="image_user"
               />
             </div>

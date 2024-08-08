@@ -35,7 +35,13 @@ function Designs({ click }) {
                         </div>
                       </>
                     ) : (
-                      <></>
+                      <>
+                        <div className="update">
+                          <Link to={`/updateCv/${cvdata._id}`}>
+                            <p>Update</p>
+                          </Link>
+                        </div>
+                      </>
                     )}
 
                     <Link to={"/"}>

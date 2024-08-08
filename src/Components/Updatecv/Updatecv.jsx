@@ -16,13 +16,15 @@ function UpdateCv() {
   const [qalad, setqalad] = useState("");
   const image = useRef();
   const location = useNavigate();
-  const [cvinfo, setcvinfo] = useState({
-    Magac: "",
-    Qiimaha: "",
-    Image: Image,
-  });
+  const [cvinfo, setcvinfo] = useState();
   const { Id } = useParams();
+  const ObjCvinfo = {
+    Magac: cvinfo && cvinfo.Magac,
+    Qiimaha: cvinfo && cvinfo.Qiimaha,
+    Image: Image,
+  };
 
+  console.log("Objccv", ObjCvinfo);
   const upload_img = () => {
     image.current.click();
   };
@@ -42,24 +44,21 @@ function UpdateCv() {
   }
 
   const GetInfoCv = async () => {
-    const date = await fetch(`https://frontend-somcv.vercel.app/Api/Cv/${Id}`);
+    const date = await fetch(`http://localhost:8800/Api/Cv/${Id}`);
     const json = date.json().then((data) => {
       setcvinfo(data);
     });
   };
   const addcv = async (e) => {
     e.preventDefault();
-    const data = await fetch(
-      `https://frontend-somcv.vercel.app/Api/Updatecv/${Id}`,
-      {
-        method: "PATCH",
-        body: JSON.stringify(cvinfo),
-        headers: {
-          "Content-Type": "application/json",
-          authorization: `Bearar ${CrentUser.Token}`,
-        },
-      }
-    );
+    const data = await fetch(`http://localhost:8800/Api/Updatecv/${Id}`, {
+      method: "PATCH",
+      body: JSON.stringify(cvinfo),
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearar ${CrentUser.Token}`,
+      },
+    });
     const json = await data.json();
     if (!data.ok) {
       setqalad(json.Fariin[1]);
@@ -120,14 +119,14 @@ function UpdateCv() {
           <form className="login_from">
             <span className="welcome">Add New Cv Design</span>
             <input
-              value={cvinfo && cvinfo.Magac}
+              value={ObjCvinfo && ObjCvinfo.Magac}
               onChange={Onchange_inputs}
               type={"text"}
               placeholder="Magacaaga"
               name="Magac"
             />
             <input
-              value={cvinfo && cvinfo.Qiimaha}
+              value={ObjCvinfo && ObjCvinfo.Qiimaha}
               onChange={Onchange_inputs}
               type={"number"}
               placeholder="Price"

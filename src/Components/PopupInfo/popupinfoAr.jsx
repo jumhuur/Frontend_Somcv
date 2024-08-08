@@ -53,7 +53,7 @@ function PopupInfoAr({ active, onclickpop, singalcv }) {
                 </div>
                 <div className="cv">
                   <div className="cv_image">
-                    {singalcv && singalcv._id === "645b74f4e010f1c9f077465a" ? (
+                    {singalcv && singalcv._id === "66b4de136bfa0197afcc1628" ? (
                       <TemplateAr cv={singalcv} />
                     ) : singalcv &&
                       singalcv._id === "645b74afe010f1c9f077464b" ? (

@@ -26,7 +26,7 @@ app.use(
   })
 );
 // rounting
-app.use("/Api", SendMessages);
+// app.use("/Api", SendMessages);
 app.use("/Api", UserRouter);
 app.use("/Api", DwonloadRouter);
 app.use("/Api", cvRouter);
